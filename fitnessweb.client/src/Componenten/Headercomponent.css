@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+}
+
+    .header .logo img {
+        height: 50px;
+    }
+
+    .header nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+        .header nav ul li {
+            padding: 0 15px;
+        }
+
+.button {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #007BFF;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.button-highlight {
+    background-color: #28a745;
+    // Een andere kleur om deze knop opvallender te maken
+}

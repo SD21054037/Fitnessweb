@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\Componenten\" />
+    <Folder Include="src\Paginas\" />
   </ItemGroup>
 </Project>
