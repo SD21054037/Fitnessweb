@@ -3,11 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f0f0f0;
+    background-color: #4cc7d5;
 }
 
     .header .logo img {
-        height: 50px;
+        height: 90px;
     }
 
     .header nav ul {
@@ -18,7 +18,9 @@
         .header nav ul li {
             padding: 0 15px;
         }
+.main {
 
+}
 .button {
     padding: 10px 20px;
     color: white;
@@ -30,5 +32,7 @@
 
 .button-highlight {
     background-color: #28a745;
-    // Een andere kleur om deze knop opvallender te maken
+    
 }
+
+

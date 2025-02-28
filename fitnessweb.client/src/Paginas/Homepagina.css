@@ -1,0 +1,32 @@
+.spacer {
+    aspect-ratio: 900/140;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('../../public/SVG-images/prototype3.svg')
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.homepagina {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #A3E9F1;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 100%;
+    background-color: pink;
+    margin-top: -65px;
+}
