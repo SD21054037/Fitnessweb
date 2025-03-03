@@ -1,13 +1,15 @@
 .spacer {
-    aspect-ratio: 900/140;
+    aspect-ratio: 1050/150;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+   
 }
 
 .layer1 {
-    background-image: url('../../public/SVG-images/prototype3.svg')
+    background-image: url('../../public/SVG-images/prototype4.svg')
 }
 
 .flip {
@@ -20,6 +22,8 @@
     height: 100vh;
     width: 100vw;
     background-color: #A3E9F1;
+    overflow-x: hidden;
+    position: relative; 
 }
 
 .main-content {
@@ -27,6 +31,27 @@
     flex-direction: row;
     height: 700px;
     width: 100%;
-    background-color: pink;
-    margin-top: -65px;
+    background-color: #A3E9F1;
+    position: relative;
+    margin-top: -151px; 
+    margin-bottom: -151px;
+}
+
+.model {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    background-color: #A3E9F1;
+    position: relative;
+    margin: 0px 10px 0px 10px;
+}
+
+.model-uitleg {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    background-color: #A3E9F1;
+    position: relative;
 }

@@ -1,38 +1,119 @@
+/* Base styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     background-color: #4cc7d5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    .header .logo img {
-        height: 90px;
-    }
-
-    .header nav ul {
-        list-style: none;
-        display: flex;
-    }
-
-        .header nav ul li {
-            padding: 0 15px;
-        }
-.main {
-
+/* Logo */
+.header__logo img {
+    height: 80px;
+    transition: transform 0.3s ease;
 }
-.button {
-    padding: 10px 20px;
+
+    .header__logo img:hover {
+        transform: scale(1.05);
+    }
+
+/* Navigation */
+.header__nav {
+    flex: 1;
+    margin-left: 2rem;
+    overflow: hidden;
+    
+}
+
+/* Ant Design Menu Customization */
+.ant-menu {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.ant-menu-horizontal {
+    line-height: 64px; 
+    white-space: nowrap; 
+}
+
+.ant-menu-item, .ant-menu-submenu-title {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    .ant-menu-item:hover, .ant-menu-submenu-title:hover {
+        color: #007BFF;
+    }
+
+.ant-menu-submenu-arrow {
+    color: #333;
+}
+
+.ant-menu-submenu-popup {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ant-menu-item-group-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.ant-menu-item {
+    padding: 0.5rem 1rem;
+}
+
+    .ant-menu-item:hover {
+        background-color: #f0f0f0;
+    }
+
+/* Buttons */
+.header__actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__button {
+    padding: 0.75rem 1.5rem;
     color: white;
     text-decoration: none;
     background-color: #007BFF;
     border-radius: 5px;
-    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
-.button-highlight {
+    .header__button:hover {
+        background-color: #0056b3;
+    }
+
+.header__button--highlight {
     background-color: #28a745;
-    
 }
 
+    .header__button--highlight:hover {
+        background-color: #218838;
+    }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header__nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .header__actions {
+        margin-top: 1rem;
+    }
+}
