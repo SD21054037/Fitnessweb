@@ -18,6 +18,7 @@ const LineModel = () => {
 
         const scene = new THREE.Scene();
 
+
         const material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 
         const points = [];
