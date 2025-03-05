@@ -33,9 +33,22 @@
 }
 
 .ant-menu-horizontal {
-    line-height: 64px; 
-    white-space: nowrap; 
+    line-height: 64px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
 }
+.custom-menu .ant-menu-item, .custom-menu .ant-menu-submenu-title {
+    font-size: 20px;
+    
+
+}
+
+    .custom-menu .ant-menu-item:hover, .custom-menu .ant-menu-submenu-title:hover {
+        color: #1890ff;
+    }
+
+
 
 .ant-menu-item, .ant-menu-submenu-title {
     color: #333;
@@ -44,9 +57,7 @@
     transition: color 0.3s ease;
 }
 
-    .ant-menu-item:hover, .ant-menu-submenu-title:hover {
-        color: #007BFF;
-    }
+    
 
 .ant-menu-submenu-arrow {
     color: #333;

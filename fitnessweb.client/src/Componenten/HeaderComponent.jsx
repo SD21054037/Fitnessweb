@@ -70,7 +70,8 @@ function HeaderComponent() {
                     mode="horizontal"
                     items={items}
                     overflowedIndicator={null} 
-                    style={{ lineHeight: '64px', borderBottom: 'none', display: 'flex', justifyContent: 'center' }}
+                    className="custom-menu"
+                    
                 />
             </nav>
             <div className="header__actions">

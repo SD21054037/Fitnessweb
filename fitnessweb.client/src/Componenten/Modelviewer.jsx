@@ -1,40 +1,70 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { useState, useRef } from 'react';
+//import { useNavigate } from 'react-router-dom'; // If using React Router
 
-import { createRoot } from 'react-dom/client'
-import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import './styles.css'
+function Model() {
+    const { scene } = useGLTF('/Musclemodel6.glb');
+    const [hovered, setHovered] = useState(null);
+    const meshRef = useRef();
+    
 
-function Box(props) {
-    // This reference will give us direct access to the mesh
-    const meshRef = useRef()
-    // Set up state for the hovered and active state
-    const [hovered, setHover] = useState(false)
-    const [active, setActive] = useState(false)
-    // Subscribe this component to the render-loop, rotate the mesh every frame
-    useFrame((state, delta) => (meshRef.current.rotation.x += delta))
-    // Return view, these are regular three.js elements expressed in JSX
+    useFrame(() => {
+        if (hovered) {
+            hovered.material.emissive.set('red'); 
+        } else if (!hovered && meshRef.current) {
+            meshRef.current.traverse((obj) => {
+                if (obj.isMesh) {
+                    obj.material.emissive.set('black'); 
+                }
+            });
+        };
+    });
+
     return (
-        <mesh
-            {...props}
+        <primitive
+            object={scene}
+            scale={1.5}
             ref={meshRef}
-            scale={active ? 1.5 : 1}
-            onClick={(event) => setActive(!active)}
-            onPointerOver={(event) => setHover(true)}
-            onPointerOut={(event) => setHover(false)}>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-        </mesh>
-    )
+            onPointerOver={(e) => {
+                e.stopPropagation();
+                if (e.object.material) {
+                    e.object.material.color.set('red'); 
+                }
+            }}
+
+            onPointerOut={(e) => {
+                e.stopPropagation();
+                if (e.object.material) {
+                    e.object.material.color.set('white'); 
+                }
+            }}
+
+            onClick={(e) => {
+                e.stopPropagation();
+                console.log('Clicked on:', e.object.name);
+                //navigate(`/muscle/${e.object.name}`); // Navigate to the muscle's info page
+            }}
+        />
+    );
 }
 
-createRoot(document.getElementById('root')).render(
-    <Canvas>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
-    </Canvas>,
-)
+export default function App() {
+    return (
+        <Canvas camera={{ position: [0, 3, -5], fov: 50 }}>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 5, -5]} />
+            <Model />
+            <OrbitControls
+                target={[2, 2, 0]}
+                enableZoom={false}
+                minDistance={1.5}
+                maxDistance={3}
+                enablePan={false}
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2} 
+            />
+        </Canvas>
+
+    );
+}

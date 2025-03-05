@@ -46,12 +46,43 @@
     position: relative;
     margin: 0px 10px 0px 10px;
 }
+    .model h2 {
+        font-size: 30px;
+        color: #333;
+    }
+
+    .model p {
+        font-size: 24px;
+        color: #333;
+        line-height: 1.5;
+        opacity: 0.8;
+        margin-top: -10px;
+    }
+
 
 .model-uitleg {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: center;
     width: 50%;
-    background-color: #A3E9F1;
-    position: relative;
+    padding: 20px;
+    background-color: #4CC7D5;
+    opacity: 0.7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0px 100px 0px 100px;
+}
+
+    .model-uitleg h2 {
+        font-size: 30px;
+        color: #333;
+       
+    }
+
+.model-uitleg p {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+    opacity: 0.8;
+    
 }
