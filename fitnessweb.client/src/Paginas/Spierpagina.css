@@ -28,15 +28,15 @@
 .main-content {
     display: flex;
     flex-direction: row;
-    height: 700px;
+    height: 800px;
     width: 100%;
     background-color: #A3E9F1;
     position: relative;
-    margin-top: -151px;
-    margin-bottom: -151px;
+    margin-top: -185px;
+    margin-bottom: -185px;
 }
 
-.model {
+.spiermodel {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -46,15 +46,16 @@
     margin: 0px 10px 0px 10px;
 }
 
-    .model h2 {
+    .spiermodel h2 {
         font-size: 30px;
         color: #333;
     }
 
-    
 
 
-.model-uitleg {
+
+
+.spiermodel-uitleg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,17 +65,32 @@
     opacity: 0.7;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0px 100px 0px 100px;
+    margin: 50px 100px 0px 100px;
 }
 
-    .model-uitleg h2 {
+    .spiermodel-uitleg h2 {
         font-size: 30px;
         color: #333;
     }
 
-    .model-uitleg p {
+    .spiermodel-uitleg p {
         font-size: 24px;
         color: #333;
         line-height: 1.5;
         opacity: 0.8;
     }
+
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

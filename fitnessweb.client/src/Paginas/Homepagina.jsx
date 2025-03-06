@@ -20,7 +20,7 @@ const Homepagina = () => {
                 <div className='model'>
                     <h2>3D Model</h2>
                     <p>Select a muscle to learn more about it.</p>
-                    <LineModel/>
+                    <Musclemodel/>
                 </div>
                 <div className='model-uitleg'>
                     {selectedMuscle ? (
