@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 //import { useNavigate } from 'react-router-dom'; // If using React Router
 
 function Model() {
-    const { scene } = useGLTF('/Musclemodel6.glb');
+    const { scene } = useGLTF('/upperbody2.glb');
     const [hovered, setHovered] = useState(null);
     const meshRef = useRef();
     
@@ -51,7 +51,7 @@ function Model() {
 
 export default function App() {
     return (
-        <Canvas camera={{ position: [0, 3, -5], fov: 50 }}>
+        <Canvas camera={{ position: [0, 2, 2], fov: 50 }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, -5]} />
             <Model />
