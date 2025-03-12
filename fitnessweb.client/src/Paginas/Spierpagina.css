@@ -61,7 +61,7 @@
     justify-content: center;
     width: 50%;
     padding: 20px;
-    background-color: #4CC7D5;
+    background-color: #1194a3;
     opacity: 0.7;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -70,12 +70,12 @@
 
     .spiermodel-uitleg h2 {
         font-size: 30px;
-        color: #333;
+        color: white;
     }
 
     .spiermodel-uitleg p {
         font-size: 24px;
-        color: #333;
+        color: white;
         line-height: 1.5;
         opacity: 0.8;
     }

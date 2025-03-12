@@ -2,62 +2,71 @@ import React from 'react';
 import { Menu } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import './HeaderComponent.css';
+import { useNavigate } from 'react-router-dom';
 
-const items = [
-    {
-        label: 'Armen',
-        key: 'armen',
-        icon: <DownOutlined />,
-        children: [
-            { label: 'Triceps', key: 'triceps' },
-            { label: 'Biceps', key: 'biceps' },
-            { label: 'Forearms', key: 'forearms' },
-        ],
-    },
-    {
-        label: 'Schouders',
-        key: 'schouders',
-        icon: <DownOutlined />,
-        children: [
-            { label: 'Front Delts', key: 'frontdelt' },
-            { label: 'Side Delts', key: 'sidedelt' },
-            { label: 'Rear Delts', key: 'reardelt' },
-        ],
-    },
-    {
-        label: 'Rug',
-        key: 'rug',
-        icon: <DownOutlined />,
-        children: [
-            { label: 'Traps', key: 'traps' },
-            { label: 'Lats', key: 'lats' },
-            { label: 'Lower Back', key: 'lowerback' },
-            { label: 'Middle Back', key: 'middleback' },
-        ],
-    },
-    {
-        label: 'Benen',
-        key: 'benen',
-        icon: <DownOutlined />,
-        children: [
-            { label: 'Quads', key: 'quads' },
-            { label: 'Hamstrings', key: 'hamstrings' },
-            { label: 'Calves', key: 'calves' },
-        ],
-    },
-    {
-        label: 'Borst',
-        key: 'borst',
-        icon: <DownOutlined />,
-        children: [
-            { label: 'Upper Chest', key: 'upperchest' },
-            { label: 'Middle Chest', key: 'middlechest' },
-            { label: 'Lower Chest', key: 'lowerchest' },
-        ],
-    },
-];
+const HeaderComponent = () => {
+    const navigate = useNavigate();
 
-function HeaderComponent() {
+    const handleNavigate = (muscle) => {
+        console.log(muscle);
+        localStorage.setItem('selectedMuscle', muscle);
+        navigate(`/spierpagina`);
+    };
+
+    const items = [
+        {
+            label: 'Armen',
+            key: 'armen',
+            icon: <DownOutlined />,
+            children: [
+                { label: 'Triceps', key: 'triceps', onClick: () => handleNavigate('Triceps') },
+                { label: 'Biceps', key: 'biceps', onClick: () => handleNavigate('Biceps') },
+                { label: 'Forearms', key: 'forearms', onClick: () => handleNavigate('Forearms') },
+            ],
+        },
+        {
+            label: 'Schouders',
+            key: 'schouders',
+            icon: <DownOutlined />,
+            children: [
+                { label: 'Front Delts', key: 'frontdelt', onClick: () => handleNavigate('Front Delts') },
+                { label: 'Side Delts', key: 'sidedelt', onClick: () => handleNavigate('Side Delts') },
+                { label: 'Rear Delts', key: 'reardelt', onClick: () => handleNavigate('Rear Delts') },
+            ],
+        },
+        {
+            label: 'Rug',
+            key: 'rug',
+            icon: <DownOutlined />,
+            children: [
+                { label: 'Traps', key: 'traps', onClick: () => handleNavigate('Traps') },
+                { label: 'Lats', key: 'lats', onClick: () => handleNavigate('Lats') },
+                { label: 'Lower Back', key: 'lowerback', onClick: () => handleNavigate('Lower Back') },
+                { label: 'Middle Back', key: 'middleback', onClick: () => handleNavigate('Middle Back') },
+            ],
+        },
+        {
+            label: 'Benen',
+            key: 'benen',
+            icon: <DownOutlined />,
+            children: [
+                { label: 'Quads', key: 'quads', onClick: () => handleNavigate('Quads') },
+                { label: 'Hamstrings', key: 'hamstrings', onClick: () => handleNavigate('Hamstrings') },
+                { label: 'Calves', key: 'calves', onClick: () => handleNavigate('Calves') },
+            ],
+        },
+        {
+            label: 'Borst',
+            key: 'borst',
+            icon: <DownOutlined />,
+            children: [
+                { label: 'Upper Chest', key: 'upperchest', onClick: () => handleNavigate('Upper Chest') },
+                { label: 'Middle Chest', key: 'middlechest', onClick: () => handleNavigate('Middle Chest') },
+                { label: 'Lower Chest', key: 'lowerchest', onClick: () => handleNavigate('Lower Chest') },
+            ],
+        },
+    ];
+
     return (
         <header className="header">
             <div className="header__logo">
@@ -66,13 +75,7 @@ function HeaderComponent() {
                 </a>
             </div>
             <nav className="header__nav">
-                <Menu
-                    mode="horizontal"
-                    items={items}
-                    overflowedIndicator={null} 
-                    className="custom-menu"
-                    
-                />
+                <Menu mode="horizontal" items={items} overflowedIndicator={null} className="custom-menu" />
             </nav>
             <div className="header__actions">
                 <a href="#login" className="header__button">Login</a>
@@ -80,6 +83,6 @@ function HeaderComponent() {
             </div>
         </header>
     );
-}
+};
 
 export default HeaderComponent;

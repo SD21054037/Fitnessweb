@@ -1,56 +1,45 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Spierpagina.css';
-import HeaderComponent from '../Componenten/HeaderComponent';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { useGLTF, OrbitControls } from '@react-three/drei';
 import PropTypes from 'prop-types';
 
 const muscles = [
-    { name: 'Lats', description: 'The latissimus dorsi is a large, flat muscle on the back that stretches to the sides, behind the arm, and is partly covered by the trapezius on the back near the midline.', path: '/upperbody.glb' },
-    { name: 'Chest', description: 'The chest muscles are made up of the pectoralis major and pectoralis minor. These muscles are responsible for the movement of the shoulder joint.', path: '/upperbody.glb' },
-    { name: 'Schoulders', description: 'The shoulder muscles include the deltoids and rotator cuff muscles, which are responsible for various movements of the shoulder joint.', path: '/upperbody.glb' },
+    { name: 'Lats', description: 'The latissimus dorsi (lats) is a large, flat muscle of the back that plays a crucial role in upper body movement, posture, and stability. It is responsible for shoulder extension, adduction, and internal rotation, making it essential for pulling motions like pull-ups, rowing, and swimming. The lats also assist in scapular depression and retraction, contributing to shoulder and back stability. Additionally, they help stabilize the lumbar spine through their connection to the thoracolumbar fascia, aiding in posture and core support. Beyond movement, the lats assist in deep respiration by expanding the rib cage during forceful breathing.', path: '/upperbody2.glb' },
+    { name: 'Schoulders', description: 'The shoulder muscles, primarily the deltoid and rotator cuff muscles, play a key role in arm movement, stability, and posture. The deltoid is responsible for shoulder flexion, abduction, and extension, allowing for movements like lifting, reaching, and pressing. The rotator cuff (supraspinatus, infraspinatus, teres minor, and subscapularis) stabilizes the glenohumeral joint, enabling controlled rotation and preventing dislocation. These muscles work together to provide mobility, strength, and dynamic stability, making them essential for sports, overhead movements, and functional activities like lifting and throwing. Proper shoulder function is crucial for injury prevention and optimal upper body performance.', path: '/upperbody2.glb' },
+    { name: 'Chest', description: 'The chest muscles, primarily the pectoralis major and pectoralis minor, play a key role in upper body strength, movement, and stability. The pectoralis major is responsible for shoulder flexion, adduction, and internal rotation, enabling pushing movements like bench presses, push-ups, and punching. The pectoralis minor assists in scapular stabilization and depression, supporting shoulder mobility and posture. These muscles are essential for generating power in sports, functional movements, and daily activities requiring upper body force. Proper chest strength enhances performance, stability, and injury prevention in both athletic and everyday tasks.', path: '/upperbody2.glb' },
+    
 ];
 
-const MuscleModel = ({ path, setHoveredMuscle, setSelectedMuscle, selectedMuscle }) => {
-    const { scene } = useGLTF(path);
-    const [hovered, setHovered] = useState(null);
-    const meshRef = useRef(scene);
+const MuscleModel = ({ selectedMuscle, setHoveredMuscle, setSelectedMuscle }) => {
+    const { scene } = useGLTF(selectedMuscle.path);
+    useGLTF.preload(selectedMuscle.path);
 
-    useFrame(() => {
+   
+    const updateColors = () => {
         scene.traverse((child) => {
             if (child.isMesh) {
-                // If muscle is selected, keep it red, otherwise reset it
                 if (selectedMuscle && child.name === selectedMuscle.name) {
-                    child.material.color.set("blue");
-                } else if (hovered === child) {
-                    child.material.color.set("red"); // Temporary hover effect
+                    child.material.color.set("red"); 
                 } else {
-                    child.material.color.set("white"); // Reset others
+                    child.material.color.set("white"); 
                 }
             }
         });
-    });
+    };
+
+    updateColors(); 
 
     return (
         <primitive
             object={scene}
-            ref={meshRef}
             scale={1.5}
-            position={[1.6, -1.8, 0]}
+            position={[1.6,-2.8, 0]}
             rotation={[0, Math.PI, 0]}
-            onPointerOver={(e) => {
-                e.stopPropagation();
-                setHovered(e.object);
-                setHoveredMuscle(e.object.name);
-            }}
-            onPointerOut={(e) => {
-                e.stopPropagation();
-                setHovered(null);
-                setHoveredMuscle(null);
-            }}
+           
             onClick={(e) => {
                 e.stopPropagation();
-                const clickedMuscle = muscles.find(m => m.name.toLowerCase() === e.object.name.toLowerCase());
+                const clickedMuscle = muscles.find(m => m.name === e.object.name);
                 if (clickedMuscle) {
                     setSelectedMuscle(clickedMuscle);
                 }
@@ -60,49 +49,57 @@ const MuscleModel = ({ path, setHoveredMuscle, setSelectedMuscle, selectedMuscle
 };
 
 
-
 MuscleModel.propTypes = {
-    path: PropTypes.string.isRequired,
-    setHoveredMuscle: PropTypes.func.isRequired,
+    selectedMuscle: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        path: PropTypes.string.isRequired,
+    }).isRequired,
+  
     setSelectedMuscle: PropTypes.func.isRequired,
 };
 
 const Spierpagina = () => {
     const [selectedMuscle, setSelectedMuscle] = useState(null);
-    const [hoveredMuscle, setHoveredMuscle] = useState(null);
+  
+
+    useEffect(() => {
+        const muscleName = localStorage.getItem('selectedMuscle');
+        if (muscleName) {
+            const muscle = muscles.find(m => m.name === muscleName);
+            setSelectedMuscle(muscle);
+        }
+    }, []);
 
     return (
         <div className="Spierpagina">
-            <HeaderComponent />
             <div className="spacer layer1"></div>
             <main className='main-content'>
                 <div className='spiermodel'>
-                    <Canvas camera={{ position: [-0.2, 2, 2], fov: 40 }}>
-                        <ambientLight intensity={0.5} />
+                    <Canvas camera={{ position: [-0.2, 0, 2], fov: 50 }}>
+                        <ambientLight intensity={1} />
                         <directionalLight position={[5, 5, 5]} intensity={0.5} />
                         <directionalLight position={[-5, -5, -5]} intensity={0.5} />
-
-                        <MuscleModel
-                            path="/upperbody2.glb"
-                            setHoveredMuscle={setHoveredMuscle}
-                            setSelectedMuscle={setSelectedMuscle}
-                            selectedMuscle={selectedMuscle}
+                        {selectedMuscle && (
+                            <MuscleModel
+                                selectedMuscle={selectedMuscle}
+                               
+                                setSelectedMuscle={setSelectedMuscle}
+                            />
+                        )}
+                        <OrbitControls
+                            target={[0, -1, 0]} 
+                            enablePan={false}
+                            enableZoom={false}
+                            minPolarAngle={Math.PI / 2}
+                            maxPolarAngle={Math.PI / 2} 
                         />
-
-
-                        <OrbitControls target={[0, 0, 0]} enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
                     </Canvas>
-
-                    {hoveredMuscle && (
-                        <div className="tooltip">
-                            {hoveredMuscle}
-                        </div>
-                    )}
                 </div>
                 <div className='spiermodel-uitleg'>
                     {selectedMuscle ? (
                         <div>
-                            <h3>{selectedMuscle.name}</h3>
+                            <h2>{selectedMuscle.name}</h2>
                             <p>{selectedMuscle.description}</p>
                         </div>
                     ) : (
@@ -116,5 +113,7 @@ const Spierpagina = () => {
     );
 };
 
+
 export default Spierpagina;
+
 

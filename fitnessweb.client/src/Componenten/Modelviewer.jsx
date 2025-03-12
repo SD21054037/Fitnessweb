@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 //import { useNavigate } from 'react-router-dom'; // If using React Router
 
 function Model() {
-    const { scene } = useGLTF('/upperbody2.glb');
+    const { scene } = useGLTF('/Musclemodel6.glb');
     const [hovered, setHovered] = useState(null);
     const meshRef = useRef();
     

@@ -14,7 +14,7 @@ const Homepagina = () => {
 
     return (
         <div className="homepagina">
-            <HeaderComponent />
+          
             <div className="spacer layer1"></div>
             <main className='main-content'>
                 <div className='model'>
