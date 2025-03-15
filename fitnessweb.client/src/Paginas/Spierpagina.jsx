@@ -11,43 +11,12 @@ const muscles = [
     
 ];
 
-const MuscleModel = ({ selectedMuscle, setHoveredMuscle, setSelectedMuscle }) => {
+const MuscleModel = ({ selectedMuscle }) => {
     const { scene } = useGLTF(selectedMuscle.path);
     useGLTF.preload(selectedMuscle.path);
 
-   
-    const updateColors = () => {
-        scene.traverse((child) => {
-            if (child.isMesh) {
-                if (selectedMuscle && child.name === selectedMuscle.name) {
-                    child.material.color.set("red"); 
-                } else {
-                    child.material.color.set("white"); 
-                }
-            }
-        });
-    };
-
-    updateColors(); 
-
-    return (
-        <primitive
-            object={scene}
-            scale={1.5}
-            position={[1.6,-2.8, 0]}
-            rotation={[0, Math.PI, 0]}
-           
-            onClick={(e) => {
-                e.stopPropagation();
-                const clickedMuscle = muscles.find(m => m.name === e.object.name);
-                if (clickedMuscle) {
-                    setSelectedMuscle(clickedMuscle);
-                }
-            }}
-        />
-    );
+    return <primitive object={scene} scale={1.5} position={[1.6, -1.8, 0]} rotation={[0, Math.PI, 0]} />;
 };
-
 
 MuscleModel.propTypes = {
     selectedMuscle: PropTypes.shape({
@@ -55,20 +24,22 @@ MuscleModel.propTypes = {
         description: PropTypes.string.isRequired,
         path: PropTypes.string.isRequired,
     }).isRequired,
-  
-    setSelectedMuscle: PropTypes.func.isRequired,
 };
 
 const Spierpagina = () => {
-    const [selectedMuscle, setSelectedMuscle] = useState(null);
-  
+    const [SelectedMuscle, setSelectedMuscle] = useState(null);]
+    const { selectedMuscle } = useMuscle();
 
     useEffect(() => {
-        const muscleName = localStorage.getItem('selectedMuscle');
-        if (muscleName) {
-            const muscle = muscles.find(m => m.name === muscleName);
-            setSelectedMuscle(muscle);
-        }
+        const handleStorageChange = () => {
+            const muscleName = selectedMuscle
+            if (muscleName) {
+                const muscle = muscles.find(m => m.name === muscleName);
+                setSelectedMuscle(muscle);
+            }
+        };
+
+ 
     }, []);
 
     return (
@@ -77,29 +48,17 @@ const Spierpagina = () => {
             <main className='main-content'>
                 <div className='spiermodel'>
                     <Canvas camera={{ position: [-0.2, 0, 2], fov: 50 }}>
-                        <ambientLight intensity={1} />
+                        <ambientLight intensity={0.5} />
                         <directionalLight position={[5, 5, 5]} intensity={0.5} />
                         <directionalLight position={[-5, -5, -5]} intensity={0.5} />
-                        {selectedMuscle && (
-                            <MuscleModel
-                                selectedMuscle={selectedMuscle}
-                               
-                                setSelectedMuscle={setSelectedMuscle}
-                            />
-                        )}
-                        <OrbitControls
-                            target={[0, -1, 0]} 
-                            enablePan={false}
-                            enableZoom={false}
-                            minPolarAngle={Math.PI / 2}
-                            maxPolarAngle={Math.PI / 2} 
-                        />
+                        {SelectedMuscle && <MuscleModel SelectedMuscle={selectedMuscle} />}
+                        <OrbitControls target={[0, 0, 0]} enablePan={true} enableZoom={false} />
                     </Canvas>
                 </div>
                 <div className='spiermodel-uitleg'>
                     {selectedMuscle ? (
                         <div>
-                            <h2>{selectedMuscle.name}</h2>
+                            <h3>{selectedMuscle.name}</h3>
                             <p>{selectedMuscle.description}</p>
                         </div>
                     ) : (
@@ -113,7 +72,4 @@ const Spierpagina = () => {
     );
 };
 
-
 export default Spierpagina;
-
-

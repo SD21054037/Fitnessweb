@@ -3,14 +3,17 @@ import { Menu } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import './HeaderComponent.css';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useMuscle } from './MuscleContext';
+
 
 const HeaderComponent = () => {
+    const { selectMuscle } = useMuscle();
     const navigate = useNavigate();
 
     const handleNavigate = (muscle) => {
-        console.log(muscle);
-        localStorage.setItem('selectedMuscle', muscle);
-        navigate(`/spierpagina`);
+        selectMuscle(muscle); 
+        navigate('/spierpagina');
     };
 
     const items = [
@@ -29,9 +32,9 @@ const HeaderComponent = () => {
             key: 'schouders',
             icon: <DownOutlined />,
             children: [
-                { label: 'Front Delts', key: 'frontdelt', onClick: () => handleNavigate('Front Delts') },
-                { label: 'Side Delts', key: 'sidedelt', onClick: () => handleNavigate('Side Delts') },
-                { label: 'Rear Delts', key: 'reardelt', onClick: () => handleNavigate('Rear Delts') },
+                { label: 'Front Delts', key: 'frontdelt', onClick: () => handleNavigate('Schoulders') },
+                { label: 'Side Delts', key: 'sidedelt', onClick: () => handleNavigate('Schoulders') },
+                { label: 'Rear Delts', key: 'reardelt', onClick: () => handleNavigate('Schoulders') },
             ],
         },
         {
@@ -60,9 +63,9 @@ const HeaderComponent = () => {
             key: 'borst',
             icon: <DownOutlined />,
             children: [
-                { label: 'Upper Chest', key: 'upperchest', onClick: () => handleNavigate('Upper Chest') },
-                { label: 'Middle Chest', key: 'middlechest', onClick: () => handleNavigate('Middle Chest') },
-                { label: 'Lower Chest', key: 'lowerchest', onClick: () => handleNavigate('Lower Chest') },
+                { label: 'Upper Chest', key: 'upperchest', onClick: () => handleNavigate('Chest') },
+                { label: 'Middle Chest', key: 'middlechest', onClick: () => handleNavigate('Chest') },
+                { label: 'Lower Chest', key: 'lowerchest', onClick: () => handleNavigate('Chest') },
             ],
         },
     ];
