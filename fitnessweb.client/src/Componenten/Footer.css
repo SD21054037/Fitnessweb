@@ -1,0 +1,39 @@
+/* Base styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4cc7d5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: stretch
+
+}
+
+
+/* Navigation */
+.header__nav {
+    flex: 1;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header__nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .header__actions {
+        margin-top: 1rem;
+    }
+}

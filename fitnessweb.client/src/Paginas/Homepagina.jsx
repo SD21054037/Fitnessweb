@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Homepagina.css';
 import HeaderComponent from '../Componenten/HeaderComponent';
-
+import Footer from '../Componenten/Footer';
 import Musclemodel from '../Componenten/Modelviewer';
 import LineModel from '../Componenten/LineModel';
 
@@ -35,8 +35,7 @@ const Homepagina = () => {
                 </div>
             </main>
             <div className="spacer layer1 flip"></div>
-            <footer>
-            </footer>
+            <Footer />
         </div>
     );
 };

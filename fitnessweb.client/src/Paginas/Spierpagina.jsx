@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Spierpagina.css';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls } from '@react-three/drei';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import PropTypes from 'prop-types';
+import { useMuscle } from '../Componenten/MuscleContext';
+import { useRef } from 'react';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import Footer from '../Componenten/Footer';
 
 const muscles = [
     { name: 'Lats', description: 'The latissimus dorsi (lats) is a large, flat muscle of the back that plays a crucial role in upper body movement, posture, and stability. It is responsible for shoulder extension, adduction, and internal rotation, making it essential for pulling motions like pull-ups, rowing, and swimming. The lats also assist in scapular depression and retraction, contributing to shoulder and back stability. Additionally, they help stabilize the lumbar spine through their connection to the thoracolumbar fascia, aiding in posture and core support. Beyond movement, the lats assist in deep respiration by expanding the rib cage during forceful breathing.', path: '/upperbody2.glb' },
@@ -12,10 +17,40 @@ const muscles = [
 ];
 
 const MuscleModel = ({ selectedMuscle }) => {
-    const { scene } = useGLTF(selectedMuscle.path);
-    useGLTF.preload(selectedMuscle.path);
+    const gltf = useLoader(GLTFLoader, selectedMuscle.path);
+    const meshRef = useRef();
+    const { scene } = useThree();
 
-    return <primitive object={scene} scale={1.5} position={[1.6, -1.8, 0]} rotation={[0, Math.PI, 0]} />;
+    useFrame(() => {
+        if (meshRef.current) {
+            meshRef.current.traverse((child) => {
+                if (child.isMesh) {
+                   
+                    child.material.emissive.setHex(0x000000);
+
+                    
+                    if (child.name === selectedMuscle.name) {
+                     
+                        child.material.emissive.setHex(0xff0000); 
+                    }
+                }
+            });
+        }
+    });
+
+    useEffect(() => {
+        if (gltf && gltf.scene) {
+            gltf.scene.traverse((object) => {
+                if (object.isMesh) {
+                    
+                    object.material.emissive = object.material.emissive || new THREE.Color(0x000000);
+                }
+            });
+            meshRef.current = gltf.scene;
+        }
+    }, [gltf]);
+
+    return meshRef.current ? <primitive object={meshRef.current} scale={[1.5, 1.5, 1.5]} position={[1.6, -1.8, 0]} rotation={[0, Math.PI, 0]} /> : null;
 };
 
 MuscleModel.propTypes = {
@@ -27,20 +62,15 @@ MuscleModel.propTypes = {
 };
 
 const Spierpagina = () => {
-    const [SelectedMuscle, setSelectedMuscle] = useState(null);]
-    const { selectedMuscle } = useMuscle();
+    const { selectedMuscle: contextMuscle } = useMuscle();
+    const [selectedMuscle, setSelectedMuscle] = useState(null);
 
     useEffect(() => {
-        const handleStorageChange = () => {
-            const muscleName = selectedMuscle
-            if (muscleName) {
-                const muscle = muscles.find(m => m.name === muscleName);
-                setSelectedMuscle(muscle);
-            }
-        };
-
- 
-    }, []);
+        if (contextMuscle) {
+            const muscle = muscles.find(m => m.name === contextMuscle);
+            setSelectedMuscle(muscle);
+        }
+    }, [contextMuscle]);
 
     return (
         <div className="Spierpagina">
@@ -51,8 +81,9 @@ const Spierpagina = () => {
                         <ambientLight intensity={0.5} />
                         <directionalLight position={[5, 5, 5]} intensity={0.5} />
                         <directionalLight position={[-5, -5, -5]} intensity={0.5} />
-                        {SelectedMuscle && <MuscleModel SelectedMuscle={selectedMuscle} />}
-                        <OrbitControls target={[0, 0, 0]} enablePan={true} enableZoom={false} />
+                        {selectedMuscle && <MuscleModel selectedMuscle={selectedMuscle} />}
+                        <OrbitControls target={[0, 0, 0]} enablePan={true} enableZoom={false} maxPolarAngle={Math.PI / 2}
+                            minPolarAngle={Math.PI / 2} />
                     </Canvas>
                 </div>
                 <div className='spiermodel-uitleg'>
@@ -67,7 +98,8 @@ const Spierpagina = () => {
                 </div>
             </main>
             <div className="spacer layer1 flip"></div>
-            <footer></footer>
+            <Footer />
+
         </div>
     );
 };
