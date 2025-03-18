@@ -24,7 +24,7 @@ const HeaderComponent = () => {
             children: [
                 { label: 'Triceps', key: 'triceps', onClick: () => handleNavigate('Triceps') },
                 { label: 'Biceps', key: 'biceps', onClick: () => handleNavigate('Biceps') },
-                { label: 'Forearms', key: 'forearms', onClick: () => handleNavigate('Forearms') },
+              
             ],
         },
         {
@@ -44,8 +44,7 @@ const HeaderComponent = () => {
             children: [
                 { label: 'Traps', key: 'traps', onClick: () => handleNavigate('Traps') },
                 { label: 'Lats', key: 'lats', onClick: () => handleNavigate('Lats') },
-                { label: 'Lower Back', key: 'lowerback', onClick: () => handleNavigate('Lower Back') },
-                { label: 'Middle Back', key: 'middleback', onClick: () => handleNavigate('Middle Back') },
+               
             ],
         },
         {
