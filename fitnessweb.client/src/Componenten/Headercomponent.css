@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #4cc7d5;
+    background-color: #2E9DA9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -37,21 +37,22 @@
 
 .custom-menu .ant-menu-item, .custom-menu .ant-menu-submenu-title {
     font-size: 20px;
+    color: white;
 }
 
     .custom-menu .ant-menu-item:hover, .custom-menu .ant-menu-submenu-title:hover {
-        color: #1890ff;
+        color: #28fcef;
     }
 
 .ant-menu-item, .ant-menu-submenu-title {
-    color: #333;
+    color: white;
     font-size: 1rem;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .ant-menu-submenu-arrow {
-    color: #333;
+    color: white;
 }
 
 .ant-menu-submenu-popup {
@@ -63,7 +64,7 @@
 
 .ant-menu-item-group-title {
     font-weight: bold;
-    color: #333;
+    color: white;
 }
 
 .ant-menu-item {
