@@ -2,7 +2,7 @@ import React from 'react';
 import './Homepagina.css';
 
 import Footer from '../Componenten/Footer';
-import Musclemodel from '../Componenten/Modelviewer';
+import Musclemodel from '../Componenten/Model';
 
 const Homepagina = () => {
     return (

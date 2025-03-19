@@ -62,7 +62,7 @@ const MuscleModel = ({ selectedMuscle }) => {
                     child.material.emissive.setHex(0x000000);
 
                     if (child.name === selectedMuscle.name) {
-                        child.material.emissive.setHex(0xff0000);
+                        child.material.emissive.setHex(0xF08080);
                     }
                 }
             });
@@ -122,12 +122,12 @@ const Spierpagina = () => {
     return (
         <div className="Spierpagina">
             
-            <main className='main-content'>
+            <main className='SPmain-content'>
                 <div className='spiermodel'>
                     <Canvas key={canvasKey} camera={{ position: [1, 0, 2], fov: 50 }}>
-                        <ambientLight intensity={0.5} />
-                        <directionalLight position={[5, 5, 5]} intensity={0.5} />
-                        <directionalLight position={[-5, -5, -5]} intensity={0.5} />
+                        <ambientLight intensity={0.6} />
+                        <directionalLight position={[5, 5, 5]} intensity={0.6} />
+                        <directionalLight position={[-5, -5, -5]} intensity={0.6} />
                         {selectedMuscle && <MuscleModel selectedMuscle={selectedMuscle} />}
                         <OrbitControls target={[0, 0, 0]} enablePan={true} enableZoom={false} maxPolarAngle={Math.PI / 2}
                             minPolarAngle={Math.PI / 2} />

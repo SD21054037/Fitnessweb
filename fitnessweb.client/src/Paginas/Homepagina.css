@@ -6,6 +6,7 @@
     background-color: #A3E9F1;
     overflow-x: hidden;
     position: relative;
+    font-family: 'Roboto', sans-serif; /* Voeg een modern lettertype toe */
 }
 
 .main-content {
@@ -15,6 +16,7 @@
     width: 100%;
     background-color: #A3E9F1;
     position: relative;
+    padding: 20px; /* Voeg padding toe */
 }
 
 .model {
@@ -25,19 +27,36 @@
     background-color: #A3E9F1;
     position: relative;
     margin: 0px 10px 10px 10px;
-    z-index: 1;
+    
+    padding: 20px; /* Voeg padding toe */
 }
 
     .model h2 {
-        font-size: 30px;
-        color: #333;
-        margin-bottom: 10px;
+        font-size: 36px; /* Maak de titel groter */
+        color: #2C3E50; /* Donkerdere kleur voor betere leesbaarheid */
+        margin-bottom: 15px;
+        font-weight: bold; /* Maak de titel vetgedrukt */
     }
 
     .model p {
-        font-size: 24px;
-        color: #333;
+        font-size: 20px; /* Maak de tekst iets kleiner */
+        color: #34495E; /* Donkerdere kleur voor betere leesbaarheid */
         line-height: 1.6;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
+    .model button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #3498DB;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .model button:hover {
+            background-color: #2980B9; /* Hover effect voor de knop */
+        }
