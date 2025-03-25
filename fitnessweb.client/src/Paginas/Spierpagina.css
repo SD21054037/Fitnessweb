@@ -133,6 +133,31 @@ img, video {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.subsectie {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+    .subsectie h5 {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .subsectie p, .subsectie ul, .subsectie ol {
+        font-size: 16px;
+        color: white;
+        line-height: 1.6;
+    }
+
+    .subsectie img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
 /* Responsive Design voor mobiele apparaten */
 @media (max-width: 768px) {
     .spiermodel {

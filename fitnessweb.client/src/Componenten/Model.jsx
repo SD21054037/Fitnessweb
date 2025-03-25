@@ -35,7 +35,7 @@ export default function App() {
           
             <Canvas
                 ref={canvasRef} 
-                camera={{ position: [0, 1.5, 3], fov: 55 }}
+                camera={{ position: [0, 3, 3], fov: 50 }}
                 onPointerMove={handlePointerMove}
                 onPointerEnter={handlePointerEnterCanvas}
                 onPointerLeave={handlePointerLeaveCanvas}
@@ -49,7 +49,7 @@ export default function App() {
 
             
                 <OrbitControls
-                    target={[1.7, 1.5, 0]}
+                    target={[1.7, 1.3, 0]}
                     enableZoom={true}
                     minDistance={2}
                     maxDistance={4}

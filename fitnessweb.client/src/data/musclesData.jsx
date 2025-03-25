@@ -38,7 +38,8 @@
 
 const muscles = [
     {
-        name: 'Lats',
+        name: 'Lats', 
+
         anatomy: {
             origin: `
                 De oorsprong van de lats bevindt zich aan de onderkant van de rug, 
@@ -77,6 +78,8 @@ const muscles = [
         ],
         path: '/upperbody2.glb',
     },
+
+
   
 ];
 
