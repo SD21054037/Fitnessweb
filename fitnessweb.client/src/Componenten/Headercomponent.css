@@ -6,6 +6,7 @@
     background-color: #2E9DA9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+    font-family: 'Roboto', sans-serif; /* Voeg een modern lettertype toe */
 }
 
 .header__logo img {

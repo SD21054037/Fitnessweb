@@ -12,6 +12,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    background-color: #217b85;
+    place-items: center;
 }
 
 
@@ -23,6 +25,7 @@ body {
     min-width: 320px;
     min-height: 100vh;
     background-color: #217b85;
+    max-width: 1300px;
 }
 
 
