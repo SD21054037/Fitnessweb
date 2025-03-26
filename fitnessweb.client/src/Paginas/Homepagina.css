@@ -6,7 +6,7 @@
     background-color: #A3E9F1;
     overflow-x: hidden;
     position: relative;
-    font-family: 'Roboto', sans-serif; /* Voeg een modern lettertype toe */
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-content {
@@ -16,7 +16,7 @@
     width: 100%;
     background-color: #A3E9F1;
     position: relative;
-    padding: 20px; 
+    
 }
 
 .welkom {
@@ -73,8 +73,8 @@
     flex-direction: row;
     height: 70vh;
     width: 100%;
-    max-height: 880px
-   
+    max-height: 880px;
+    margin-right: 20px;
 }
 
 .Introductie {

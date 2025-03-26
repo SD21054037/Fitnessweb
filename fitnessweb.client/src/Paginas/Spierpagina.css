@@ -16,6 +16,7 @@
     width: 100%;
     background-color: #A3E9F1;
     position: relative;
+    color: #1194a3;
 }
 
 .spiermodel {
@@ -157,6 +158,74 @@ img, video {
         border-radius: 8px;
         margin-bottom: 10px;
     }
+
+
+
+.spiergroep-sectie {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 20px;
+    background-color: #2E9DA9;
+    border-radius: 10px;
+    overflow: hidden;
+   
+}
+
+.model-container {
+    flex: 1 1 50%;
+    height: 530px;
+    min-width: 300px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.groep-info {
+    flex: 1 1 50%;
+    padding: 20px;
+    color: white;
+}
+
+    .groep-info h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+       
+    }
+
+    .groep-info h4 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .groep-info p {
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .groep-info ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .groep-info li {
+        font-size: 18px;
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: 6px;
+        margin-bottom: 6px;
+        transition: background 0.2s ease;
+    }
+
+        .groep-info li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .groep-info li.active {
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
 
 /* Responsive Design voor mobiele apparaten */
 @media (max-width: 768px) {

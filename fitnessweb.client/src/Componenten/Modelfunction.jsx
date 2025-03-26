@@ -3,6 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMuscle } from '../Componenten/MuscleContext';
+import muscleGroups from '../data/muscleGroupsData';
 
 export default function Model({ setHovered }) {
     const { scene } = useGLTF('/BWS.glb');
@@ -42,15 +43,28 @@ export default function Model({ setHovered }) {
             }}
             onClick={(e) => {
                 e.stopPropagation();
-                console.log('Clicked on:', e.object.name);
+                const clickedName = e.object.name;
+                console.log('Clicked on:', clickedName);
 
-                if (contextMuscle && contextMuscle.selectMuscle) {
-                    contextMuscle.selectMuscle(e.object.name);
-                    navigate(`/spierpagina/`);
-                } else {
-                    console.error("Muscle is not available!");
+                if (contextMuscle) {
+                    
+                    const groepEntry = Object.entries(muscleGroups).find(([groepNaam, groep]) =>
+                        groep.muscles.includes(clickedName)
+                    );
+
+                    if (groepEntry) {
+                        const [groepNaam] = groepEntry;
+                        contextMuscle.selectMuscleGroup(groepNaam);
+                        navigate('/spierpagina');
+                    } else {
+                       
+                        contextMuscle.selectMuscle(clickedName);
+                        navigate('/spierpagina');
+                    }
                 }
+
             }}
+
         />
     );
 }

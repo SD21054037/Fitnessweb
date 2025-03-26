@@ -38,51 +38,72 @@
 
 const muscles = [
     {
-        name: 'Lats', 
-
+        name: "Biceps_femoris",
+        displayName: "Biceps femoris",
+        path: "/lowerbody2.glb",
         anatomy: {
-            origin: `
-                De oorsprong van de lats bevindt zich aan de onderkant van de rug, 
-                waar de spier vastzit aan de wervelkolom en het bekken.
-            `,
-            insertion: `
-                De insertie van de lats bevindt zich aan de bovenkant van de bovenarm, 
-                waar de spier vastzit aan het opperarmbeen.
-            `,
-            function: `
-                De lats zijn verantwoordelijk voor het naar beneden en naar achteren trekken van de armen, 
-                zoals bij pull-ups en roeibewegingen.
-            `,
+            origin: "Ischial tuberosity of pelvis.",
+            insertion: "Head of fibula.",
+            function: "Flexes the knee and extends the hip."
         },
         injuries: {
-            common: `
-                Spierverrekkingen komen vaak voor bij overbelasting van de lats, vooral tijdens zware tillen of trekbewegingen.
-                Tendinitis (peesontsteking) kan ontstaan door herhaalde bewegingen, zoals roeien of zwemmen.
-                Spierscheuren zijn zeldzaam maar kunnen optreden bij plotselinge, krachtige bewegingen.
-            `,
-            prevention: `
-                Zorg voor een goede warming-up voordat je intensieve oefeningen doet.
-                Stretch regelmatig om de flexibiliteit van de lats te behouden.
-                Bouw je training geleidelijk op om overbelasting te voorkomen.
-            `,
-            treatment: `
-                Bij spierverrekkingen is rust en ijs aanbevolen om de ontsteking te verminderen.
-                Bij tendinitis kan fysiotherapie helpen om de pezen te versterken.
-                Bij spierscheuren is medische behandeling vaak nodig, zoals een operatie.
-            `,
+            common: "Strains and tears due to overstretching or explosive movements.",
+            prevention: "Warm-up properly and include eccentric hamstring exercises.",
+            treatment: "Rest, ice, compression, and rehab exercises."
         },
-        exercises: [
-            ' Pull-ups',
-            ' Lat pulldown',
-            ' Bent-over rows',
-        ],
-        path: '/upperbody2.glb',
+        exercises: ["Romanian deadlift", "Hamstring curl", "Nordic curl"]
     },
-
-
-  
+    {
+        name: "Semitendinosus",
+        displayName: "Semitendinosus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Ischial tuberosity.",
+            insertion: "Upper part of tibia.",
+            function: "Knee flexion and medial rotation, hip extension."
+        },
+        injuries: {
+            common: "Strains common in sprinting sports.",
+            prevention: "Stretching and progressive load training.",
+            treatment: "Rest and gradual return to activity."
+        },
+        exercises: ["Glute bridge", "Lying leg curl"]
+    },
+    {
+        name: "Semimembranosus",
+        displayName: "Semimembranosus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Ischial tuberosity.",
+            insertion: "Medial tibial condyle.",
+            function: "Hip extension, knee flexion, and medial rotation."
+        },
+        injuries: {
+            common: "Strains from improper warm-up.",
+            prevention: "Eccentric hamstring work, mobility training.",
+            treatment: "Ice, rest, rehab exercises."
+        },
+        exercises: ["Deadlifts", "Hip thrusts"]
+    },
+    {
+        name: "Latissimus_dorsi",
+        displayName: "Latissimus dorsi",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lower spine and iliac crest.",
+            insertion: "Upper humerus.",
+            function: "Shoulder extension, adduction, and medial rotation."
+        },
+        injuries: {
+            common: "Tendinitis from overuse (e.g. pull-ups, rows).",
+            prevention: "Proper warm-up and rest.",
+            treatment: "Physiotherapy and load management."
+        },
+        exercises: ["Pull-ups", "Bent-over rows", "Lat pulldowns"]
+    }
 ];
 
 export default muscles;
+
 
 
