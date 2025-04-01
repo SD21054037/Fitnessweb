@@ -1,0 +1,62 @@
+.exercise-list-page {
+    padding: 2rem;
+    background-color: #20666e;
+    color: #ffffff;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+    .exercise-list-page h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+    .filters input,
+    .filters select {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+    }
+
+.exercise-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.exercise-item {
+    background-color: #1a4f55;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .exercise-item:hover {
+        background-color: #256a71;
+    }
+
+.exercise-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.exercise-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-item p {
+    font-size: 1rem;
+    color: #c9f4f6;
+    line-height: 1.6;
+}

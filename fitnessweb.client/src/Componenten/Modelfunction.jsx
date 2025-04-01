@@ -47,23 +47,23 @@ export default function Model({ setHovered }) {
                 console.log('Clicked on:', clickedName);
 
                 if (contextMuscle) {
-                    
+                    // Zoek bijbehorende spiergroep
                     const groepEntry = Object.entries(muscleGroups).find(([groepNaam, groep]) =>
                         groep.muscles.includes(clickedName)
                     );
 
                     if (groepEntry) {
                         const [groepNaam] = groepEntry;
-                        contextMuscle.selectMuscleGroup(groepNaam);
+                        contextMuscle.selectMuscle(clickedName);       // spier
+                        contextMuscle.selectMuscleGroup(groepNaam);    // groep
                         navigate('/spierpagina');
                     } else {
-                       
-                        contextMuscle.selectMuscle(clickedName);
-                        navigate('/spierpagina');
+                        // fallback als spier geen groep heeft (optioneel)
+                        console.warn("Spier niet gevonden in muscleGroups:", clickedName);
                     }
                 }
-
             }}
+
 
         />
     );

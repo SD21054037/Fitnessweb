@@ -1,0 +1,109 @@
+.spiergroep-sectie {
+    padding: 2rem;
+    background-color: #e0f7fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+}
+
+.spiergroep-titel {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #007B8A;
+}
+
+.spiergroep-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.groep-info {
+    flex: 1;
+}
+
+.groep-description {
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.spier-lijst {
+    list-style: none;
+    padding: 0;
+}
+.model-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spier-naam {
+    display: block;
+    font-size: 1rem;
+}
+
+.spier-info {
+    display: block;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.spier-lijst {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+.spier-item {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    color: #007b8a;
+    transition: all 0.25s ease;
+}
+
+    .spier-item:hover {
+        background-color: #b2ebf2;
+        color: #004d56;
+    }
+
+    .spier-item.selected {
+        background-color: #4dd0e1;
+        color: white;
+        font-weight: bold;
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+        transition: all 0.25s ease;
+    }
+
+
+@media (max-width: 768px) {
+    .spiergroep-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .model-container {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .groep-info {
+        width: 100%;
+    }
+
+    .spier-lijst {
+        padding: 0;
+    }
+
+    .spier-item {
+        display: inline-block;
+        margin: 0.3rem;
+        width: auto;
+    }
+}
+

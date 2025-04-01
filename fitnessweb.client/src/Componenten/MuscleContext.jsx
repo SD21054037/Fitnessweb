@@ -21,6 +21,12 @@ export const MuscleProvider = ({ children }) => {
         setSelectedMuscleGroup(null);
     };
 
+    const selectMuscleAndGroup = (group, muscle) => {
+        setSelectedMuscleGroup(group);
+        setSelectedMuscle(muscle);
+    };
+
+
     return (
         <MuscleContext.Provider
             value={{
@@ -29,6 +35,8 @@ export const MuscleProvider = ({ children }) => {
                 selectedMuscleGroup,
                 selectMuscleGroup,
                 clearSelection,
+                selectMuscleAndGroup,
+
             }}
         >
             {children}

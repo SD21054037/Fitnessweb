@@ -100,6 +100,654 @@ const muscles = [
             treatment: "Physiotherapy and load management."
         },
         exercises: ["Pull-ups", "Bent-over rows", "Lat pulldowns"]
+    },
+    {
+        name: "Adductor_brevis",
+        displayName: "Adductor brevis",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Inferior pubic ramus",
+            insertion: "Linea aspera of femur",
+            function: "Hip adduction and flexion"
+        },
+        injuries: {
+            common: "Groin pulls from sudden movement",
+            prevention: "Adductor strengthening, dynamic warm-up",
+            treatment: "Rest, ice, mobility"
+        },
+        exercises: ["Sumo squats", "Copenhagen plank"]
+    },
+
+   {
+        name: "Adductor_longus",
+        displayName: "Adductor longus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Pubis",
+            insertion: "Middle third of linea aspera",
+            function: "Hip adduction and medial rotation"
+        },
+        injuries: {
+            common: "Common in soccer-related groin injuries",
+            prevention: "Gradual load progression",
+            treatment: "Adductor rehab programs"
+        },
+        exercises: ["Adduction machine", "Lateral lunges"]
+    },
+    {
+        name: "Adductor_magnus",
+        displayName: "Adductor magnus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Ischial tuberosity and pubis",
+            insertion: "Linea aspera and adductor tubercle",
+            function: "Adduction, extension, and flexion of hip"
+        },
+        injuries: {
+            common: "Overuse in athletes",
+            prevention: "Eccentric loading & mobility",
+            treatment: "Massage, foam rolling, rehab"
+        },
+        exercises: ["Cable adductions", "Split squats"]
+    },
+    {
+        name: "Gracilis",
+        displayName: "Gracilis",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Inferior pubic ramus",
+            insertion: "Medial surface of tibia",
+            function: "Hip adduction and knee flexion"
+        },
+        injuries: {
+            common: "Tightness and weakness from inactivity",
+            prevention: "Stretching and activation",
+            treatment: "Mobility work and foam rolling"
+        },
+        exercises: ["Side-lying leg lifts", "Adductor stretch"]
+    },
+    {
+        name: "Pectineus",
+        displayName: "Pectineus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Superior pubic ramus",
+            insertion: "Pectineal line of femur",
+            function: "Adducts and flexes hip"
+        },
+        injuries: {
+            common: "Often affected in groin strains",
+            prevention: "Proper warm-up and control work",
+            treatment: "Stretching and rehab strengthening"
+        },
+        exercises: ["Standing hip adduction", "Side step-ups"]
+    },
+
+    // --- CALVES ---
+    {
+        name: "Calves",
+        displayName: "Calves",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Femoral condyles",
+            insertion: "Calcaneus via Achilles tendon",
+            function: "Plantarflexes the foot"
+        },
+        injuries: {
+            common: "Tightness, Achilles tendinitis",
+            prevention: "Eccentric calf raises, mobility",
+            treatment: "Ice, stretch, heel drops"
+        },
+        exercises: ["Standing calf raise", "Seated calf raise"]
+    },
+
+    // --- HIP FLEXORS ---
+    {
+        name: "Iliacus",
+        displayName: "Iliacus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Iliac fossa",
+            insertion: "Lesser trochanter of femur",
+            function: "Flexes the hip joint"
+        },
+        injuries: {
+            common: "Tightness from prolonged sitting",
+            prevention: "Dynamic stretching, core training",
+            treatment: "Stretching, hip mobility drills"
+        },
+        exercises: ["Hanging leg raises", "Hip marches"]
+    },
+    {
+        name: "Psoas_major",
+        displayName: "Psoas major",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Lumbar vertebrae",
+            insertion: "Lesser trochanter of femur",
+            function: "Powerful hip flexion"
+        },
+        injuries: {
+            common: "Low back tightness, anterior pelvic tilt",
+            prevention: "Postural training, mobility",
+            treatment: "Stretching and strengthening core"
+        },
+        exercises: ["Leg raises", "High knees"]
+    },
+    {
+        name: "Sartorius",
+        displayName: "Sartorius",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Anterior superior iliac spine",
+            insertion: "Medial surface of tibia",
+            function: "Flexes hip and knee, laterally rotates thigh"
+        },
+        injuries: {
+            common: "Rare injuries, sometimes strain in athletes",
+            prevention: "Balanced flexibility and strength",
+            treatment: "Mobility, stretching, light strengthening"
+        },
+        exercises: ["Leg lifts", "Hip flexion with resistance band"]
+    },
+    // --- UPPER BODY START ---
+  {
+        name: "Abductor_pollicis_longus",
+        displayName: "Abductor pollicis longus",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Posterior surfaces of radius and ulna",
+            insertion: "Base of the first metacarpal",
+            function: "Abducts and extends the thumb"
+        },
+        injuries: {
+            common: "De Quervain's tenosynovitis",
+            prevention: "Avoid repetitive thumb movements",
+            treatment: "Splinting, anti-inflammatory treatment"
+        },
+        exercises: ["Thumb abduction with resistance band"]
+    },
+    {
+        name: "Abs",
+        displayName: "Abs",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Pubic crest and symphysis",
+            insertion: "Costal cartilages of ribs 5-7 and xiphoid process",
+            function: "Trunk flexion and core stabilization"
+        },
+        injuries: {
+            common: "Muscle strains from overuse or twisting",
+            prevention: "Core conditioning and proper form",
+            treatment: "Rest, gentle stretching"
+        },
+        exercises: ["Crunches", "Leg raises", "Planks"]
+    },
+    {
+        name: "Anconeus",
+        displayName: "Anconeus",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lateral epicondyle of the humerus",
+            insertion: "Olecranon and posterior ulna",
+            function: "Assists in elbow extension"
+        },
+        injuries: {
+            common: "Rarely injured; occasional soreness from elbow use",
+            prevention: "Gradual load increase",
+            treatment: "Rest and ice"
+        },
+        exercises: ["Triceps pushdown", "Dips"]
+    },
+    {
+        name: "Biceps_brachii",
+        displayName: "Biceps brachii",
+        path: "/upperbody2.glb",
+        anatomy: {
+            location: "Anterior upper arm (front of humerus)",
+            origin: "Scapula (short head: coracoid process; long head: supraglenoid tubercle)",
+            insertion: "Radial tuberosity",
+            function: "Elbow flexion and forearm supination",
+            innervation: "Musculocutaneous nerve (C5–C7)",
+            bloodSupply: "Brachial artery",
+            synergists: "Brachialis, Brachioradialis",
+            antagonists: "Triceps brachii"
+        },
+        injuries: {
+            common: "Tendinitis or distal rupture",
+            prevention: "Proper loading and warm-up",
+            treatment: "Rest, ice, or surgery if torn"
+        },
+        exercises: [
+            {
+                name: "Bicep Curls",
+                description: "An isolation exercise that directly targets the biceps. By flexing the elbow under load using dumbbells or barbells, it strengthens and builds size in the upper arm."
+            },
+            {
+                name: "Chin-ups",
+                description: "A bodyweight compound exercise where the biceps assist in pulling the body up, especially when using a supinated (palms facing you) grip. Great for strength and endurance."
+            }
+        ]
+
+    },
+    {
+        name: "Brachialis",
+        displayName: "Brachialis",
+        path: "/upperbody2.glb",
+        anatomy: {
+            location: "Deep to the biceps brachii, anterior side of the humerus",
+            origin: "Distal half of anterior surface of the humerus",
+            insertion: "Ulnar tuberosity and coronoid process of ulna",
+            function: "Primary flexor of the elbow",
+            innervation: "Musculocutaneous nerve (C5–C6), with minor contribution from radial nerve",
+            bloodSupply: "Brachial artery and radial recurrent artery",
+            synergists: "Biceps brachii, Brachioradialis",
+            antagonists: "Triceps brachii"
+        },
+        injuries: {
+            common: "Overuse strains from repeated pulling or heavy lifting, especially in exercises where the elbow remains flexed.",
+            prevention: "Progressive overload and variation in grip to distribute stress. Strengthening supporting muscles like the biceps and brachioradialis can reduce risk.",
+            treatment: "Soft tissue therapy, mobility work, and temporarily reducing high-stress movements. Gentle loading may be reintroduced during rehab."
+        }
+,
+        exercises: [
+            {
+                name: "Hammer Curls",
+                description: "A variation of the bicep curl where the palms face inward. This targets the brachialis muscle more directly and contributes to arm thickness."
+            },
+            {
+                name: "Reverse Curls",
+                description: "Performed with an overhand grip, reverse curls engage the brachialis and forearm muscles more than traditional curls."
+            }
+        ]
+
+    }
+,
+    {
+        name: "Brachioradialis",
+        displayName: "Brachioradialis",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lateral supracondylar ridge of humerus",
+            insertion: "Styloid process of radius",
+            function: "Flexes elbow, especially in mid-pronation"
+        },
+        injuries: {
+            common: "Strains or soreness in forearm",
+            prevention: "Grip variation and mobility",
+            treatment: "Stretch and deep massage"
+        },
+        exercises: ["Reverse curls", "Hammer curls"]
+    },
+    {
+        name: "Chest",
+        displayName: "Chest (Pectoralis major/minor)",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Clavicle, sternum, costal cartilages",
+            insertion: "Greater tubercle of humerus",
+            function: "Adducts, flexes, and medially rotates the arm"
+        },
+        injuries: {
+            common: "Tears from bench pressing",
+            prevention: "Proper warm-up and controlled eccentric loading",
+            treatment: "Rest, surgery if severe"
+        },
+        exercises: ["Bench press", "Push-ups", "Chest fly"]
+    },
+    {
+        name: "Diaphragm",
+        displayName: "Diaphragm",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Xiphoid process, lower ribs, lumbar vertebrae",
+            insertion: "Central tendon",
+            function: "Primary muscle for breathing"
+        },
+        injuries: {
+            common: "Spasms, cramping from fatigue",
+            prevention: "Breathing practice",
+            treatment: "Stretching and breathing exercises"
+        },
+        exercises: ["Diaphragmatic breathing"]
+    },
+    {
+        name: "Erector_spinae",
+        displayName: "Erector spinae",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Spinous processes, sacrum, and iliac crest",
+            insertion: "Ribs and cervical vertebrae",
+            function: "Extends and laterally flexes spine"
+        },
+        injuries: {
+            common: "Low back strains",
+            prevention: "Posterior chain strengthening",
+            treatment: "Mobility and stability work"
+        },
+        exercises: ["Back extensions", "Deadlifts"]
+    },
+    {
+        name: "Extensors",
+        displayName: "Wrist and finger extensors",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lateral epicondyle of humerus",
+            insertion: "Metacarpals and phalanges",
+            function: "Extend wrist and fingers"
+        },
+        injuries: {
+            common: "Tennis elbow (lateral epicondylitis)",
+            prevention: "Forearm balancing",
+            treatment: "Stretching, isometrics, eccentric rehab"
+        },
+        exercises: ["Wrist extensions", "Reverse curls"]
+    },
+    
+    {
+        name: "Serratus_anterior",
+        displayName: "Serratus anterior",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Ribs 1–8",
+            insertion: "Medial border of scapula",
+            function: "Protracts and stabilizes scapula"
+        },
+        injuries: {
+            common: "Winged scapula from weakness",
+            prevention: "Scapular push-ups and wall slides",
+            treatment: "Strengthening and neuromuscular work"
+        },
+        exercises: ["Wall slides", "Push-up plus"]
+    },
+    {
+        name: "Serratus_posterior_inferior",
+        displayName: "Serratus posterior inferior",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Spinous processes of T11–L2",
+            insertion: "Lower ribs 9–12",
+            function: "Depresses ribs during exhalation"
+        },
+        injuries: {
+            common: "Strain from heavy breathing or lifting",
+            prevention: "Posture training",
+            treatment: "Stretching and massage"
+        },
+        exercises: ["Deep breathing", "Thoracic mobility"]
+    },
+    {
+        name: "Teres_major",
+        displayName: "Teres major",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Inferior angle of scapula",
+            insertion: "Intertubercular groove of humerus",
+            function: "Adducts, extends, and medially rotates arm"
+        },
+        injuries: {
+            common: "Overuse in pulling movements",
+            prevention: "Balanced upper body training",
+            treatment: "Soft tissue release"
+        },
+        exercises: ["Straight-arm pulldown"]
+    },
+    {
+        name: "Teres_minor",
+        displayName: "Teres minor",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lateral border of scapula",
+            insertion: "Greater tubercle of humerus",
+            function: "Lateral rotation and stabilization of arm"
+        },
+        injuries: {
+            common: "Rotator cuff irritation",
+            prevention: "Cuff strengthening",
+            treatment: "Band work, massage"
+        },
+        exercises: ["Side-lying external rotation"]
+    },
+    {
+        name: "Torso",
+        displayName: "Torso",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Various spinal and abdominal attachments",
+            insertion: "Ribs, pelvis, and vertebrae",
+            function: "Trunk support and movement"
+        },
+        injuries: {
+            common: "General core weakness or strain",
+            prevention: "Core training",
+            treatment: "Stability drills"
+        },
+        exercises: ["Dead bug", "Bird dog"]
+    },
+    {
+        name: "Transverse_abdominis",
+        displayName: "Transverse abdominis",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Iliac crest, inguinal ligament, lumbar fascia",
+            insertion: "Linea alba",
+            function: "Compresses abdominal contents"
+        },
+        injuries: {
+            common: "Pelvic instability or low back pain",
+            prevention: "Core activation work",
+            treatment: "Deep core strengthening"
+        },
+        exercises: ["Plank", "Vacuum hold"]
+    },
+    {
+        name: "Traps",
+        displayName: "Trapezius",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Occipital bone, C7–T12 vertebrae",
+            insertion: "Clavicle, acromion, and scapula",
+            function: "Elevates, retracts, depresses scapula"
+        },
+        injuries: {
+            common: "Tightness or postural fatigue",
+            prevention: "Postural strength and mobility",
+            treatment: "Stretch, massage, mobility"
+        },
+        exercises: ["Shrugs", "Face pulls"]
+    },
+    {
+        name: "Triceps_brachii",
+        displayName: "Triceps brachii",
+        path: "/upperbody2.glb",
+        anatomy: {
+            location: "Posterior upper arm",
+            origin: "Long head: infraglenoid tubercle of scapula; lateral and medial heads: posterior humerus",
+            insertion: "Olecranon process of the ulna",
+            function: "Elbow extension and assists in shoulder extension",
+            innervation: "Radial nerve (C6–C8)",
+            bloodSupply: "Deep brachial artery",
+            synergists: "Anconeus",
+            antagonists: "Biceps brachii, Brachialis"
+        },
+        injuries: {
+            common: "Tendinitis or strains from heavy pushing exercises like bench presses, dips, or overhead extensions.",
+            prevention: "Progressive loading, proper warm-up, and avoiding excessive volume. Balanced training between pushing and pulling helps maintain joint health.",
+            treatment: "Rest, ice, and activity modification. Physical therapy may be required in cases of persistent pain or partial tendon injury."
+        },
+
+        exercises: [
+            {
+                name: "Triceps Dips",
+                description: "A compound movement that emphasizes elbow extension to target the triceps. Can be performed on parallel bars or benches, using bodyweight or added resistance."
+            },
+            {
+                name: "Overhead Triceps Extension",
+                description: "An isolation exercise where the triceps extend the elbow while the arms are overhead. Ideal for targeting the long head of the triceps."
+            }
+        ]
+
+    }
+,
+    {
+        name: "Rectus_femoris",
+        description: "Part of the quadriceps, involved in knee extension and hip flexion.",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Anterior inferior iliac spine (AIIS)",
+            insertion: "Patella and tibial tuberosity via patellar ligament",
+            function: "Extends the knee and flexes the hip"
+        },
+        injuries: {
+            common: "Strains due to sprinting or kicking",
+            prevention: "Dynamic warm-up, controlled eccentric training",
+            treatment: "Rest, ice, and gradual stretching"
+        },
+        exercises: ["Leg extension", "Squats", "Lunges"]
+    },
+    {
+        name: "Vastus_intermedius",
+        description: "Deep quadriceps muscle aiding in knee extension.",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Anterior and lateral surfaces of femur",
+            insertion: "Patella and tibial tuberosity",
+            function: "Knee extension"
+        },
+        injuries: {
+            common: "Overuse from repetitive knee extension",
+            prevention: "Progressive load training",
+            treatment: "Rest, strengthening surrounding muscles"
+        },
+        exercises: ["Leg press", "Wall sits", "Step-ups"]
+    },
+    {
+        name: "Vastus_lateralis",
+        description: "Largest and most lateral of the quadriceps group.",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Greater trochanter and linea aspera of femur",
+            insertion: "Patella and tibial tuberosity",
+            function: "Knee extension"
+        },
+        injuries: {
+            common: "Iliotibial band friction, lateral knee pain",
+            prevention: "Stretching IT band and strengthening hips",
+            treatment: "Foam rolling, targeted stretching"
+        },
+        exercises: ["Squats", "Step-ups", "Leg press"]
+    },
+    {
+        name: "Vastus_medialis",
+        description: "Medial quadriceps muscle important for knee stabilization.",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Linea aspera of femur",
+            insertion: "Patella and tibial tuberosity",
+            function: "Knee extension and patellar stabilization"
+        },
+        injuries: {
+            common: "Patellofemoral pain syndrome",
+            prevention: "Strengthen hip abductors and glutes",
+            treatment: "Corrective exercise, stretching"
+        },
+        exercises: ["Terminal knee extensions", "Leg press with toes out", "Step-downs"]
+    },
+    {
+        name: "Front_delts",
+        description: "Anterior part of the deltoid, responsible for shoulder flexion.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Lateral third of clavicle",
+            insertion: "Deltoid tuberosity of humerus",
+            function: "Shoulder flexion and internal rotation"
+        },
+        injuries: {
+            common: "Impingement due to overuse",
+            prevention: "Proper form in pressing exercises",
+            treatment: "Rest, mobility work"
+        },
+        exercises: ["Front raises", "Overhead press", "Arnold press"]
+    },
+    {
+        name: "Side_delts",
+        description: "Lateral deltoid head involved in shoulder abduction.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Acromion of scapula",
+            insertion: "Deltoid tuberosity of humerus",
+            function: "Shoulder abduction"
+        },
+        injuries: {
+            common: "Deltoid strain from heavy lateral raises",
+            prevention: "Progressive overload and proper technique",
+            treatment: "Massage, rest, light range-of-motion work"
+        },
+        exercises: ["Lateral raises", "Upright rows", "Cable abductions"]
+    },
+    {
+        name: "Rear_delts",
+        description: "Posterior deltoid important for shoulder extension and external rotation.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Spine of scapula",
+            insertion: "Deltoid tuberosity of humerus",
+            function: "Shoulder extension and external rotation"
+        },
+        injuries: {
+            common: "Overuse or imbalance with front delts",
+            prevention: "Balanced training including posterior chain",
+            treatment: "Face pulls, soft tissue work"
+        },
+        exercises: ["Reverse fly", "Face pulls", "Rear delt rows"]
+    },
+    {
+        name: "Rhomboid_major",
+        description: "Retracts the scapula and stabilizes the shoulder blade.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Spinous processes of T2–T5 vertebrae",
+            insertion: "Medial border of scapula",
+            function: "Scapular retraction and stabilization"
+        },
+        injuries: {
+            common: "Tightness or knots from poor posture",
+            prevention: "Postural awareness and regular movement",
+            treatment: "Massage, mobility, corrective exercises"
+        },
+        exercises: ["Rows", "Scapular retractions", "Face pulls"]
+    },
+    {
+        name: "Rhomboid_minor",
+        description: "Assists rhomboid major in scapular retraction.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Spinous processes of C7–T1",
+            insertion: "Medial border of scapula above rhomboid major",
+            function: "Scapular elevation and retraction"
+        },
+        injuries: {
+            common: "Muscle spasms from prolonged sitting",
+            prevention: "Stretching and upper back engagement",
+            treatment: "Heat, soft tissue release"
+        },
+        exercises: ["Band pull-aparts", "Row variations", "T-spine mobility work"]
+    },
+    {
+        name: "Infraspinatus",
+        description: "Part of the rotator cuff, responsible for external shoulder rotation.",
+        path: "/upperbody2.glb",
+        anatomy: {
+            origin: "Infraspinous fossa of scapula",
+            insertion: "Greater tubercle of humerus",
+            function: "External rotation and shoulder stabilization"
+        },
+        injuries: {
+            common: "Rotator cuff strain or tear",
+            prevention: "Rotator cuff strengthening and mobility",
+            treatment: "Physical therapy, isolated rehab exercises"
+        },
+        exercises: ["External rotations", "Face pulls", "Cuban press"]
     }
 ];
 

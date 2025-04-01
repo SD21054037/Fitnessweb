@@ -14,6 +14,8 @@ import OefeningenSectie from '../SpierpaginaSecties/OefeningenSectie';
 const Spierpagina = () => {
     const { selectedMuscle: contextMuscle, selectedMuscleGroup } = useMuscle();
     const [selectedMuscle, setSelectedMuscle] = useState(null);
+    console.log(selectedMuscle);
+    console.log(selectedMuscleGroup);
 
     useEffect(() => {
         if (contextMuscle) {
@@ -21,10 +23,22 @@ const Spierpagina = () => {
             setSelectedMuscle(spier);
         }
     }, [contextMuscle]);
-    console.log(selectedMuscleGroup);
-    if (!selectedMuscleGroup) {
-        return <p>Select a muscle group from the homepage.</p>;
-    }
+
+    useEffect(() => {
+        // fallback voor muscleGroup als het er nog niet is
+        if (!selectedMuscleGroup && contextMuscle) {
+            const group = Object.values(muscleGroups).find(g =>
+                g.muscles.includes(contextMuscle)
+            );
+            if (group) {
+                // Optional: als je selectMuscleGroup uit context wil gebruiken
+                // selectMuscleGroup(group.name); 
+                // Of tijdelijke state in component
+                setSelectedMuscleGroup(group.name);
+            }
+        }
+    }, [contextMuscle, selectedMuscleGroup]);
+
 
     const group = muscleGroups[selectedMuscleGroup];
     const spierenInGroep = group.muscles.map(name => muscles.find(m => m.name === name));
@@ -32,7 +46,7 @@ const Spierpagina = () => {
     return (
         <div className="Spierpagina">
             <main className='SPmain-content'>
-                <h1>{group.name}</h1>
+             
 
                 <SpiergroepSectie
                     group={group}

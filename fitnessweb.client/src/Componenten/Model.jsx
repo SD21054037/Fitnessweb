@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useState, useRef } from 'react';
 import Model from './Modelfunction';
-
+import ArmAnimation from '../Animations/ArmAnimation';
 export default function App() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isMouseOverCanvas, setIsMouseOverCanvas] = useState(false);
@@ -76,6 +76,8 @@ export default function App() {
                     {hovered.name}
                 </div>
             )}
+           
+
         </div>
     );
 }
