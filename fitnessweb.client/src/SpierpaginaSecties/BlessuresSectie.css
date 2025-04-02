@@ -1,0 +1,43 @@
+.blessure-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #2b8b92;
+    border-radius: 12px;
+    margin: 2rem;
+    flex-wrap: wrap;
+}
+
+.blessure-tekstblok {
+    flex: 1 1 500px;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+    .blessure-tekstblok h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+.blessure-illustratie {
+    flex: 1 1 400px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+}
+
+    .blessure-illustratie img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+.illustratie-caption {
+    margin-top: 0.5rem;
+    color: #d6f2f5;
+    font-size: 0.95rem;
+}

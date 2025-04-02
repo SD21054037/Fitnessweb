@@ -16,7 +16,7 @@ const Model = ({ path, highlightSpieren, selected, onClickSpier }) => {
                     const isSelected = child.name === selected;
 
                     if (isHighlighted) {
-                        child.material.emissive = new THREE.Color(isSelected ? 0xff4d4d : 0xf08080);
+                        child.material.emissive = new THREE.Color(isSelected ? 0x2A909A : 0xf08080);
                     } else {
                         child.material.emissive = new THREE.Color(0x000000);
                     }

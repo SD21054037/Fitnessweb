@@ -1,0 +1,72 @@
+.anatomie-sectie {
+    background-color: #2ca5a9;
+    padding: 2rem;
+    border-radius: 12px;
+    color: white;
+    margin-top: 2rem;
+}
+
+.anatomie-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.anatomie-blok {
+    margin-bottom: 1rem;
+}
+
+    .anatomie-blok h4 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .anatomie-blok p {
+        margin: 0;
+        line-height: 1.5;
+    }
+    .anatomie-blok h4 {
+        color: #ffffff;
+        font-weight: bold;
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .anatomie-blok p {
+        color: #e0f7fa;
+        margin: 0.25rem 0 0.75rem;
+        line-height: 1.6;
+    }
+
+.anatomie-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #2f9aa4;
+    border-radius: 12px;
+    margin: 2rem;
+    flex-wrap: wrap;
+}
+
+.anatomie-tekstblok {
+    flex: 1 1 500px;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+    .anatomie-tekstblok h3 {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+.anatomie-animatie-placeholder {
+    flex: 1 1 400px;
+    min-height: 300px;
+    background-color: #1f7a84;
+    border-radius: 10px;
+    opacity: 0.3;
+}
