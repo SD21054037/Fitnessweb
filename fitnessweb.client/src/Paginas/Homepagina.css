@@ -12,7 +12,7 @@
 .main-content {
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 100%;
     width: 100%;
     background-color: #A3E9F1;
     position: relative;
