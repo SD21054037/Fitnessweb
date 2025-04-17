@@ -47,11 +47,11 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
     color: white;
-    background-color: #007bff;
+    background-color: #20666E;
 }
 
 .header__button--highlight {
-    background-color: #28a745;
+    background-color: #20666E;
 }
 
 .header__button:hover {
