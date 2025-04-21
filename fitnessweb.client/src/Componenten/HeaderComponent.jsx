@@ -140,7 +140,16 @@ const HeaderComponent = () => {
                     <a onClick={(e) => e.preventDefault()} className="nav-dropdown">Muscles <DownOutlined /></a>
                 </Dropdown>
                 <Dropdown menu={{ items: exerciseItems }} placement="bottomLeft" trigger={["hover"]}>
-                    <a onClick={(e) => e.preventDefault()} className="nav-dropdown">Exercises <DownOutlined /></a>
+                    <a
+                        onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/exercises');
+                        }}
+                        className="nav-dropdown"
+                    >
+                        Exercises <DownOutlined />
+                    </a>
+
                 </Dropdown>
             </nav>
             <div className="header__actions">

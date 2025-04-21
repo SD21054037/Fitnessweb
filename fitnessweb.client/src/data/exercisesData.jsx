@@ -1,6 +1,6 @@
 const exercises = [
     {
-        name: "Barbell Squat",
+        name: "Barbell-Squat",
         intro: "A fundamental lower-body exercise that targets strength, coordination, and mobility.",
         muscles: {
             primary: ["Quadriceps", "Glutes"],
@@ -12,7 +12,7 @@ const exercises = [
         programming: "Great for leg days or full-body routines. Start with 3–5 sets of 5–10 reps. Rest 1–3 minutes between sets depending on intensity."
     },
     {
-        name: "Barbell Bench Press",
+        name: "Barbell-Bench-Press",
         intro: "A classic compound exercise for upper body strength, especially the chest and triceps.",
         muscles: {
             primary: ["Pectorals"],
@@ -36,7 +36,7 @@ const exercises = [
         programming: "Use in pull days or back-focused sessions. Perform 3–4 sets of max reps or assisted reps. For strength, add weight and aim for 5–8 reps."
     },
     {
-        name: "Bicep Curl",
+        name: "Bicep-Curl",
         intro: "A classic isolation exercise focused on building biceps strength and size.",
         muscles: {
             primary: ["Biceps brachii"],
@@ -48,7 +48,7 @@ const exercises = [
         programming: "Perform 3–4 sets of 10–15 reps. Great at the end of upper-body or arm-focused workouts."
     },
     {
-        name: "Tricep Pushdown",
+        name: "Tricep-Pushdown",
         intro: "An effective isolation movement targeting the triceps using a cable machine.",
         muscles: {
             primary: ["Triceps brachii"],
@@ -60,7 +60,7 @@ const exercises = [
         programming: "Use for 3–4 sets of 12–15 reps. Ideal at the end of push or arm workouts."
     },
     {
-        name: "Lateral Raise",
+        name: "Lateral-Raise",
         intro: "An isolation exercise to build the lateral deltoid for wider shoulders.",
         muscles: {
             primary: ["Side delts"],
@@ -72,7 +72,7 @@ const exercises = [
         programming: "3–4 sets of 12–20 reps. Use light weight with strict form to prevent cheating."
     },
     {
-        name: "Overhead Press",
+        name: "Overhead-Press",
         intro: "A compound pressing movement that builds upper body pushing strength and shoulder mass.",
         muscles: {
             primary: ["Front delts"],
@@ -84,7 +84,7 @@ const exercises = [
         programming: "3–4 sets of 5–10 reps. Use as a main lift on push or shoulder day."
     },
     {
-        name: "Romanian Deadlift",
+        name: "Romanian-Deadlift",
         intro: "A hip hinge exercise that emphasizes hamstring and glute development.",
         muscles: {
             primary: ["Hamstrings", "Glutes"],
@@ -96,7 +96,7 @@ const exercises = [
         programming: "3–4 sets of 8–12 reps. Ideal as an accessory on leg or posterior chain days."
     },
     {
-        name: "Chest Fly",
+        name: "Chest-Fly",
         intro: "An isolation movement to target the pectoral muscles through horizontal adduction.",
         muscles: {
             primary: ["Pectorals"],
@@ -108,7 +108,7 @@ const exercises = [
         programming: "3–4 sets of 10–15 reps. Best used after compound presses to fully fatigue the pecs."
     },
     {
-        name: "Leg Extension",
+        name: "Leg-Extension",
         intro: "A machine-based isolation exercise for the quadriceps.",
         muscles: {
             primary: ["Quadriceps"],
@@ -120,7 +120,7 @@ const exercises = [
         programming: "3–4 sets of 12–15 reps. Use after compound leg movements for maximal quad fatigue."
     },
     {
-        name: "Seated Row",
+        name: "Seated-Row",
         intro: "A compound pulling exercise that targets the upper and mid back.",
         muscles: {
             primary: ["Rhomboids", "Lats"],
