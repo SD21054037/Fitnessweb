@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2.5rem;
+    padding: 2.5rem;
     background-color: #2b8b92;
-    border-radius: 12px;
+    border-radius: 16px;
     margin: 2rem;
     flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .blessure-tekstblok {
@@ -15,10 +16,23 @@
     color: #fff;
     font-size: 1.1rem;
     line-height: 1.75;
+    padding-right: 1rem;
 }
 
     .blessure-tekstblok h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .blessure-tekstblok h4 {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #e0f7f9;
+    }
+
+    .blessure-tekstblok ul {
+        padding-left: 1.5rem;
         margin-bottom: 1rem;
     }
 
@@ -28,16 +42,74 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
     .blessure-illustratie img {
         max-width: 100%;
-        border-radius: 10px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
 .illustratie-caption {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     color: #d6f2f5;
     font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
 }
+/* FAQ / Myths Dropdown Styling */
+.ant-collapse {
+    background-color: #2b8b92;
+    border: none;
+    color: white;
+    font-family: inherit;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ant-collapse-item {
+    border-bottom: 1px solid #4aa3a7;
+}
+
+.ant-collapse-header {
+    background-color: #23787d;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+
+}
+
+.ant-collapse-content {
+    background-color: #20676b;
+    color: #eaf8f9;
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+}
+
+.ant-collapse-content-box {
+    padding: 0;
+}
+
+.ant-collapse-icon-position-start .ant-collapse-header {
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.ant-collapse-expand-icon {
+    position: absolute;
+    left: 1rem;
+    color: #a9e1e5;
+    font-size: 1rem;
+}
+
+.ant-collapse-header:hover {
+    background-color: #2e8d93;
+    cursor: pointer;
+}
+
+

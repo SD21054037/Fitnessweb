@@ -314,10 +314,47 @@ const muscles = [
             antagonists: "Triceps brachii"
         },
         injuries: {
-            common: "Tendinitis or distal rupture",
-            prevention: "Proper loading and warm-up",
-            treatment: "Rest, ice, or surgery if torn"
+            common: "tendinitis of distale ruptuur",
+            prevention: "juiste belasting en warming-up",
+            treatment: "rust, ijs of operatie bij scheuring",
+            specific: [
+                {
+                    name: "Distale bicepsruptuur",
+                    description: "Een scheuring van de pees die de biceps met de onderarm verbindt. Komt vaak voor bij plotselinge krachtinspanning, zoals bij zwaar tillen."
+                },
+                {
+                    name: "Biceps tendinitis",
+                    description: "Een ontsteking van de lange bicepspees. Meestal veroorzaakt door herhaalde overbelasting of slechte techniek bij trekken/duwen."
+                }
+            ],
+            recognitionTips: [
+                "Pijn aan de voorzijde van de elleboog of schouder",
+                "Krachtverlies bij het buigen van de arm",
+                "Zichtbare bult bij een peesscheur (Popeye sign)",
+                "Klik- of knakgeluid bij scheuring"
+            ],
+            rehabExercises: [
+                {
+                    name: "Bicep Curl met lichte weerstand",
+                    link: "/exercises/bicep-curl"
+                },
+                {
+                    name: "Isometrische bicepsactivatie",
+                    link: "/exercises/isometric-biceps"
+                }
+            ],
+            faq: [
+                {
+                    q: "Mag ik trainen met biceps tendinitis?",
+                    a: "Vermijd pijnlijke bewegingen. Train licht, gefocust op mobiliteit en herstel. Raadpleeg een professional bij twijfel."
+                },
+                {
+                    q: "Helpt rekken bij een gescheurde biceps?",
+                    a: "Nee, rekken wordt afgeraden bij acute scheuringen. Laat het eerst professioneel beoordelen."
+                }
+            ]
         },
+
         exercises: [
             {
                 name: "Bicep Curls",

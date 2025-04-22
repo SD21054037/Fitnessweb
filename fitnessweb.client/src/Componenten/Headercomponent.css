@@ -5,7 +5,7 @@
     background-color: #2ca4b1;
     padding: 0.8rem 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
 }

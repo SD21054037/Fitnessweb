@@ -1,22 +1,73 @@
 import React from 'react';
 import './BlessuresSectie.css';
+import { Collapse } from 'antd';
+
+
+const { Panel } = Collapse;
+
 
 const BlessuresSectie = ({ selectedMuscle }) => {
     if (!selectedMuscle || !selectedMuscle.injuries) return null;
 
-    const { common, prevention, treatment } = selectedMuscle.injuries;
+    const { common, prevention, treatment, specific, diagnosis, rehab, faq } = selectedMuscle.injuries;
 
     return (
         <section className="blessure-container">
             <div className="blessure-tekstblok">
                 <h3>Injuries</h3>
+
                 <p>
-                    Injuries related to the <strong>{selectedMuscle.displayName}</strong> are typically associated with {common?.toLowerCase()}. These issues often arise from poor movement mechanics, excessive loading, or lack of muscle control.
-                    <br /><br />
-                    To prevent these types of injuries, it's important to focus on {prevention?.toLowerCase()}. This includes a combination of proper warm-ups, progressive loading, mobility work, and muscular balance. Athletes and fitness enthusiasts are encouraged to gradually build strength and stability in this muscle group.
-                    <br /><br />
-                    In case of injury, treatment often involves {treatment?.toLowerCase()}. Depending on severity, this can range from simple rest and recovery to structured rehabilitation programs. Addressing imbalances and allowing proper healing time is essential to restore full function and avoid recurrence.
+                    Injuries related to the <strong>{selectedMuscle.displayName}</strong> are commonly associated with {common?.toLowerCase()}.
                 </p>
+
+                {specific && (
+                    <>
+                        <h4>Common Injuries:</h4>
+                        <ul>
+                            {specific.map((injury, index) => (
+                                <li key={index}><strong>{injury.name}:</strong> {injury.description}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
+                {diagnosis && (
+                    <>
+                        <h4>Diagnosis & Symptoms:</h4>
+                        <p>{diagnosis}</p>
+                    </>
+                )}
+
+                <h4>Prevention:</h4>
+                <p>{prevention}</p>
+
+                <h4>Treatment:</h4>
+                <p>{treatment}</p>
+
+                {rehab && (
+                    <>
+                        <h4>Rehab Exercises:</h4>
+                        <ul>
+                            {rehab.map((exercise, index) => (
+                                <li key={index}>{exercise}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
+                {faq && (
+                    <>
+                        <h4>FAQ / Myths:</h4>
+                        <Collapse accordion>
+                            {faq.map((item, index) => (
+                                <Panel header={item.q} key={index}>
+                                    <p>{item.a}</p>
+                                </Panel>
+                            ))}
+                        </Collapse>
+                    </>
+                )}
+
             </div>
 
             <div className="blessure-illustratie">

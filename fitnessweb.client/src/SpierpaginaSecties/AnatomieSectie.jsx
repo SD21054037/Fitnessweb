@@ -24,7 +24,7 @@ const AnatomieSectie = ({ selectedMuscle }) => {
 
            
             <div className="anatomie-animatie-placeholder">
-                <Canvas camera={{ position: [0, 0, 0], fov: 40 }} style={{ width: '100%', height: '490px' }}>
+                <Canvas camera={{ position: [4, 0, 1], fov: 40 }} style={{ width: '100%', height: '490px' }}>
                     <ambientLight intensity={1} />
                     <directionalLight position={[2, 2, 2]} />
                     <directionalLight position={[-2, -2, -2]} />

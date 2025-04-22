@@ -12,10 +12,13 @@ import BlessuresSectie from '../SpierpaginaSecties/BlessuresSectie';
 import OefeningenSectie from '../SpierpaginaSecties/OefeningenSectie';
 
 const Spierpagina = () => {
-    const { selectedMuscle: contextMuscle, selectedMuscleGroup } = useMuscle();
+    const {
+        selectedMuscle: contextMuscle,
+        selectedMuscleGroup,
+        selectMuscleGroup,
+    } = useMuscle();
+
     const [selectedMuscle, setSelectedMuscle] = useState(null);
-    console.log(selectedMuscle);
-    console.log(selectedMuscleGroup);
 
     useEffect(() => {
         if (contextMuscle) {
@@ -25,29 +28,22 @@ const Spierpagina = () => {
     }, [contextMuscle]);
 
     useEffect(() => {
-        // fallback voor muscleGroup als het er nog niet is
         if (!selectedMuscleGroup && contextMuscle) {
-            const group = Object.values(muscleGroups).find(g =>
+            const group = Object.entries(muscleGroups).find(([_, g]) =>
                 g.muscles.includes(contextMuscle)
             );
             if (group) {
-                // Optional: als je selectMuscleGroup uit context wil gebruiken
-                // selectMuscleGroup(group.name); 
-                // Of tijdelijke state in component
-                setSelectedMuscleGroup(group.name);
+                selectMuscleGroup(group[0]);
             }
         }
-    }, [contextMuscle, selectedMuscleGroup]);
-
+    }, [contextMuscle, selectedMuscleGroup, selectMuscleGroup]);
 
     const group = muscleGroups[selectedMuscleGroup];
-    const spierenInGroep = group.muscles.map(name => muscles.find(m => m.name === name));
+    const spierenInGroep = group?.muscles.map(name => muscles.find(m => m.name === name)) || [];
 
     return (
         <div className="Spierpagina">
             <main className='SPmain-content'>
-             
-
                 <SpiergroepSectie
                     group={group}
                     spieren={spierenInGroep}
@@ -57,6 +53,7 @@ const Spierpagina = () => {
 
                 {selectedMuscle && (
                     <>
+                        
                         <AnatomySectie selectedMuscle={selectedMuscle} />
                         <BlessuresSectie selectedMuscle={selectedMuscle} />
                         <OefeningenSectie selectedMuscle={selectedMuscle} />

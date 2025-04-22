@@ -43,3 +43,13 @@
     border-radius: 10px;
     opacity: 0.3;
 }
+
+.oefening-blok:hover {
+    background-color: #f0f0f0;
+    transition: 0.3s;
+    color: #333;
+}
+
+.oefening-blok:hover p {
+    color: #333;
+}
