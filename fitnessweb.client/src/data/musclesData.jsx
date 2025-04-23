@@ -333,7 +333,7 @@ const muscles = [
                 "Zichtbare bult bij een peesscheur (Popeye sign)",
                 "Klik- of knakgeluid bij scheuring"
             ],
-            rehabExercises: [
+            rehabEx: [
                 {
                     name: "Bicep Curl met lichte weerstand",
                     link: "/exercises/bicep-curl"
@@ -357,7 +357,7 @@ const muscles = [
 
         exercises: [
             {
-                name: "Bicep Curls",
+                name: "Bicep Curl",
                 description: "An isolation exercise that directly targets the biceps. By flexing the elbow under load using dumbbells or barbells, it strengthens and builds size in the upper arm."
             },
             {

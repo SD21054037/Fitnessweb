@@ -23,9 +23,9 @@ body {
     display: flex;
     place-items: center;
     min-width: 320px;
-    height: stretch;
+    
     background-color: #217b85;
-    max-width: 1300px;
+    
 }
 
 

@@ -8,6 +8,8 @@
     border-radius: 12px;
     margin: 2rem;
     flex-wrap: wrap;
+    width: 1300px;
+    align-self: center;
 }
 
 .oefeningen-tekstblok {

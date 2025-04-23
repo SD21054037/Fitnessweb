@@ -129,7 +129,8 @@ const HeaderComponent = () => {
     ];
 
     return (
-        <header className="header">
+            <header className="header__background">
+        <div className="header">
             <div className="header__logo">
                 <a href="/">
                     <img src="/logo.png" alt="Fitness & Education Logo" />
@@ -155,8 +156,9 @@ const HeaderComponent = () => {
             <div className="header__actions">
                 <a href="#login" className="header__button">Login</a>
                 <a href="#start-training" className="header__button header__button--highlight">Start Training</a>
-            </div>
-        </header>
+                </div>
+        </div>
+            </header>
     );
 };
 
