@@ -15,6 +15,7 @@
 .oefeningen-tekstblok {
     flex: 1 1 500px;
     color: #fff;
+    text-align: left;
 }
 
     .oefeningen-tekstblok h3 {
