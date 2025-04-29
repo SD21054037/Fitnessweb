@@ -3,7 +3,7 @@ import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import './HeaderComponent.css';
-import { useMuscle } from './MuscleContext';
+import { useMuscle } from '../hooks/MuscleContext';
 import muscleGroups from '../data/muscleGroupsData';
 
 const HeaderComponent = () => {
@@ -55,7 +55,7 @@ const HeaderComponent = () => {
             key: 'chest',
             label: 'Chest',
             children: [
-                { key: 'chest-all', label: 'Chest', onClick: () => handleMuscleNavigate('Pectoralis_major') },
+                { key: 'chest-all', label: 'Chest', onClick: () => handleMuscleNavigate('Chest') },
             ],
         },
         {
@@ -73,7 +73,7 @@ const HeaderComponent = () => {
             children: [
                 { key: 'quads', label: 'Quads', onClick: () => handleMuscleNavigate('Rectus_femoris') },
                 { key: 'hamstrings', label: 'Hamstrings', onClick: () => handleMuscleNavigate('Biceps_femoris') },
-                { key: 'calves', label: 'Calves', onClick: () => handleMuscleNavigate('Calves') },
+                { key: 'calves', label: 'Calves', onClick: () => handleMuscleNavigate('Gastrocnemius') },
             ],
         },
         {

@@ -5,7 +5,7 @@ import './App.css';
 import Homepagina from './Paginas/Homepagina';
 import Spierpagina from './Paginas/Spierpagina';
 import HeaderComponent from './Componenten/HeaderComponent';
-import { MuscleProvider } from './Componenten/MuscleContext';
+import { MuscleProvider } from './hooks/MuscleContext';
 import ExerciseListPage from './Paginas/Oefeninglijstpagina';
 import ExerciseDetail from './Paginas/Oefeningpagina';
 import exercises from './data/exercisesData';

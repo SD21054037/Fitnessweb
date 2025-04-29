@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Spierpagina.css';
 
-import { useMuscle } from '../Componenten/MuscleContext';
+import { useMuscle } from '../hooks/MuscleContext';
 import Footer from '../Componenten/Footer';
 import muscles from '../data/musclesData';
 import muscleGroups from '../data/muscleGroupsData';

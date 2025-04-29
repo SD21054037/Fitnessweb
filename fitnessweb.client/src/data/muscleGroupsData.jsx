@@ -49,7 +49,7 @@ const muscleGroups = [
     },
     {
         name: "Calves",
-        muscles: ["Calves"],
+        muscles: ["Gastrocnemius", "Soleus","Tibialis_anterior"],
         path: "/lowerbody2.glb",
         description: "Calf muscles help in pushing the foot off the ground, crucial for walking, jumping, and running.",
         sportApplication: "Critical in sprinting, jumping, and change of direction. Used heavily in basketball and sprinting.",
@@ -61,7 +61,7 @@ const muscleGroups = [
     },
     {
         name: "Core",
-        muscles: ["Rectus_abdominis", "Obliques", "Transverse_abdominis", "Erector_spinae"],
+        muscles: ["Rectus_abdominis", "Obliques", "Transverse_abdominis", "Erector_spinae", "Serratus_posterior_inferior"],
         path: "/upperbody2.glb",
         description: "The core muscles stabilize the spine, support posture, and transfer force between the upper and lower body.",
         sportApplication: "Crucial for balance, power transfer, and injury prevention in sports like golf, baseball, and swimming.",
@@ -74,8 +74,8 @@ const muscleGroups = [
     {
         name: "Back",
         muscles: [
-            "Erector_spinae", "Latissimus_dorsi", "Trapezius_upper", "Trapezius_middle", "Trapezius_lower",
-            "Rhomboid_major", "Rhomboid_minor", "Teres_major", "Teres_minor", "Infraspinatus", "Supraspinatus", "Serratus_posterior_inferior"
+            "Latissimus_dorsi", "Traps",
+            "Rhomboid_major", "Rhomboid_minor", "Teres_major", "Teres_minor", "Infraspinatus", "Supraspinatus"
         ],
         path: "/upperbody2.glb",
         description: "The back muscles support the spine, stabilize the shoulders, and assist in pulling and lifting.",
@@ -100,7 +100,7 @@ const muscleGroups = [
     },
     {
         name: "Forearm",
-        muscles: ["Brachioradialis", "Flexor_group", "Extensor_group", "Pronator_teres", "Supinator", "Abductor_pollicis_longus"],
+        muscles: ["Brachioradialis", "Flexors", "Extensors", "Pronator_teres", "Supinator", "Abductor_pollicis_longus"],
         path: "/upperbody2.glb",
         description: "The forearm muscles control grip, wrist movement, and fine motor function of the hand.",
         sportApplication: "Important for climbing, weightlifting, and sports that involve gripping or wrist rotation.",
@@ -111,8 +111,9 @@ const muscleGroups = [
         videoEmbed: "https://www.youtube.com/embed/1t7tJ8MPZ6I"
     },
     {
+
         name: "Shoulders",
-        muscles: ["Rear_delts", "Side_delts", "Front_delts", "Rotator_cuff"],
+        muscles: ["Rear_delts", "Side_delts", "Front_delts"],
         path: "/upperbody2.glb",
         description: "Shoulder muscles allow for arm abduction, flexion, extension, and rotation.",
         sportApplication: "Vital in overhead and throwing sports like volleyball, swimming, and baseball.",
@@ -124,7 +125,7 @@ const muscleGroups = [
     },
     {
         name: "Chest",
-        muscles: ["Pectoralis_major", "Pectoralis_minor"],
+        muscles: ["Chest"],
         path: "/upperbody2.glb",
         description: "The chest muscles are responsible for shoulder flexion, adduction, and internal rotation.",
         sportApplication: "Critical for pushing movements, balance, and stability in sports like boxing, volleyball, and swimming.",

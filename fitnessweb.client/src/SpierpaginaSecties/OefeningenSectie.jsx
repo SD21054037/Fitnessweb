@@ -1,6 +1,7 @@
 import React from 'react';
 import './OefeningenSectie.css';
 import { useNavigate } from 'react-router-dom';
+import { highlightTerms } from '../utils/highlightTerms'; 
 
 const OefeningenSectie = ({ selectedMuscle }) => {
     const navigate = useNavigate();
@@ -23,14 +24,10 @@ const OefeningenSectie = ({ selectedMuscle }) => {
                         onClick={() => handleExerciseClick(exercise.name)}
                         style={{ cursor: 'pointer' }}
                     >
-                        <h4>{exercise.name}</h4>
-                        <p>{exercise.description}</p>
+                        <h4>{highlightTerms(exercise.name)}</h4>
+                        <p>{highlightTerms(exercise.description)}</p>
                     </div>
                 ))}
-            </div>
-
-            <div className="oefeningen-animatie-placeholder">
-                {/* Future animated preview here */}
             </div>
         </section>
     );

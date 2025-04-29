@@ -1,83 +1,98 @@
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { useState, useRef } from 'react';
-import Model from './Modelfunction';
-import ArmAnimation from '../Animations/ArmAnimation';
-export default function App() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isMouseOverCanvas, setIsMouseOverCanvas] = useState(false);
-    const [hovered, setHovered] = useState(null);
-    const canvasRef = useRef(); 
+﻿import { useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+import { useRef, useImperativeHandle, forwardRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useMuscle } from '../hooks/MuscleContext';
+import muscleGroups from '../data/muscleGroupsData';
+import { useMuscleVisibility } from '../hooks/useMuscleVisibility';
 
-  
-    const handlePointerMove = (e) => {
-        if (canvasRef.current) {
-            const rect = canvasRef.current.getBoundingClientRect();
-            const x = e.clientX - rect.left; 
-            const y = e.clientY - rect.top; 
-            setMousePosition({ x, y });
+const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
+    const { scene } = useGLTF('/BWS.glb');
+    const meshRef = useRef();
+
+    useEffect(() => {
+        if (scene && onSceneLoaded) {
+            onSceneLoaded(scene);
         }
-    };
+    }, [scene, onSceneLoaded]);
 
-    
-    const handlePointerEnterCanvas = () => {
-        setIsMouseOverCanvas(true);
-    };
 
-   
-    const handlePointerLeaveCanvas = () => {
-        setIsMouseOverCanvas(false);
-        setHovered(null); 
-    };
+    useFrame(() => {
+        if (meshRef.current) {
+            meshRef.current.traverse((obj) => {
+                if (obj.isMesh) {
+                    obj.material.emissive.set('black');
+                }
+            });
+        }
+    });
+
+    useImperativeHandle(ref, () => ({
+        hideMuscle: (muscleName) => {
+            if (meshRef.current) {
+                meshRef.current.traverse((obj) => {
+                    if (obj.name === muscleName) {
+                        obj.visible = false;
+                    }
+                });
+            }
+        },
+        showMuscle: (muscleName) => {
+            if (meshRef.current) {
+                meshRef.current.traverse((obj) => {
+                    if (obj.name === muscleName) {
+                        obj.visible = true;
+                    }
+                });
+            }
+        }
+    }));
 
     return (
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-          
-            <Canvas
-                ref={canvasRef} 
-                camera={{ position: [0, 3, 3], fov: 50 }}
-                onPointerMove={handlePointerMove}
-                onPointerEnter={handlePointerEnterCanvas}
-                onPointerLeave={handlePointerLeaveCanvas}
-            >
-                <ambientLight intensity={0.6} />
-                <directionalLight position={[5, 5, 5]} intensity={0.6} />
-                <directionalLight position={[-5, -5, -5]} intensity={0.6} />
+        <primitive
+            object={scene}
+            scale={1.5}
+            ref={(node) => {
+                meshRef.current = node;
+            }}
 
-                
-                <Model setHovered={setHovered} />
+            onPointerOver={(e) => {
+                e.stopPropagation();
+                setHovered(e.object);
+                if (e.object.material) {
+                    e.object.material.color.set('lightcoral');
+                }
+            }}
+            onPointerOut={(e) => {
+                e.stopPropagation();
+                setHovered(null);
+                if (e.object.material) {
+                    e.object.material.color.set('white');
+                }
+            }}
+            onClick={(e) => {
+                e.stopPropagation();
+                const clickedName = e.object.name;
+                console.log('Clicked on:', clickedName);
 
-            
-                <OrbitControls
-                    target={[1.7, 1.3, 0]}
-                    enableZoom={true}
-                    minDistance={2}
-                    maxDistance={4}
-                    enablePan={true}
-                    maxPolarAngle={Math.PI / 2}
-                    minPolarAngle={Math.PI / 2}
-                />
-            </Canvas>
+                if (contextMuscle) {
+                    const groepEntry = Object.entries(muscleGroups).find(([groepNaam, groep]) =>
+                        groep.muscles.includes(clickedName)
+                    );
 
-            {hovered && isMouseOverCanvas && (
-                <div
-                    style={{
-                        position: 'absolute',
-                        left: `${mousePosition.x + 10}px`,
-                        top: `${mousePosition.y + 10}px`,
-                        background: 'white',
-                        padding: '5px',
-                        borderRadius: '5px',
-                        color: 'black',
-                        pointerEvents: 'none',
-                        zIndex: 1000,
-                    }}
-                >
-                    {hovered.name}
-                </div>
-            )}
-           
-
-        </div>
+                    if (groepEntry) {
+                        const [groepNaam] = groepEntry;
+                        contextMuscle.selectMuscle(clickedName);
+                        contextMuscle.selectMuscleGroup(groepNaam);
+                        navigate('/spierpagina');
+                    } else {
+                        console.warn("Spier niet gevonden in muscleGroups:", clickedName);
+                    }
+                }
+            }}
+        />
     );
-}
+});
+
+Model.displayName = 'Model';
+export default Model;
