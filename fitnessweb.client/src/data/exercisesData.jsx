@@ -143,6 +143,7 @@ const exercises = [
         warmup: "Bodyweight lunges, dynamic hip stretches, and glute bridges.",
         programming: "3 sets of 8–12 reps per leg. Add dumbbells or a barbell for increased difficulty."
     }
+
 ];
 
 export default exercises;

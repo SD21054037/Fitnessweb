@@ -24,8 +24,8 @@ const OefeningenSectie = ({ selectedMuscle }) => {
                         onClick={() => handleExerciseClick(exercise.name)}
                         style={{ cursor: 'pointer' }}
                     >
-                        <h4>{highlightTerms(exercise.name)}</h4>
-                        <p>{highlightTerms(exercise.description)}</p>
+                        <h4>{exercise.name}</h4>
+                        <p>{exercise.description}</p>
                     </div>
                 ))}
             </div>

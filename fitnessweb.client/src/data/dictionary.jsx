@@ -35,6 +35,7 @@ const dictionary = {
     "inversion": "Turning the sole of the foot inward toward the midline of the body.",
     "eversion": "Turning the sole of the foot outward, away from the midline of the body.",
 
+    "VMO": "Vastus Medialis Oblique, the inner part of the quadriceps muscle that helps stabilize the patella and control knee extension.",
 
 
 

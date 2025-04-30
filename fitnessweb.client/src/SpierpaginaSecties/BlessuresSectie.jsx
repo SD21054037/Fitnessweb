@@ -61,7 +61,7 @@ const BlessuresSectie = ({ selectedMuscle }) => {
                         <h4>FAQ / Myths:</h4>
                         <Collapse accordion>
                             {faq.map((item, index) => (
-                                <Panel header={highlightTerms(item.q)} key={index}>
+                                <Panel header={item.q} key={index}>
                                     <p>{highlightTerms(item.a)}</p>
                                 </Panel>
                             ))}
