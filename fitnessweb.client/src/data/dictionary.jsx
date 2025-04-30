@@ -27,7 +27,14 @@ const dictionary = {
     "Common peroneal nerve": "A nerve that branches from the sciatic nerve and controls muscles that lift the foot.",
     "Superficial peroneal nerve": "A branch of the common peroneal nerve that supplies muscles in the lower leg and sensation to the top of the foot.",
     "Deep peroneal nerve": "Another branch of the common peroneal nerve responsible for foot dorsiflexion and toe extension.",
-    "Lateral cutaneous nerve of thigh": "Provides sensation to the skin on the outer thigh."
+    "Lateral cutaneous nerve of thigh": "Provides sensation to the skin on the outer thigh.",
+    "Calcaneus": "The heel bone, which forms the foundation of the rear part of the foot and connects to the Achilles tendon.",
+    "achilles tendon": "Tendon connecting the calf muscles (gastrocnemius and soleus) to the heel bone (calcaneus), crucial for walking, running, and jumping.",
+    "plantarflexion": "Movement at the ankle that increases the angle between the foot and the shin, such as when pointing the toes downward.",
+    "dorsiflexion": "Movement at the ankle where the toes are brought closer to the shin, decreasing the angle between them.",
+    "inversion": "Turning the sole of the foot inward toward the midline of the body.",
+    "eversion": "Turning the sole of the foot outward, away from the midline of the body.",
+
 
 
 
