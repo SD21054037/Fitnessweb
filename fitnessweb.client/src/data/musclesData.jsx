@@ -1057,36 +1057,32 @@ const muscles = [
 
     // CAlVES
     {
-        name: "Calves",
-        displayName: "Calves (Gastrocnemius & Soleus)",
+        name: "Gastrocnemius",
+        displayName: "Gastrocnemius",
         path: "/lowerbody2.glb",
         anatomy: {
-            origin: "Gastrocnemius: Medial and lateral condyles of the femur; Soleus: Posterior tibia and fibula.",
+            origin: "Medial and lateral condyles of the femur.",
             insertion: "Calcaneus via the Achilles tendon.",
-            function: "Plantarflexion of the ankle; Gastrocnemius also assists in knee flexion.",
+            function: "Plantarflexion of the ankle and assists in knee flexion.",
             innervation: "Tibial nerve (S1–S2)",
             bloodSupply: "Posterior tibial and peroneal arteries",
-            synergists: "Posterior tibialis, peroneals",
+            synergists: "Soleus, posterior tibialis, peroneals",
             antagonists: "Tibialis anterior, dorsiflexors"
         },
         injuries: {
-            common: "Strains from explosive movements (e.g. sprinting/jumping), Achilles tendinitis, or calf tightness due to inactivity.",
-            prevention: "Eccentric calf raises, ankle mobility drills, and proper warm-up for plyometrics.",
+            common: "Strains from explosive movements like sprinting and jumping.",
+            prevention: "Eccentric calf raises and proper warm-up before plyometrics.",
             treatment: "Rest, gentle stretching, massage, and progressive return to loading.",
             specific: [
                 {
-                    name: "Achilles Tendinitis",
-                    description: "Irritation or inflammation of the Achilles tendon from overuse or poor ankle mobility."
-                },
-                {
                     name: "Calf Strain",
-                    description: "Microtears in the gastrocnemius or soleus due to sudden stretch or overload."
+                    description: "Microtears in the gastrocnemius due to sudden stretch or overload."
                 }
             ],
             recognitionTips: [
-                "Pain or tightness in the back of the lower leg",
-                "Stiffness during walking, especially uphill or after rest",
-                "Swelling or tenderness near Achilles or mid-calf"
+                "Sudden sharp pain in the calf during movement",
+                "Swelling or bruising in the upper calf",
+                "Difficulty with push-off when walking or running"
             ],
             rehabEx: [
                 "Eccentric heel drops",
@@ -1095,12 +1091,8 @@ const muscles = [
             ],
             faq: [
                 {
-                    q: "Should I train calves daily?",
-                    a: "They recover quickly, but allow at least 24h between intense sessions to avoid overuse."
-                },
-                {
-                    q: "Why don’t my calves grow?",
-                    a: "Calves respond well to both high-volume and full range — many lifters undertrain them in both."
+                    q: "Should I stretch before sprinting?",
+                    a: "Dynamic warm-up is key. Static stretching should follow your session, not precede it."
                 }
             ]
         },
@@ -1110,16 +1102,116 @@ const muscles = [
                 description: "Targets the gastrocnemius with a stretch and contraction in extended knee position."
             },
             {
-                name: "Seated Calf Raise",
-                description: "Emphasizes the soleus muscle by working with flexed knees."
-            },
-            {
                 name: "Single-Leg Calf Raise",
                 description: "Unilateral strength and balance builder with deep range focus."
             }
         ]
     }
+
     ,
+    {
+        name: "Soleus",
+        displayName: "Soleus",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Posterior tibia and fibula.",
+            insertion: "Calcaneus via the Achilles tendon.",
+            function: "Plantarflexion of the ankle, especially when the knee is bent.",
+            innervation: "Tibial nerve (S1–S2)",
+            bloodSupply: "Posterior tibial and peroneal arteries",
+            synergists: "Gastrocnemius, posterior tibialis, peroneals",
+            antagonists: "Tibialis anterior, dorsiflexors"
+        },
+        injuries: {
+            common: "Tightness or soreness from prolonged standing or underuse.",
+            prevention: "Regular stretching and loaded stretching through full range.",
+            treatment: "Massage, stretching, and strengthening through controlled loading.",
+            specific: [
+                {
+                    name: "Calf Strain",
+                    description: "Microtears in the soleus due to overload, often with bent-knee movements."
+                }
+            ],
+            recognitionTips: [
+                "Tightness or ache deep in the lower calf",
+                "Discomfort when walking upstairs or inclines",
+                "Pain after prolonged standing or slow jogging"
+            ],
+            rehabEx: [
+                "Seated calf raises",
+                "Bent-knee wall stretches",
+                "Isometric calf squeezes"
+            ],
+            faq: [
+                {
+                    q: "Why train the soleus separately?",
+                    a: "It’s most active when the knee is bent — key for endurance and ankle support."
+                }
+            ]
+        },
+        exercises: [
+            {
+                name: "Seated Calf Raise",
+                description: "Emphasizes the soleus muscle by working with flexed knees."
+            },
+            {
+                name: "Single-Leg Seated Calf Raise",
+                description: "Improves unilateral soleus strength and control."
+            }
+        ]
+    }
+    , {
+        name: "Tibialis_anterior",
+        displayName: "Tibialis Anterior",
+        path: "/lowerbody2.glb",
+        anatomy: {
+            origin: "Lateral condyle and upper two-thirds of the lateral surface of the tibia.",
+            insertion: "Medial cuneiform and base of the first metatarsal.",
+            function: "Dorsiflexion and inversion of the foot.",
+            innervation: "Deep peroneal nerve (L4–S1)",
+            bloodSupply: "Anterior tibial artery",
+            synergists: "Extensor hallucis longus, extensor digitorum longus",
+            antagonists: "Gastrocnemius, soleus, posterior tibialis"
+        },
+        injuries: {
+            common: "Shin splints and anterior compartment syndrome.",
+            prevention: "Progressive loading, proper running technique, and dorsiflexion strength work.",
+            treatment: "Rest, soft tissue work, and gradual return to activity.",
+            specific: [
+                {
+                    name: "Shin Splints (MTSS)",
+                    description: "Pain and inflammation of the tibialis anterior and surrounding tissue due to overuse."
+                }
+            ],
+            recognitionTips: [
+                "Pain along the shin during or after running",
+                "Tenderness on the front or side of the shin",
+                "Worsens with impact activities"
+            ],
+            rehabEx: [
+                "Toe raises",
+                "Banded dorsiflexion",
+                "Slow eccentric lowering of foot"
+            ],
+            faq: [
+                {
+                    q: "How can I prevent shin splints?",
+                    a: "Gradually increase intensity, strengthen dorsiflexors, and ensure good footwear."
+                }
+            ]
+        },
+        exercises: [
+            {
+                name: "Toe Raises",
+                description: "Strengthens the tibialis anterior by lifting the toes while keeping heels on the ground."
+            },
+            {
+                name: "Banded Dorsiflexion",
+                description: "Resistance band exercise for targeted strengthening of the tibialis anterior."
+            }
+        ]
+    }
+,
     // --- CHEST ---
 
     {
