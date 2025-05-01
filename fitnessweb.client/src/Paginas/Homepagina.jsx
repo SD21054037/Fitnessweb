@@ -4,10 +4,9 @@ import CubeModel from '../Componenten/CubeModel';
 import Footer from '../Componenten/Footer';
 import Musclemodel from '../Componenten/MuscleModel';
 import LineModel from '../Componenten/LineModel';
-import MuscleVisibilityPanel from '../Componenten/MuscleVisibilityPanel';
+
 import { useMuscleVisibility } from '../hooks/useMuscleVisibility';
-import { useEffect } from 'react';
-import { Button } from 'antd'; 
+
 
 const Homepagina = () => {
    
@@ -68,15 +67,15 @@ const Homepagina = () => {
                         <p>Select a muscle to learn more about it.</p>
                        
                        
-                        {Object.keys(muscleVisibility).length > 0 && (
-                            <MuscleVisibilityPanel
-                                modelRef={modelRef}
-                                hiddenMuscles={muscleVisibility}
-                                toggleMuscleVisibility={toggleVisibility}
-                                showAll={showAllMusclesOnModel}
-                                hideAll={hideAllMusclesOnModel}
-                            />
-                        )}
+                        {/*{Object.keys(muscleVisibility).length > 0 && (*/}
+                        {/*    <MuscleVisibilityPanel*/}
+                        {/*        modelRef={modelRef}*/}
+                        {/*        hiddenMuscles={muscleVisibility}*/}
+                        {/*        toggleMuscleVisibility={toggleVisibility}*/}
+                        {/*        showAll={showAllMusclesOnModel}*/}
+                        {/*        hideAll={hideAllMusclesOnModel}*/}
+                        {/*    />*/}
+                        {/*)}*/}
 
                        
 

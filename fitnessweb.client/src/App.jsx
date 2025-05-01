@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Profiler, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
@@ -9,7 +9,12 @@ import { MuscleProvider } from './hooks/MuscleContext';
 import ExerciseListPage from './Paginas/Oefeninglijstpagina';
 import ExerciseDetail from './Paginas/Oefeningpagina';
 import exercises from './data/exercisesData';
-
+import Login from './Paginas/Login';
+import Aanmelden from './Paginas/Aanmelden';
+import CustomWorkoutBuilder from './Paginas/CustomWorkoutBuilder';
+import Muscles from './Paginas/Muscles';
+import Dashboard from './Paginas/Dashboard';
+import Profile from './Paginas/Profiel';
 function App() {
     return (
         <Router>
@@ -34,6 +39,13 @@ const AnimatedRoutes = () => {
                     path="/exercises/:name"
                     element={<PageWrapper><ExerciseDetailWrapper /></PageWrapper>}
                 />
+                <Route path="/login" element={<Login />} />
+                <Route path="/aanmelden" element={<Aanmelden />} />
+                <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
+                <Route path="/muscles" element={<PageWrapper><Muscles /></PageWrapper>} />
+                <Route path="/profile" element={<PageWrapper><Profile /></PageWrapper>} />
+                <Route path="/custom-workout" element={<CustomWorkoutBuilder />} />
+                <Route path="*" element={<PageWrapper><h2>404 - Pagina niet gevonden</h2></PageWrapper>} />
             </Routes>
         </AnimatePresence>
     );
@@ -41,6 +53,7 @@ const AnimatedRoutes = () => {
 
 const PageWrapper = ({ children }) => (
     <motion.div
+        style={{ height: '100%' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}

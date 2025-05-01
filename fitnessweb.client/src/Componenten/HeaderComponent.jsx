@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './HeaderComponent.css';
 import { useMuscle } from '../hooks/MuscleContext';
 import muscleGroups from '../data/muscleGroupsData';
+import { Link } from 'react-router-dom';
 
 const HeaderComponent = () => {
     const navigate = useNavigate();
@@ -153,9 +154,9 @@ const HeaderComponent = () => {
 
                 </Dropdown>
             </nav>
-            <div className="header__actions">
-                <a href="#login" className="header__button">Login</a>
-                <a href="#start-training" className="header__button header__button--highlight">Start Training</a>
+                <div className="header__actions">
+                    <Link to="/login" className="header__button">Login</Link>
+                    <Link to="/aanmelden" className="header__button header__button--highlight">Start Training</Link>
                 </div>
         </div>
             </header>

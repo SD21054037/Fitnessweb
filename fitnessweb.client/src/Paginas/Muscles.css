@@ -1,0 +1,61 @@
+.muscles-page {
+    text-align: center;
+    background-color: #bdf4ff;
+    padding: 40px 0;
+    min-height: 100vh;
+}
+
+.muscles-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.model-container {
+    flex: 1 1 500px;
+    min-width: 300px;
+    max-width: 600px;
+    height: 600px;
+    background-color: #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.muscle-list {
+    flex: 1 1 250px;
+    min-width: 250px;
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+    .muscle-list h3 {
+        margin-bottom: 16px;
+    }
+
+    .muscle-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .muscle-list li {
+        margin-bottom: 10px;
+    }
+
+    .muscle-list a {
+        color: #1890ff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .muscle-list a:hover {
+            color: #096dd9;
+        }
