@@ -12,14 +12,14 @@ import BlessuresSectie from '../SpierpaginaSecties/BlessuresSectie';
 import OefeningenSectie from '../SpierpaginaSecties/OefeningenSectie';
 
 const Spierpagina = () => {
+   
+
+    const [selectedMuscle, setSelectedMuscle] = useState(null);
     const {
         selectedMuscle: contextMuscle,
         selectedMuscleGroup,
         selectMuscleGroup,
     } = useMuscle();
-
-    const [selectedMuscle, setSelectedMuscle] = useState(null);
-
     useEffect(() => {
         if (contextMuscle) {
             const spier = muscles.find(m => m.name === contextMuscle);

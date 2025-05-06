@@ -1,61 +1,121 @@
-.muscles-page {
-    text-align: center;
-    background-color: #bdf4ff;
-    padding: 40px 0;
+﻿.muscles-page {
+    background: linear-gradient(to bottom, #e0f7fa, #bdf4ff);
+    padding: 80px 20px;
     min-height: 100vh;
+    color: #003a4d;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
 }
 
-.muscles-layout {
+    .muscles-page h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        color: #004d61;
+    }
+
+.muscles-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    margin-top: 30px;
-    padding: 0 20px;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.model-container {
+.muscles-left {
     flex: 1 1 500px;
-    min-width: 300px;
     max-width: 600px;
+}
+
+.muscles-viewer {
+    width: 100%;
     height: 600px;
-    background-color: #eaeaea;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.muscle-list {
-    flex: 1 1 250px;
-    min-width: 250px;
-    max-height: 600px;
-    overflow-y: auto;
-    background-color: #ffffff;
+.muscles-right {
+    flex: 1 1 400px;
+    max-width: 600px;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-    .muscle-list h3 {
-        margin-bottom: 16px;
-    }
+.muscles-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
-    .muscle-list ul {
-        list-style: none;
-        padding: 0;
+    .muscles-header h3 {
+        font-size: 1.3rem;
         margin: 0;
         text-align: left;
     }
 
-    .muscle-list li {
-        margin-bottom: 10px;
+.muscles-search {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+}
+
+.muscle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.muscle-button {
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: linear-gradient(to right, #ffffff, #e6f7ff);
+    color: #006d9c;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+    .muscle-button:hover {
+        background: #d4f0ff;
+        color: #003a5c;
+        transform: translateY(-2px);
     }
 
-    .muscle-list a {
-        color: #1890ff;
-        text-decoration: none;
-        transition: color 0.2s ease;
+/* ✅ Responsiveness */
+
+@media (max-width: 900px) {
+    .muscles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
 
-        .muscle-list a:hover {
-            color: #096dd9;
+    .muscles-right {
+        width: 100%;
+    }
+
+    .muscles-header {
+        text-align: center;
+        align-items: center;
+    }
+
+        .muscles-header h3 {
+            text-align: center;
         }
+}

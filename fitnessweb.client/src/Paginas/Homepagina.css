@@ -1,13 +1,12 @@
 .homepagina {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-    background-color: #A3E9F1;
-    overflow-x: hidden;
-    position: relative;
+    background: linear-gradient(to bottom right, #E6F7FA, #C9EAF3); 
     font-family: 'Roboto', sans-serif;
+    height: auto;
+    width: 100vw;
 }
+
 
 .main-content {
     display: flex;
@@ -15,82 +14,295 @@
     height: 100%;
     max-width: 1300px;
     align-self: center;
-    background-color: #A3E9F1;
-    position: relative;
+    
+  
 }
 
 .welkom {
-    padding: 20px;
-    padding-bottom: 0px;
-    color: #2C3E50;
+    color: #1F2D3D;
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
 }
+
+    .welkom h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+.hero {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+    .hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        opacity: 0.95;
+        margin: 0 auto;
+        max-width: 600px;
+        margin-bottom: 10px;
+    }
+
+.cta-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #0072ff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+    .cta-button:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        background-color: #f0f8ff;
+    }
+
 
 .model {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 50%;
-    background-color: #A3E9F1;
-    position: relative;
-    margin: 0px 10px 10px 10px;
-    
-    padding: 5px;
-}
-
-    .model h2 {
-        font-size: 36px;
-        color: #2C3E50; 
-        margin-bottom: 15px;
-        font-weight: bold; 
-    }
-
-    .model p {
-        font-size: 20px; 
-        color: #34495E; 
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-
-    .model button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 18px;
-        color: #fff;
-        background-color: #3498DB;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-        .model button:hover {
-            background-color: #2980B9; 
-        }
-
-.midsection {
-    display: flex;
-    flex-direction: row;
-    height: 70vh;
-    width: 100%;
-    max-height: 880px;
-    margin-right: 20px;
-}
-
-.Introductie {
+    flex: 1 1 48%;
+    min-width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: center;
-    margin-bottom: 20px;
-    background-color: #2E9DA9;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 10px;
-    width: 50%;
-    height: fit-content;
+}
+
+
+
+    .model p {
+        font-size: 18px;
+        color: #34495E;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: 500;
+       
+        padding-bottom: 10px;
+        width: 100%;
+    }
+
+
+
+.midsection {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+.spiergroepen {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f9fb;
+}
+
+    .spiergroepen h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+        color: #2C3E50;
+    }
+    .spiergroepen h3 {
+        font-size: 20px;
+        color: #117A8B;
+    }
+.spiergroep-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.spiergroep-card {
+    background: white;
+    border-radius: 12px;
+    width: 160px;
+    height: 160px;
     padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .spiergroep-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+.spier-icoon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.Introductie {
+    flex: 1 1 48%;
+    min-width: 320px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px 24px;
+    color: #2C3E50;
 }
 
     .Introductie h3 {
-        font-size
+        font-size: 24px;
+        color: #117A8B;
+        margin-bottom: 20px;
+    }
+
+    .Introductie p,
+    .Introductie li {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    .Introductie ul {
+        margin-left: 20px;
+        padding-left: 0;
+    }
+
+.spieren-uitleg {
+    padding: 60px 20px;
+    background: #f9fbfc;
+    text-align: center;
+}
+
+    .spieren-uitleg h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        color: #2C3E50;
+    }
+
+.info-kaarten {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.kaart {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .kaart:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+.icoon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.kaart h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #117A8B;
+}
+
+.kaart p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+@media (max-width: 900px) {
+    .midsection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .model,
+    .Introductie {
+        width: 90%;
+        flex: none;
+    }
+
+    .welkom h2 {
+        font-size: 26px;
+    }
+
+    .Introductie h3 {
+        font-size: 22px;
+    }
+
+    .Introductie p,
+    .Introductie li {
+        font-size: 16px;
+    }
+}
+
+.call-to-action {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    
+  
+}
+
+    .call-to-action h2 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .call-to-action p {
+        font-size: 18px;
+        opacity: 0.95;
+        margin-bottom: 30px;
+    }
+
+.cta-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: white;
+    color: #0072ff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        background-color: #f0f8ff;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+

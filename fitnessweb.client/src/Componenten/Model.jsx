@@ -9,6 +9,32 @@ import { useMuscleVisibility } from '../hooks/useMuscleVisibility';
 const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
     const { scene } = useGLTF('/BWS.glb');
     const meshRef = useRef();
+    const navigate = useNavigate();
+    const contextMuscle = useMuscle();
+
+    useEffect(() => {
+        const canvas = document.querySelector('canvas');
+        if (!canvas) return;
+
+        const handlePointerOver = () => (canvas.style.cursor = 'pointer');
+        const handlePointerOut = () => (canvas.style.cursor = 'default');
+
+        scene.traverse((obj) => {
+            if (obj.isMesh) {
+                obj.onPointerOver = handlePointerOver;
+                obj.onPointerOut = handlePointerOut;
+            }
+        });
+
+        return () => {
+            scene.traverse((obj) => {
+                if (obj.isMesh) {
+                    obj.onPointerOver = null;
+                    obj.onPointerOut = null;
+                }
+            });
+        };
+    }, [scene]);
 
     useEffect(() => {
         if (scene && onSceneLoaded) {
@@ -52,6 +78,9 @@ const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
         <primitive
             object={scene}
             scale={1.5}
+            position={[0, -0.1, 0]}
+         
+
             ref={(node) => {
                 meshRef.current = node;
             }}
@@ -59,7 +88,8 @@ const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
             onPointerOver={(e) => {
                 e.stopPropagation();
                 setHovered(e.object);
-                if (e.object.material) {
+                if (e.object.material ) {
+                  
                     e.object.material.color.set('lightcoral');
                 }
             }}

@@ -28,7 +28,8 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
     };
 
     return (
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        <div className = "hero-canvas-wrapper">
+
 
            
  
@@ -68,17 +69,21 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
                         position: 'absolute',
                         left: `${mousePosition.x + 10}px`,
                         top: `${mousePosition.y + 10}px`,
-                        background: 'white',
-                        padding: '5px',
-                        borderRadius: '5px',
-                        color: 'black',
+                        background: 'rgba(0,0,0,0.8)',
+                        padding: '6px 10px',
+                        borderRadius: '6px',
+                        color: 'white',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
                         pointerEvents: 'none',
                         zIndex: 1000,
+                        whiteSpace: 'nowrap',
                     }}
                 >
-                    {hovered.name}
+                    {hovered.name.replaceAll('_', ' ')}
                 </div>
             )}
+
         </div>
     );
 }

@@ -1,48 +1,66 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import muscleGroups from '../data/muscleGroupsData';
 import './Muscles.css';
-import Musclemodel from '../Componenten/Musclemodel';
-import { useMuscleVisibility } from '../hooks/useMuscleVisibility';
-
+import { useMuscle } from '../hooks/MuscleContext';
+import Musclemodel from '../Componenten/MuscleModel';
+import { useRef } from 'react'; 
 export default function Muscles() {
-    const {
-        muscleVisibility,
-        toggleVisibility,
-        showAll,
-        hideAll,
-        generateMuscleListFromScene,
-        modelRef
-    } = useMuscleVisibility();
+  const allMuscles = muscleGroups.flatMap((group) => group.muscles);
+  const contextMuscle = useMuscle();
+    const navigate = useNavigate();
+    const modelRef = useRef();
+    
 
-    const handleSceneReady = (scene) => {
-        if (scene && scene.traverse) {
-            generateMuscleListFromScene(scene);
-            modelRef.current = scene;
+  const handleMuscleClick = (clickedName) => {
+    if (contextMuscle) {
+      const groepEntry = Object.entries(muscleGroups).find(([groepNaam, groep]) =>
+        groep.muscles.includes(clickedName)
+      );
 
-        }
-    };
-    return (
-        <div className="muscles-page">
-            <h2>Select a muscle to learn more about it</h2>
+      if (groepEntry) {
+        const [groepNaam] = groepEntry;
+        contextMuscle.selectMuscle(clickedName);
+        contextMuscle.selectMuscleGroup(groepNaam);
+        navigate('/spierpagina');
+      }
+    }
+  };
 
-            <div className="muscles-layout">
-                <div className="model-container">
-                    <Musclemodel modelRef={modelRef} handleSceneReady={handleSceneReady} />
-                </div>
+  return (
+      <div className="muscles-page">
+          <h2>Explore the Human Musculature</h2>
 
-                <div className="muscle-list">
-                    <h3>Or select from the list:</h3>
-                    <ul>
-                        {muscleGroups.map((group) =>
-                            group.muscles.map((muscle) => (
-                                <li key={muscle}>
-                                    <Link to={`/muscle/${muscle}`}>{muscle.replaceAll('_', ' ')}</Link>
-                                </li>
-                            ))
-                        )}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    );
+          <div className="muscles-container">
+              <div className="muscles-left">
+                  <div className="muscles-viewer">
+                      <Musclemodel modelRef={modelRef} />
+                  </div>
+              </div>
+
+              <div className="muscles-right">
+                  <div className="muscles-header">
+                      <h3>Search or select a muscle</h3>
+                      <input
+                          type="text"
+                          placeholder="Search muscles..."
+                          className="muscles-search"
+                      />
+                  </div>
+
+                  <div className="muscle-grid">
+                      {allMuscles.map((muscle) => (
+                          <button
+                              key={muscle}
+                              className="muscle-button"
+                              onClick={() => handleMuscleClick(muscle)}
+                          >
+                              {muscle.replaceAll('_', ' ')}
+                          </button>
+                      ))}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  );
 }

@@ -3,7 +3,6 @@
     line-height: 1.5;
     font-weight: 400;
     width: 100vw;
-   
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424;
@@ -12,7 +11,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background-color: #217b85;
+    background: linear-gradient(to bottom right, #E6F7FA, #C9EAF3);
     place-items: center;
 }
 
@@ -24,7 +23,7 @@ body {
     place-items: center;
     min-width: 320px;
     
-    background-color: #217b85;
+   
     
 }
 

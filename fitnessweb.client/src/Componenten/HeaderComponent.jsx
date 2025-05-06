@@ -1,6 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+
+import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import './HeaderComponent.css';
 import { useMuscle } from '../hooks/MuscleContext';
@@ -10,6 +13,13 @@ import { Link } from 'react-router-dom';
 const HeaderComponent = () => {
     const navigate = useNavigate();
     const { selectMuscle, selectMuscleGroup } = useMuscle();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+    const toggleSubmenu = (menu) => {
+        setActiveSubmenu(prev => prev === menu ? null : menu);
+    };
+
 
     const findMuscleGroupByMuscle = (muscleName) => {
         const groupEntry = Object.entries(muscleGroups).find(([groupName, group]) =>
@@ -130,16 +140,80 @@ const HeaderComponent = () => {
     ];
 
     return (
-            <header className="header__background">
-        <div className="header">
+        <header className="header">
+
+
+            <div className="header__inner">
             <div className="header__logo">
                 <a href="/">
                     <img src="/logo.png" alt="Fitness & Education Logo" />
                 </a>
             </div>
+            {isMenuOpen && (
+  <div className="mobile-menu">
+    <button className="close-button" onClick={() => setIsMenuOpen(false)}>X</button>
+                   
+
+                    <div className="mobile-menu__content">
+                        <p onClick={() => toggleSubmenu('muscles')}>Muscles</p>
+
+                        {activeSubmenu === 'muscles' && (
+                            <div className="mobile-submenu">
+                                {muscleItems.map(group => (
+                                    <div key={group.key}>
+                                        <p className="mobile-submenu__group">{group.label}</p>
+                                        <ul>
+                                            {group.children.map(item => (
+                                                <li key={item.key} onClick={() => { item.onClick(); setIsMenuOpen(false); }}>
+                                                    {item.label}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        <p onClick={() => toggleSubmenu('exercises')}>Exercises</p>
+                        {activeSubmenu === 'exercises' && (
+                            <div className="mobile-submenu">
+                                {exerciseItems.map(group => (
+                                    <div key={group.key}>
+                                        <p className="mobile-submenu__group">{group.label}</p>
+                                        <ul>
+                                            {group.children.map(item => (
+                                                <li key={item.key} onClick={() => { item.onClick(); setIsMenuOpen(false); }}>
+                                                    {item.label}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        <p onClick={() => { navigate('/login'); setIsMenuOpen(false); }}>Login</p>
+                    </div>
+                </div>
+            )}
+
+                <div className="hamburger-icon" onClick={() => setIsMenuOpen(true)}>
+                    <svg width="28" height="28" viewBox="0 0 100 80" fill="white">
+                        <rect width="100" height="10"></rect>
+                        <rect y="30" width="100" height="10"></rect>
+                        <rect y="60" width="100" height="10"></rect>
+                    </svg>
+                </div>
             <nav className="header__nav">
                 <Dropdown menu={{ items: muscleItems }} placement="bottomLeft" trigger={["hover"]}>
-                    <a onClick={(e) => e.preventDefault()} className="nav-dropdown">Muscles <DownOutlined /></a>
+                        <a onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/muscles');
+                        }
+                        
+                        
+                        
+                        } className="nav-dropdown">Muscles <DownOutlined /></a>
                 </Dropdown>
                 <Dropdown menu={{ items: exerciseItems }} placement="bottomLeft" trigger={["hover"]}>
                     <a
@@ -153,12 +227,12 @@ const HeaderComponent = () => {
                     </a>
 
                 </Dropdown>
-            </nav>
+                 </nav>
                 <div className="header__actions">
                     <Link to="/login" className="header__button">Login</Link>
-                    <Link to="/aanmelden" className="header__button header__button--highlight">Start Training</Link>
+            
                 </div>
-        </div>
+             </div>
             </header>
     );
 };

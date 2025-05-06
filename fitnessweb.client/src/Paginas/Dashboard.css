@@ -1,6 +1,8 @@
 
 .dashboard-container {
+    position: relative;
     height: 100%;
+    z-index: 1;
     padding: 60px 40px;
     text-align: center;
     background-image: url('../assets/dashboardBG.jpg');
@@ -11,12 +13,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
-    .dashboard-container h2 {
-        color: #ffffff;
-        margin-bottom: 40px;
-    }
+dashboard-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 1); /* donkere overlay */
+    z-index: -1;
+}
+
+
+.dashboard-container h2 {
+    font-size: 36px;
+    color: #2CA4B1;
+    margin-bottom: 40px;
+    z-index: 2;
+}
 
 .swiper {
     width: 100%;
@@ -68,4 +82,23 @@
 .dashboard-card p {
     color: #444;
     margin-top: 8px;
+}
+
+.dashboard-quote {
+    background: #2CA4B1;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    max-width: 590px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.dashboard-tip {
+    background: #2CA4B1;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    max-width: 590px;
+    text-align: center;
 }
