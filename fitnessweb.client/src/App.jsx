@@ -15,11 +15,12 @@ import CustomWorkoutBuilder from './Paginas/CustomWorkoutBuilder';
 import Muscles from './Paginas/Muscles';
 import Dashboard from './Paginas/Dashboard';
 import Profile from './Paginas/Profiel';
+import Layout from './Layout';
 function App() {
     return (
         <Router>
             <MuscleProvider>
-                <HeaderComponent />
+                <Layout />
                 <AnimatedRoutes />
             </MuscleProvider>
         </Router>

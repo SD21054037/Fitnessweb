@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Form, Input, Select, Button, Typography } from 'antd';
-import './Aanmelden.css';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+import './Login.css';
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -14,6 +16,19 @@ export default function Aanmelden() {
     };
 
     return (
+        <div className="signup-page">
+            <div className="auth-hero">
+                <DotLottieReact
+                    src="https://lottie.host/6440dbb7-3b33-48c4-9421-df750c19ee15/KKzAOEydAC.lottie"
+                    loop
+                    autoplay
+                    
+                    
+                />
+        <h1>Word lid van Fitness & Education</h1>
+        <p>Ontdek je lichaam. Train slimmer. Bereik je doelen.</p>
+        
+    </div>
         <div className="signup-container">
             <Title level={2} style={{ textAlign: 'center' }}>Meld je aan</Title>
 
@@ -70,6 +85,7 @@ export default function Aanmelden() {
                     </Button>
                 </Form.Item>
             </Form>
+            </div>
         </div>
     );
 }

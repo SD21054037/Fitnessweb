@@ -1,8 +1,67 @@
-.login-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.login-page,
+.signup-page {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #0099ff, #00ccff);
+    padding: 40px 20px;
+}
+
+.login-container,
+.signup-container {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ant-form-item-label > label {
+    font-weight: 600;
+    color: #003a4d;
+}
+
+.ant-input,
+.ant-input-password,
+.ant-select-selector,
+textarea {
+    border-radius: 8px !important;
+}
+
+.ant-btn-primary {
+    background-color: #1890ff;
+    border: none;
     border-radius: 8px;
+    font-weight: 600;
+}
+
+    .ant-btn-primary:hover {
+        background-color: #40a9ff;
+    }
+
+
+.auth-hero {
+    text-align: center;
+    margin: 30px;
+    color: white;
+}
+
+    .auth-hero h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .auth-hero p {
+        font-size: 16px;
+        margin: 0;
+    }
+
+.auth-illustration {
+    max-width: 180px;
+    margin:   20px auto 0;
+    display: block;
 }

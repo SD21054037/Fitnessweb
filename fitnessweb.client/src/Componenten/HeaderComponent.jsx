@@ -140,23 +140,30 @@ const HeaderComponent = () => {
     ];
 
     return (
+        
+
         <header className="header">
-
-
-            <div className="header__inner">
+            
             <div className="header__logo">
                 <a href="/">
                     <img src="/logo.png" alt="Fitness & Education Logo" />
                 </a>
             </div>
             {isMenuOpen && (
-  <div className="mobile-menu">
-    <button className="close-button" onClick={() => setIsMenuOpen(false)}>X</button>
+                <div className="mobile-menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
+            )}
+
+            {isMenuOpen && (
+                <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+
+                   
+
                    
 
                     <div className="mobile-menu__content">
-                        <p onClick={() => toggleSubmenu('muscles')}>Muscles</p>
-
+                        <p onClick={() => toggleSubmenu('muscles')}>
+                            Muscles <span>{activeSubmenu === 'muscles' ? '˄' : '˅'}</span>
+                        </p>
                         {activeSubmenu === 'muscles' && (
                             <div className="mobile-submenu">
                                 {muscleItems.map(group => (
@@ -174,7 +181,9 @@ const HeaderComponent = () => {
                             </div>
                         )}
 
-                        <p onClick={() => toggleSubmenu('exercises')}>Exercises</p>
+                        <p onClick={() => toggleSubmenu('exercises')}>
+                            Exercises <span>{activeSubmenu === 'exercises' ? '˄' : '˅'}</span>
+                        </p>
                         {activeSubmenu === 'exercises' && (
                             <div className="mobile-submenu">
                                 {exerciseItems.map(group => (
@@ -232,8 +241,8 @@ const HeaderComponent = () => {
                     <Link to="/login" className="header__button">Login</Link>
             
                 </div>
-             </div>
-            </header>
+
+        </header>
     );
 };
 

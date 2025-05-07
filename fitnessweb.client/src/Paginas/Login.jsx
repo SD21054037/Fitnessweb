@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Form, Input, Button, Typography, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 import './Login.css';
 
 const { Title } = Typography;
@@ -34,6 +36,18 @@ export default function Login() {
     };
 
     return (
+        <div className="login-page">
+
+            <div className="auth-hero">
+                <DotLottieReact
+                    src="https://lottie.host/9bebdae2-78c4-4bc5-b352-cc17348b0c4d/3xzmFuptup.lottie"
+                    loop
+                    autoplay
+                />
+                <h1>Welkom terug!</h1>
+                <p>Log in om je vooruitgang te volgen en slimmer te trainen.</p>
+                
+            </div>
         <div className="login-container">
             <Title level={2} style={{ textAlign: 'center' }}>Inloggen</Title>
 
@@ -60,6 +74,7 @@ export default function Login() {
                     </Button>
                 </Form.Item>
             </Form>
+            </div>
         </div>
     );
 }
