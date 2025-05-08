@@ -32,8 +32,10 @@ export default function Login() {
         } finally {
             setLoading(false);
         }
+
     };
 
+   
 
     return (
         <div className="login-page">
@@ -69,7 +71,7 @@ export default function Login() {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" block loading={loading}>
+                        <Button  type="primary" htmlType="submit" block loading={loading}>
                             Inloggen
                         </Button>
                     </Form.Item>
