@@ -14,26 +14,26 @@ export default function Login() {
     const handleLogin = async (values) => {
         setLoading(true);
         try {
-            const res = await fetch('https://jouwdomein.nl/api/auth/login', {
+            const res = await fetch('/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values),
             });
 
-            if (!res.ok) {
-                throw new Error('Ongeldige inloggegevens');
-            }
+            if (!res.ok) throw new Error('Inloggen mislukt');
 
             const data = await res.json();
-            localStorage.setItem('token', data.token); // JWT opslaan
-            message.success('Succesvol ingelogd!');
-            navigate('/dashboard'); // of een andere beveiligde route
+            localStorage.setItem('token', data.token);
+
+            message.success('Je bent ingelogd!');
+            navigate('/dashboard');
         } catch (err) {
             message.error(err.message || 'Er ging iets mis');
         } finally {
             setLoading(false);
         }
     };
+
 
     return (
         <div className="login-page">
@@ -51,29 +51,30 @@ export default function Login() {
         <div className="login-container">
             <Title level={2} style={{ textAlign: 'center' }}>Inloggen</Title>
 
-            <Form layout="vertical" onFinish={handleLogin}>
-                <Form.Item
-                    label="E-mailadres"
-                    name="email"
-                    rules={[{ required: true, type: 'email', message: 'Vul een geldig e-mailadres in!' }]}
-                >
-                    <Input />
-                </Form.Item>
+                <Form layout="vertical" onFinish={handleLogin}>
+                    <Form.Item
+                        label="E-mailadres"
+                        name="email"
+                        rules={[{ required: true, type: 'email', message: 'Vul een geldig e-mailadres in!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-                <Form.Item
-                    label="Wachtwoord"
-                    name="password"
-                    rules={[{ required: true, message: 'Wachtwoord is verplicht!' }]}
-                >
-                    <Input.Password />
-                </Form.Item>
+                    <Form.Item
+                        label="Wachtwoord"
+                        name="password"
+                        rules={[{ required: true, message: 'Wachtwoord is verplicht!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" block loading={loading}>
-                        Inloggen
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" block loading={loading}>
+                            Inloggen
+                        </Button>
+                    </Form.Item>
+                </Form>
+
             </div>
         </div>
     );

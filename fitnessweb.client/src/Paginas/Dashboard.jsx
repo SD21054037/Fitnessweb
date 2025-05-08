@@ -7,11 +7,24 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import './Dashboard.css';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { message } from 'antd';
 import { AppstoreAddOutlined, UserOutlined, ReadOutlined, SmileOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
 export default function Dashboard() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            message.warning('Log in om verder te gaan');
+            navigate('/login');
+        }
+    }, []);
+
     const features = [
         {
             title: 'Workout Builder',

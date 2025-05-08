@@ -1,6 +1,6 @@
 @Fitnessweb.Server_HostAddress = http://localhost:5173
 
-GET {{Fitnessweb.Server_HostAddress}}/weatherforecast/
+GET {{Fitnessweb.Server_HostAddress}}/API
 Accept: application/json
 
 ###
