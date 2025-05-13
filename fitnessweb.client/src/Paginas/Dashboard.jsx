@@ -1,4 +1,4 @@
-﻿import { Card, Typography, Statistic, Row, Col } from 'antd';
+﻿import { Card, Typography, Statistic, Row, Col, Button, Progress } from 'antd';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, EffectCoverflow } from 'swiper/modules';
@@ -7,15 +7,30 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import './Dashboard.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
-import { AppstoreAddOutlined, UserOutlined, ReadOutlined, SmileOutlined } from '@ant-design/icons';
+import { motion } from 'framer-motion';
+import { AppstoreAddOutlined, UserOutlined, ReadOutlined, SmileOutlined, ReloadOutlined, FireOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
+const tips = [
+    "Start your week with a full-body warm-up to avoid injury and boost performance.",
+    "Train your back as often as your chest to avoid imbalances.",
+    "Don’t skip rest days – they help your muscles grow."
+];
+
+const quotes = [
+    "Discipline is doing what needs to be done, even when you don’t feel like doing it.",
+    "Success doesn’t come from what you do occasionally, it comes from what you do consistently.",
+    "The pain you feel today will be the strength you feel tomorrow."
+];
+
 export default function Dashboard() {
     const navigate = useNavigate();
+    const [tipIndex, setTipIndex] = useState(0);
+    const [quoteIndex, setQuoteIndex] = useState(0);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -24,6 +39,13 @@ export default function Dashboard() {
             navigate('/login');
         }
     }, []);
+
+    const getGreeting = () => {
+        const hour = new Date().getHours();
+        if (hour < 12) return 'Good morning, athlete!';
+        if (hour < 18) return 'Good afternoon, athlete!';
+        return 'Good evening, athlete!';
+    };
 
     const features = [
         {
@@ -52,16 +74,24 @@ export default function Dashboard() {
         }
     ];
 
+    const completed = 36;
+    const total = 42;
+
     return (
         <div className="dashboard-container">
-            <Title level={3}>Welcome back, athlete! 👋</Title>
+
+            <Title level={3} className="welcome-text">{getGreeting()} 👋</Title>
             
 
+
             <Row gutter={16} justify="center" className="dashboard-stats">
-                <Col><Statistic title="Total Workouts" value={42} /></Col>
-                <Col><Statistic title="Completed Workouts" value={36} /></Col>
+                <Col><Statistic title="Total Workouts" value={total} /></Col>
+                <Col><Statistic title="Completed" value={completed} /></Col>
                 <Col><Statistic title="Calories Burned" value={12450} /></Col>
                 <Col><Statistic title="Streak" value={5} suffix="days" /></Col>
+                <Col>
+                    <Progress type="circle" percent={(completed / total) * 100} size={64} status="active" />
+                </Col>
             </Row>
 
             <Title level={2} style={{ marginTop: '40px' }}>Fitness & Education Dashboard</Title>
@@ -69,24 +99,14 @@ export default function Dashboard() {
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, EffectCoverflow]}
                 effect="coverflow"
-                coverflowEffect={{
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 200,
-                    modifier: 2.5,
-                    slideShadows: false
-                }}
+                coverflowEffect={{ rotate: 0, stretch: 0, depth: 200, modifier: 2.5, slideShadows: false }}
                 spaceBetween={30}
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}
                 mousewheel
                 centeredSlides
-                breakpoints={{
-                    0: { slidesPerView: 1 },
-                    768: { slidesPerView: 1.5 },
-                    1024: { slidesPerView: 3 }
-                }}
+                breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 1.5 }, 1024: { slidesPerView: 3 } }}
             >
                 {features.map(({ title, description, path, icon }) => (
                     <SwiperSlide key={title}>
@@ -102,15 +122,15 @@ export default function Dashboard() {
             </Swiper>
 
             <div className="dashboard-quote">
-                <p>"Discipline is doing what needs to be done, even when you don’t feel like doing it." – Unknown</p>
+                <p>"{quotes[quoteIndex]}"</p>
+                <Button type="link" icon={<ReloadOutlined />} onClick={() => setQuoteIndex((quoteIndex + 1) % quotes.length)}>New Quote</Button>
             </div>
 
             <div className="dashboard-tip">
                 <h4>💡 Tip of the Day</h4>
-                <p>Start your week with a full-body warm-up to avoid injury and boost performance.</p>
+                <p>{tips[tipIndex]}</p>
+                <Button type="link" icon={<ReloadOutlined />} onClick={() => setTipIndex((tipIndex + 1) % tips.length)}>New Tip</Button>
             </div>
-
-            
         </div>
     );
 }

@@ -13,7 +13,7 @@
 .signup-container {
     width: 100%;
     max-width: 420px;
-    background: white;
+    background-color: var(--card-bg);
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
@@ -64,4 +64,44 @@ textarea {
     max-width: 180px;
     margin:   20px auto 0;
     display: block;
+}
+
+body.dark-mode .login-page,
+.signup-page {
+    background: linear-gradient(to bottom, #0d1a28, #102a3c);
+}
+
+body.dark-mode .login-container,
+body.dark-mode .signup-container {
+    background-color: var(--card-bg);
+    color: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .ant-input,
+body.dark-mode .ant-input-password,
+body.dark-mode .ant-select-selector,
+body.dark-mode .ant-input-affix-wrapper
+body.dark-mode .ant-form-item-required{
+background-color: #1e1e1e !important;
+color: white;
+border-color: #444 !important;
+}
+
+    body.dark-mode .ant-input::placeholder,
+    body.dark-mode .ant-input:focus,
+   
+    
+    body.dark-mode .ant-input-affix-wrapper:focus {
+        border-color: #40a9ff !important;
+        box-shadow: 0 0 0 2px rgba(64, 169, 255, 0.2) !important;
+    }
+
+    body .dark-mode .ant-form-item-label > label {
+        color: white;
+    }
+
+body.dark-mode .ant-btn-primary {
+    background-color: #0185ff! important;
+    color: var(--cta-text) !important;
 }

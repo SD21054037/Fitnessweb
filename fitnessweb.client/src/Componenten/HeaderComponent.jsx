@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
@@ -16,13 +16,20 @@ const HeaderComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
 
+    const [dark, setDark] = useState(() => localStorage.getItem('dark-mode') === 'true');
+
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', dark);
+        localStorage.setItem('dark-mode', dark);
+    }, [dark]);
+
     const toggleSubmenu = (menu) => {
         setActiveSubmenu(prev => prev === menu ? null : menu);
     };
 
 
     const findMuscleGroupByMuscle = (muscleName) => {
-        const groupEntry = Object.entries(muscleGroups).find(([groupName, group]) =>
+        const groupEntry = Object .entries(muscleGroups).find(([groupName, group]) =>
             group.muscles.includes(muscleName)
         );
         return groupEntry ? groupEntry[0] : null;
@@ -38,6 +45,7 @@ const HeaderComponent = () => {
             console.warn('Muscle group not found for:', muscleName);
         }
     };
+
 
     const handleExerciseNavigate = (exerciseName) => {
         navigate(`/exercises/${exerciseName.toLowerCase().replaceAll(' ', '-')}`);
@@ -236,7 +244,11 @@ const HeaderComponent = () => {
                     </a>
 
                 </Dropdown>
-                 </nav>
+            </nav>
+            <button className="dark-toggle-button" onClick={() => setDark(prev => !prev)}>
+                {dark ? '☀️' : '🌙'}
+            </button>
+
                 <div className="header__actions">
                     <Link to="/login" className="header__button">Login</Link>
             
