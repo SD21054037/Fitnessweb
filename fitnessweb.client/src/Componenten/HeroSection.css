@@ -5,9 +5,7 @@
     height: 100vh;
     position: relative;
     padding: 0 5vw;
-    background: linear-gradient(to bottom, #0078ff, #00c6ff);
-   
-  
+    background: var(--hero-gradient);
 }
 
 .hero-overlay {
@@ -26,15 +24,26 @@
     max-width: 1000px;
 }
 
+    .hero-canvas-wrapper::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 40%);
+        z-index: 0;
+    }
+
+
 
 .hero-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color:white;
 }
 
 .hero-overlay p {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {

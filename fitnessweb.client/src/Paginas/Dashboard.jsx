@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { motion } from 'framer-motion';
+
 import { AppstoreAddOutlined, UserOutlined, ReadOutlined, SmileOutlined, ReloadOutlined, FireOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
@@ -78,6 +79,7 @@ export default function Dashboard() {
     const total = 42;
 
     return (
+        <div className="dashboard-background">
         <div className="dashboard-container">
 
             <Title level={3} className="welcome-text">{getGreeting()} 👋</Title>
@@ -90,7 +92,7 @@ export default function Dashboard() {
                 <Col><Statistic title="Calories Burned" value={12450} /></Col>
                 <Col><Statistic title="Streak" value={5} suffix="days" /></Col>
                 <Col>
-                    <Progress type="circle" percent={(completed / total) * 100} size={64} status="active" />
+                    <Progress type="circle" percent={Math.round((completed / total) * 100)} size={64} status="active"  />
                 </Col>
             </Row>
 
@@ -131,6 +133,8 @@ export default function Dashboard() {
                 <p>{tips[tipIndex]}</p>
                 <Button type="link" icon={<ReloadOutlined />} onClick={() => setTipIndex((tipIndex + 1) % tips.length)}>New Tip</Button>
             </div>
+            </div>
+        
         </div>
-    );
+            );
 }

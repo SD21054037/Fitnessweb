@@ -50,34 +50,7 @@ const Homepagina = () => {
 
             <main className="main-content">
 
-                    {/*<motion.div*/}
-                    {/*    className="Introductie"*/}
-                    {/*    initial={{ opacity: 0, y: 40 }}*/}
-                    {/*    whileInView={{ opacity: 1, y: 0 }}*/}
-                    {/*    viewport={{ once: true, amount: 0.3 }}*/}
-                    {/*    transition={{ duration: 0.6, delay: 0.3 }}*/}
-                    {/*>*/}
-
-       
-                   
-                    {/*    <h3>The Muscular System</h3>*/}
-                    {/*    <p>*/}
-                    {/*        The muscular system is essential for everything from movement to posture and even body temperature.*/}
-                    {/*        Your body has over <strong>600 muscles</strong>, each working together to support strength, flexibility, and control.*/}
-                    {/*    </p>*/}
-                    {/*    <p>*/}
-                    {/*        There are <strong>three types of muscles</strong>:*/}
-                    {/*    </p>*/}
-                    {/*        <ul>*/}
-                    {/*            <li><strong>Skeletal muscles</strong> – responsible for voluntary movement</li>*/}
-                    {/*            <li><strong>Cardiac muscle</strong> – found only in the heart</li>*/}
-                    {/*            <li><strong>Smooth muscles</strong> – found in organs and blood vessels, working involuntarily</li>*/}
-                    {/*        </ul>*/}
-                    {/*    <p>*/}
-                    {/*        Understanding how your muscles work can help improve your training, prevent injuries, and boost your overall health.*/}
-                    {/*    </p>*/}
-                        
-                    {/*</motion.div>*/}
+                  
               
                 <section className="spiergroepen">
                     <h2>Explore Muscle Groups</h2>

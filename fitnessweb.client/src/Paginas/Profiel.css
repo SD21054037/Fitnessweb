@@ -1,23 +1,43 @@
 .profile-page {
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: var(--background);
+    color: var(--text-dark);
+    width: 100vw;
+    height: 100vh;
 }
 
-    .profile-page h2 {
-        text-align: center;
-        margin-bottom: 30px;
+    .profile-page .ant-card {
+        max-width: 500px;
+        width: 100%;
+        max-height: 600px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
-.profile-form .ant-form-item {
-    margin-bottom: 20px;
-}
+    .profile-page .ant-form-item-label > label {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
 
-.profile-form .ant-btn {
-    width: 100%;
-    height: 40px;
-    font-size: 16px;
+    .profile-page .ant-input,
+    .profile-page .ant-select-selector,
+    .profile-page .ant-input-password {
+        background-color: #fff;
+        color: #000;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+body.dark-mode .profile-page .ant-input,
+body.dark-mode .profile-page .ant-select-selector,
+body.dark-mode .profile-page .ant-input-password {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #444;
 }

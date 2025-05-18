@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import { Typography, Form, Input, Select, Button, message, Card } from 'antd';
+import './Profiel.css';
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -13,13 +14,14 @@ export default function Profiel() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            fetch('https://jouwdomein.nl/api/user/profile', {
+            fetch('http://localhost:5173/api/profile/me', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data)
                     setInitialData(data);
                     form.setFieldsValue(data);
                 })
@@ -33,7 +35,7 @@ export default function Profiel() {
     const handleUpdate = async (values) => {
         setLoading(true);
         try {
-            const res = await fetch('https://jouwdomein.nl/api/user/profile', {
+            const res = await fetch('http://localhost:5173/api/profile/update', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,16 +55,18 @@ export default function Profiel() {
     };
 
     return (
-        <div style={{ maxWidth: 600, margin: '60px auto' }}>
+        <div className= "profile-page">
+
             <Card bordered>
                 <Title level={3}>Profiel bewerken</Title>
 
-                {initialData ? (
+                
                     <Form
                         layout="vertical"
                         form={form}
                         onFinish={handleUpdate}
-                        initialValues={initialData}
+                    initialValues={initialData}
+                    message={message}
                     >
                         <Form.Item name="name" label="Naam" rules={[{ required: true }]}>
                             <Input />
@@ -73,7 +77,7 @@ export default function Profiel() {
                                 <Option value="afvallen">Afvallen</Option>
                                 <Option value="spiermassa">Spiermassa opbouwen</Option>
                                 <Option value="conditie">Conditie verbeteren</Option>
-                                <Option value="herstel">Herstel na blessure</Option>
+                            <Option value="herstel">Herstel na blessure</Option>
                             </Select>
                         </Form.Item>
 
@@ -87,9 +91,7 @@ export default function Profiel() {
                             </Button>
                         </Form.Item>
                     </Form>
-                ) : (
-                    <p>Gegevens laden...</p>
-                )}
+               
             </Card>
         </div>
     );
