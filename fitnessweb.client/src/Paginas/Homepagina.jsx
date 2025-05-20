@@ -4,11 +4,14 @@ import Footer from '../Componenten/Footer';
 import HeroSection from '../Componenten/HeroSection';
 import { useNavigate } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
+import { useMuscle } from '../hooks/MuscleContext';
 import MusclePreview from '../Componenten/MusclePreview';
+import muscleGroups from '../data/muscleGroupsData';
 
 
 const Homepagina = () => {
     const navigate = useNavigate();
+    const contextMuscle = useMuscle();
    
     const benefits = [
         {
@@ -56,12 +59,12 @@ const Homepagina = () => {
                     <h2>Explore Muscle Groups</h2>
                     <div className="spiergroep-grid">
                         {[
-                            { name: 'Chest', model: '/chest.glb' },
-                            { name: 'Back', model: '/back.glb' },
-                            { name: 'Legs', model: '/legs.glb' },
-                            { name: 'Schoulders', model: '/schoulders.glb' },
-                            { name: 'Arms', model: '/arms.glb' },
-                            { name: 'Core', model: '/core.glb' }
+                            { name: 'Chest', model: '/chest.glb', position: [0, -1.5, 0] },
+                            { name: 'Back', model: '/back.glb', position: [0, -1.4, 0] },
+                            { name: 'Legs', model: '/legs.glb', position: [0, -0.5, 0], scale: 0.7 },
+                            { name: 'Schoulders', model: '/schoulders.glb', position: [0, -1.5, 0] },
+                            { name: 'Arms', model: '/arms.glb', position: [0, -1.2, 0] },
+                            { name: 'Core', model: '/core.glb', position: [0, -1.4, 0] }
                         ].map((group, index) => (
                             <motion.div
                                 key={group.name}
@@ -71,12 +74,22 @@ const Homepagina = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                onClick={() => navigate(`/spiergroep/${group.name.toLowerCase()}`)}
+                                onClick={() => {
+                                    const clickedName = group.name;
+                                 
+                                   
+                                        const [groepNaam] = clickedName;
+                                        
+                                        contextMuscle.selectMuscleGroup(groepNaam);
+                                        navigate('/spierpagina');
+                                    }
+                                }
                             >
                                 <MusclePreview
                                     modelPath={group.model}
                                     scale={group.scale}
                                     position={group.position}
+                                   
                                 />
                                 <h3>{group.name}</h3>
                             </motion.div>

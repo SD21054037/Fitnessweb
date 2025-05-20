@@ -1,10 +1,29 @@
+.custom-workout-builder {
+    background-color: var(--background);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+
+
+
+
+
 .builder-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #ffffff;
+    width: 900px;
+    height: 100%;
+
+    background-color: var(--background);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ant-steps-item-title {
+    color: var(--text-dark) !important;
 }
 
 .step-content {

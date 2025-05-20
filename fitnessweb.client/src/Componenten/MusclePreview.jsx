@@ -8,12 +8,13 @@ function Model({ path, scale, position }) {
     return <primitive object={scene} scale={scale} position={position} />;
 }
 
-const MusclePreview = ({ modelPath, scale = 1.2, position = [0, 0, 0] }) => {
+const MusclePreview = ({ modelPath, position, scale}) => {
     return (
         <div className="preview-container">
-            <Canvas camera={{ position: [0, 0, 3], fov: 30 }}>
+            <Canvas camera={{ position: [0, 0, 2], fov: 25 }}>
                 <ambientLight intensity={0.6} />
                 <directionalLight position={[2, 2, 2]} intensity={0.8} />
+                <directionalLight position={[-2, -2, -2]} intensity={0.8} />
                 <Suspense fallback={null}>
                     <Model path={modelPath} scale={scale} position={position} />
                 </Suspense>

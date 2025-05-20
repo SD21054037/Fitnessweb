@@ -23,7 +23,7 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
         <div className="hero-canvas-wrapper">
             <Canvas
                 ref={canvasRef}
-                camera={{ position: [0, 0, -1], fov: 60 }}
+                camera={{ position: [0, 0, 1], fov: 60 }}
                 onPointerMove={handlePointerMove}
                 onPointerEnter={() => setIsMouseOverCanvas(true)}
                 onPointerLeave={() => {

@@ -18,17 +18,18 @@
 
 .hero-canvas-wrapper {
     flex: 1;
-    height: 80vh;
+    height: 90vh;
     position: relative;
     pointer-events: auto;
     max-width: 1000px;
+    padding: 5px
 }
 
     .hero-canvas-wrapper::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 40%);
+        background: var( --hero-modelbackground);
         z-index: 0;
     }
 

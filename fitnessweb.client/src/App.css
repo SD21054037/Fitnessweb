@@ -18,6 +18,7 @@ HTML {
     --cta-text: var(--text-light);
     --overlay-text: var(--text-dark);
     --hero-gradient: linear-gradient(to bottom, #005D9F, #00AEEF);
+    --hero-modelbackground: radial-gradient(rgba(0, 99, 165, 1), transparent 75%);
 }
 
 /* Dark mode override */
@@ -35,7 +36,7 @@ body.dark-mode {
     --overlay-text: #ffffff;
     --hero-gradient: linear-gradient(to bottom, #0e1a24, #1c364c);
     --dashboard-background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    background-color: var(--background);
+    --hero-modelbackground: ;
     color: var(--text-light);
 }
 
