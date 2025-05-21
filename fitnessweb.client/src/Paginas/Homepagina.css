@@ -69,10 +69,10 @@
 }
 
     .cta-button:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        background-color: #f0f8ff;
+        background-color: #2a9eabc6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+
 
 
 .model {
@@ -112,17 +112,20 @@
 .spiergroepen {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f9fb;
+    background-color: var(--background);
+    transition: background-color 0.3s ease;
 }
 
     .spiergroepen h2 {
         font-size: 30px;
         margin-bottom: 40px;
-        color: #2C3E50;
+        color: var(--text-dark);
+        transition: color 0.3s ease;
     }
     .spiergroepen h3 {
         font-size: 20px;
-        color: #117A8B;
+        color: var(--text-dark);
+        transition: color 0.3s ease;
     }
 .spiergroep-grid {
     display: flex;
@@ -144,6 +147,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
     .spiergroep-card:hover {
@@ -192,12 +199,15 @@
     padding: 60px 20px;
     background: #f9fbfc;
     text-align: center;
+    background-color: var(--background);
+    transition: background-color 0.3s ease;
 }
 
     .spieren-uitleg h2 {
         font-size: 32px;
         margin-bottom: 40px;
-        color: #2C3E50;
+        color: var(--text-dark);
+        transition: color 0.3s ease;
     }
 
 .info-kaarten {
@@ -205,6 +215,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+
 }
 
 .kaart {
@@ -214,6 +225,11 @@
     padding: 30px 20px;
     width: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
     .kaart:hover {
@@ -230,14 +246,18 @@
 .kaart h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #117A8B;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
 }
 
 .kaart p {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
 }
+
+
 
 
 @media (max-width: 900px) {
@@ -267,18 +287,17 @@
 }
 
 .call-to-action {
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+    background: var(--hero-gradient);
     padding: 60px 20px;
     text-align: center;
     color: white;
-    
-  
 }
 
     .call-to-action h2 {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 10px;
+        color: white;
     }
 
     .call-to-action p {
@@ -300,9 +319,5 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-    .cta-button:hover {
-        transform: translateY(-3px);
-        background-color: #f0f8ff;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
+  
 

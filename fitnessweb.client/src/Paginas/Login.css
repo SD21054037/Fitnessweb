@@ -90,16 +90,15 @@ border-color: #444 !important;
 
     body.dark-mode .ant-input::placeholder,
     body.dark-mode .ant-input:focus,
-   
-    
     body.dark-mode .ant-input-affix-wrapper:focus {
         border-color: #40a9ff !important;
         box-shadow: 0 0 0 2px rgba(64, 169, 255, 0.2) !important;
     }
 
-    body .dark-mode .ant-form-item-label > label {
-        color: white;
-    }
+body.dark-mode .ant-form-item-label > label,
+body.dark-mode .ant-typography {
+    color: white;
+}
 
 body.dark-mode .ant-btn-primary {
     background-color: #0185ff! important;

@@ -121,7 +121,10 @@ export default function CustomWorkoutBuilder() {
     ];
 
     return (
+        <div className="custom-workout-builder">
         <div className="builder-container">
+
+            
             <Title level={2}>Custom Workout Builder</Title>
 
             <Steps current={currentStep} style={{ marginBottom: 40 }}>
@@ -149,6 +152,7 @@ export default function CustomWorkoutBuilder() {
                 onClose={() => setPreviewVisible(false)}
                 glbPath={previewPath}
             />
+            </div>
         </div>
     );
 }

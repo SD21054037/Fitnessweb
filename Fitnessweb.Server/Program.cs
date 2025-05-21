@@ -48,6 +48,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // Dependency Injection (DI)
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost", builder =>
+    {
+        builder.WithOrigins("https://localhost:54677")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 
 // Controllers + Newtonsoft
 builder.Services.AddControllers()
@@ -100,6 +111,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowLocalhost");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

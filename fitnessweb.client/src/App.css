@@ -1,14 +1,10 @@
-﻿#root {
-    height: 100vh;
-    text-align: center;
+﻿/* Base variables */
+
+HTML {
+    width: 100%;
+    height: 100%;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-/* Base variables */
 :root {
     --primary: #2CA4B1;
     --accent: #1890ff;
@@ -18,6 +14,11 @@ th, td {
     --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.3);
     --background: #ffffff;
+    --cta-bg: var(--primary);
+    --cta-text: var(--text-light);
+    --overlay-text: var(--text-dark);
+    --hero-gradient: linear-gradient(to bottom, #005D9F, #00AEEF);
+    --hero-modelbackground: radial-gradient(rgba(0, 99, 165, 1), transparent 75%);
 }
 
 /* Dark mode override */
@@ -30,15 +31,23 @@ body.dark-mode {
     --glass-bg: rgba(25, 25, 25, 0.2);
     --glass-border: rgba(255, 255, 255, 0.05);
     --background: #0e1a24;
-    background-color: var(--background);
+    --cta-bg: #ffffff;
+    --cta-text: #0e1a24;
+    --overlay-text: #ffffff;
+    --hero-gradient: linear-gradient(to bottom, #0e1a24, #1c364c);
+    --dashboard-background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    --hero-modelbackground: ;
     color: var(--text-light);
 }
 
 /* Global style overrides */
 body {
+    --dashboard-background: linear-gradient(to bottom right, rgba(0, 165, 230, 1), rgba(0, 96, 162, 1));
     background-color: var(--background);
     color: var(--text-dark);
     transition: background-color 0.3s ease, color 0.3s ease;
+   
+    
 }
 
 .ant-card,
@@ -50,8 +59,98 @@ body {
 }
 
 .ant-statistic-title,
-.ant-statistic-content-value {
+.ant-statistic-content-value,
+.ant-progress-text,
+.ant-statistic-content-suffix {
     color: var(--text-dark) !important;
+}
+
+/* Optional toggle button */
+.dark-toggle-button {
+    position: relative;
+    right: 1rem;
+    background: var(--card-bg);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background 0.3s ease;
+}
+
+/* Hero-specific overrides */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    padding: 0 5vw;
+    background: var(--hero-gradient);
+    transition: background 0.3s ease-in-out;
+}
+
+   
+
+.hero-canvas-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 40%);
+    z-index: 0;
+    pointer-events: none;
+    transition: background 0.6s ease-in-out;
+}
+
+.hero-overlay {
+    color: var(--overlay-text);
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.cta-button {
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 2;
+}
+
+
+body:not(.dark-mode) .hero-section {
+    background-position: top;
+}
+
+body.dark-mode .hero-section {
+    background-position: bottom;
+}
+
+/* Home section overrides */
+.homepagina,
+.spiergroepen,
+.spieren-uitleg,
+.call-to-action {
+    background-color: var(--background);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .welkom h2,
+    .spiergroepen h2,
+    .spieren-uitleg h2,
+    .call-to-action h2,
+    .kaart h3,
+    .spiergroepen h3,
+    .Introductie h3 {
+        color: var(--text-dark);
+        transition: color 0.3s ease;
+    }
+
+.kaart p,
+.Introductie p,
+.Introductie li {
+    color: var(--text-dark);
+    transition: color 0.3s ease;
 }
 
 
