@@ -11,7 +11,7 @@ import ExerciseDetail from './Paginas/Oefeningpagina';
 import exercises from './data/exercisesData';
 import Login from './Paginas/Login';
 import Aanmelden from './Paginas/Aanmelden';
-import CustomWorkoutBuilder from './Paginas/CustomWorkoutBuilder';
+import CustomWorkoutBuilder from './Paginas/WorkoutBuilder';
 import Muscles from './Paginas/Muscles';
 import Dashboard from './Paginas/Dashboard';
 import Profile from './Paginas/Profiel';

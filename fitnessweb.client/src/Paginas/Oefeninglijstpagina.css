@@ -1,14 +1,27 @@
+.exercise-list-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+
 .exercise-list-page {
     padding: 2rem;
-    background-color: #20666e;
+  
     color: #ffffff;
     border-radius: 12px;
     margin-top: 2rem;
+    height: 100%;
 }
 
     .exercise-list-page h1 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
+        color: var(--text-dark);
+        
     }
 
 .filters {
@@ -26,12 +39,14 @@
         font-size: 1rem;
     }
 
-.exercise-list {
+.exercise-page-list {
     list-style: none;
     padding: 0;
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
 .exercise-item {

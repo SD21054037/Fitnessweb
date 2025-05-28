@@ -1,0 +1,64 @@
+.step-two-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+    .step-two-container h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .form-group label {
+        font-weight: 600;
+        color: #444;
+    }
+
+    .form-group select {
+        padding: 0.6rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        color: #333;
+    }
+
+.step-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+    .step-controls button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .step-controls button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        .step-controls button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }

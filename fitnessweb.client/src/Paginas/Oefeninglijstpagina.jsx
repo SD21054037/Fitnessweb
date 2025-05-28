@@ -18,6 +18,7 @@ const ExerciseListPage = () => {
     const allMuscles = Array.from(new Set(exercises.flatMap(e => [...e.muscles.primary, ...e.muscles.secondary])));
 
     return (
+        <div className="exercise-list-container">
         <div className="exercise-list-page">
             <h1>All Exercises</h1>
 
@@ -37,7 +38,7 @@ const ExerciseListPage = () => {
                 </select>
             </div>
 
-            <ul className="exercise-list">
+            <ul className="exercise-page-list">
                 {filteredExercises.map(ex => (
                     <li key={ex.name} className="exercise-item">
                         <Link to={`/exercises/${encodeURIComponent(ex.name)}`} className="exercise-link">
@@ -47,6 +48,17 @@ const ExerciseListPage = () => {
                     </li>
                 ))}
             </ul>
+            </div>
+            {/*<div className="exercise-list-sidebar">*/}
+            {/*    <h2>Popular Exercises</h2>*/}
+            {/*    <ul>*/}
+            {/*        {exercises.slice(0, 5).map(ex => (*/}
+            {/*            <li key={ex.name}>*/}
+            {/*                <Link to={`/exercises/${encodeURIComponent(ex.name)}`}>{ex.name}</Link>*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*    </ul>*/}
+            {/*</div>*/}
         </div>
     );
 };

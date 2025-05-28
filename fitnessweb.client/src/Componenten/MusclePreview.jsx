@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import React, { Suspense } from 'react';
 import { Bounds } from '@react-three/drei';
+import './MusclePreview.css';
 
 function Model({ path, scale, position }) {
     const { scene } = useGLTF(path);
@@ -11,7 +12,7 @@ function Model({ path, scale, position }) {
 const MusclePreview = ({ modelPath, position, scale}) => {
     return (
         <div className="preview-container">
-            <Canvas camera={{ position: [0, 0, 2], fov: 25 }}>
+            <Canvas camera={{ position: [0, 0, 2], fov: 26 }}>
                 <ambientLight intensity={0.6} />
                 <directionalLight position={[2, 2, 2]} intensity={0.8} />
                 <directionalLight position={[-2, -2, -2]} intensity={0.8} />
