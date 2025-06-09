@@ -65,34 +65,40 @@ const AnimatedRoutes = () => {
                             <PageWrapper><ExerciseDetailWrapper /></PageWrapper>
                         </PublicLayout>
                     }
+
                 />
+                <Route path="/muscles" element={
+                    <PublicLayout>
+                        <PageWrapper><Muscles /></PageWrapper>
+                    </PublicLayout>
+                } />
 
                 {/* Pagina's met DashboardLayout */}
-                <Route path="/dashboard" element={
-                    <DashboardLayout>
-                        <PageWrapper><Dashboard /></PageWrapper>
-                    </DashboardLayout>
-                } />
-                <Route path="/profile" element={
-                    <DashboardLayout>
-                        <PageWrapper><Profile /></PageWrapper>
-                    </DashboardLayout>
-                } />
-                <Route path="/custom-workout" element={
-                    <DashboardLayout>
-                        <PageWrapper><CustomWorkoutBuilder /></PageWrapper>
-                    </DashboardLayout>
-                } />
-                <Route path="/muscles" element={
-                    <DashboardLayout>
-                        <PageWrapper><Muscles /></PageWrapper>
-                    </DashboardLayout>
-                } />
-                <Route path="/exercises" element={
-                    <DashboardLayout>
-                        <PageWrapper><ExerciseListPage /></PageWrapper>
-                    </DashboardLayout>
-                } />
+                {/*<Route path="/dashboard" element={*/}
+                {/*    <DashboardLayout>*/}
+                {/*        <PageWrapper><Dashboard /></PageWrapper>*/}
+                {/*    </DashboardLayout>*/}
+                {/*} />*/}
+                {/*<Route path="/profile" element={*/}
+                {/*    <DashboardLayout>*/}
+                {/*        <PageWrapper><Profile /></PageWrapper>*/}
+                {/*    </DashboardLayout>*/}
+                {/*} />*/}
+                {/*<Route path="/custom-workout" element={*/}
+                {/*    <DashboardLayout>*/}
+                {/*        <PageWrapper><CustomWorkoutBuilder /></PageWrapper>*/}
+                {/*    </DashboardLayout>*/}
+                {/*} />*/}
+                {/*<Route path="/muscles" element={*/}
+                {/*    <DashboardLayout>*/}
+                {/*        <PageWrapper><Muscles /></PageWrapper>*/}
+                {/*    </DashboardLayout>*/}
+                {/*} />*/}
+                {/*<Route path="/exercises" element={*/}
+                {/*    <DashboardLayout>*/}
+                {/*        <PageWrapper><ExerciseListPage /></PageWrapper>*/}
+                {/*    </DashboardLayout>*/}
+                {/*} />*/}
 
                 {/* Fallback route */}
                 <Route path="*" element={<PageWrapper><h2>404 - Pagina niet gevonden</h2></PageWrapper>} />

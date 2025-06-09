@@ -10,7 +10,7 @@
 /* -------------------------- Layout -------------------------- */
 .dashboard-container {
     position: relative;
-    min-height: 100vh;
+    height: 100%;
     padding: 60px 40px;
     text-align: center;
     display: flex;
@@ -157,6 +157,10 @@
 
     .swiper-slide {
         padding: 0;
+    }
+    .dashboard-herosection {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

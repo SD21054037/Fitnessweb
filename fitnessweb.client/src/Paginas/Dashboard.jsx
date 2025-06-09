@@ -84,8 +84,8 @@ export default function Dashboard() {
         <div className="dashboard-background">
         
             <div className="dashboard-container">
-                <div className="dashboard-herosection">
-            <Title level={1} className="welcome-text">{getGreeting()} 👋</Title>
+            {/*    <div className="dashboard-herosection">*/}
+            {/*<Title level={1} className="welcome-text">{getGreeting()} 👋</Title>*/}
             
 
 
@@ -98,7 +98,7 @@ export default function Dashboard() {
                 {/*    <Progress type="circle" percent={Math.round((completed / total) * 100)} size={64} status="active"  />*/}
                 {/*</Col>*/}
                 </Row>
-            </div>
+            {/*</div>*/}
             <Title level={2} style={{ marginTop: '40px' }}>Fitness & Education Dashboard</Title>
 
             <Swiper
