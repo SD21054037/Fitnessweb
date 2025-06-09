@@ -1,6 +1,6 @@
 import Sidebar from './Componenten/Sidebar';
-import HeaderComponent from './Componenten/HeaderComponent';
-import Footer from './Componenten/Footer';
+import HeaderComponent from './Componenten/Headers/HeaderComponent';
+import Footer from './Componenten/Footers/Footer';
 
 import './DashboardLayout.css';
 

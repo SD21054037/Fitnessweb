@@ -1,7 +1,7 @@
 import React from 'react';
 import './BlessuresSectie.css';
 import { Collapse } from 'antd';
-import { highlightTerms } from '../utils/highlightTerms'; // pad naar highlightTerms functie
+import { highlightTerms } from '../../utils/highlightTerms'; // pad naar highlightTerms functie
 
 const { Panel } = Collapse;
 

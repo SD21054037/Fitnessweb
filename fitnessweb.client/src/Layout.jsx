@@ -1,12 +1,12 @@
 
-import HeaderComponent from './Componenten/HeaderComponent';
+import HeaderComponent from './Componenten/Headers/HeaderComponent';
 
 import './Layout.css';
-import Footer from './Componenten/Footer';
+import Footer from './Componenten/Footers/Footer';
 
 export default function Layout({ children }) {
     return (
-        <>
+        <div className="layout">
             <div className="layout-header-wrapper">
                 <HeaderComponent />
             </div>
@@ -17,6 +17,6 @@ export default function Layout({ children }) {
                 <Footer />
             </footer>
             
-        </>
+        </div>
     );
 }

@@ -1,9 +1,9 @@
 
-import { useFrame } from '@react-three/fiber';
 import { Link } from 'react-router-dom';
 
-import Musclemodel from '../Componenten/MuscleModel'; import './HeroSection.css';
-import { useMuscleVisibility } from '../hooks/useMuscleVisibility';
+import Musclemodel from '../../Componenten/MuscleModel';
+import './HeroSection.css';
+import { useMuscleVisibility } from '../../hooks/useMuscleVisibility';
 
 export default function HeroSection() {
    

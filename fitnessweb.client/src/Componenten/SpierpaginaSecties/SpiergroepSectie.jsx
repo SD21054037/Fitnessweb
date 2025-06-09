@@ -1,9 +1,9 @@
 import React from 'react';
 import './SpiergroepSectie.css';
-import MuscleGroupModel from '../Componenten/MuscleGroupModel';
+import MuscleGroupModel from '../../Componenten/MuscleGroupModel';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import ArmAnimation from '../Animations/ArmAnimation';
+
 
 const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle }) => {
     return (

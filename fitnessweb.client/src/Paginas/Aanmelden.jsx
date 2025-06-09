@@ -157,7 +157,7 @@ export default function Signup() {
                 </Form>
 
                 <div className="signup-footer">
-                    <p>Already have an account? <a href="/inloggen">Log in here</a></p>
+                    <p>Already have an account? <a href="/login">Log in here</a></p>
                     <p>By signing up, you agree to our <a href="/voorwaarden">Terms & Conditions</a> and <a href="/privacy">Privacy Policy</a>.</p>
                 </div>
             </div>

@@ -10,14 +10,13 @@ import ExerciseDetail from './Paginas/Oefeningpagina';
 import exercises from './data/exercisesData';
 import Login from './Paginas/Login';
 import Aanmelden from './Paginas/Aanmelden';
-import CustomWorkoutBuilder from './Paginas/WorkoutBuilder';
+
 import Muscles from './Paginas/Muscles';
-import Dashboard from './Paginas/Dashboard';
-import Profile from './Paginas/Profiel';
-import Footer from './Componenten/Footer';
+
 import { MuscleProvider } from './hooks/MuscleContext';
-import PageNotFound from './Paginas/NotFound';
-import DashboardLayout from './DashboardLayout';
+import PageNotFound from './Paginas/Errorpaginas/NotFound';
+import MusclePageNotFound from './Paginas/Errorpaginas/MuscleNotFound';
+
 import PublicLayout from './Layout';
 
 function App() {
@@ -53,7 +52,7 @@ const AnimatedRoutes = () => {
                         <PageWrapper><Aanmelden /></PageWrapper>
                    </PublicLayout>
                 } />
-                <Route path="/spierpagina" element={
+                <Route path="/spierpagina/:spiernaam" element={
                     <PublicLayout>
                         <PageWrapper><Spierpagina /></PageWrapper>
                     </PublicLayout>
@@ -78,35 +77,11 @@ const AnimatedRoutes = () => {
                     </PublicLayout>
                 } />
 
-                {/* Pagina's met DashboardLayout */}
-                {/*<Route path="/dashboard" element={*/}
-                {/*    <DashboardLayout>*/}
-                {/*        <PageWrapper><Dashboard /></PageWrapper>*/}
-                {/*    </DashboardLayout>*/}
-                {/*} />*/}
-                {/*<Route path="/profile" element={*/}
-                {/*    <DashboardLayout>*/}
-                {/*        <PageWrapper><Profile /></PageWrapper>*/}
-                {/*    </DashboardLayout>*/}
-                {/*} />*/}
-                {/*<Route path="/custom-workout" element={*/}
-                {/*    <DashboardLayout>*/}
-                {/*        <PageWrapper><CustomWorkoutBuilder /></PageWrapper>*/}
-                {/*    </DashboardLayout>*/}
-                {/*} />*/}
-                {/*<Route path="/muscles" element={*/}
-                {/*    <DashboardLayout>*/}
-                {/*        <PageWrapper><Muscles /></PageWrapper>*/}
-                {/*    </DashboardLayout>*/}
-                {/*} />*/}
-                {/*<Route path="/exercises" element={*/}
-                {/*    <DashboardLayout>*/}
-                {/*        <PageWrapper><ExerciseListPage /></PageWrapper>*/}
-                {/*    </DashboardLayout>*/}
-                {/*} />*/}
+               
 
                 {/* Fallback route */}
-                <Route path="*" element={<PageWrapper><PageNotFound/></PageWrapper>} />
+                <Route path="*" element={<PageWrapper><PageNotFound /></PageWrapper>} />
+                <Route path="/Spier404" element={<PageWrapper><MusclePageNotFound /></PageWrapper>} />
             </Routes>
         </AnimatePresence>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import './OefeningenSectie.css';
 import { useNavigate } from 'react-router-dom';
-import { highlightTerms } from '../utils/highlightTerms'; 
+import { highlightTerms } from '../../utils/highlightTerms'; 
 
 const OefeningenSectie = ({ selectedMuscle }) => {
     const navigate = useNavigate();

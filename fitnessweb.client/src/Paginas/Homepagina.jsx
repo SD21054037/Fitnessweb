@@ -1,7 +1,7 @@
 ﻿
 import './Homepagina.css';
 
-import HeroSection from '../Componenten/HeroSection';
+import HeroSection from '../Componenten/Herosections/HeroSection';
 import { useNavigate } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
 import { useMuscle } from '../hooks/MuscleContext';

@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 import './AnatomieSectie.css';
-import ArmAnimation from '../Animations/ArmAnimation';
+import ArmAnimation from '../../Animations/ArmAnimation';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { highlightTerms } from '../utils/highlightTerms'; 
+import { highlightTerms } from '../../utils/highlightTerms'; 
 
 const AnatomieSectie = ({ selectedMuscle }) => {
     if (!selectedMuscle || !selectedMuscle.anatomy) return null;

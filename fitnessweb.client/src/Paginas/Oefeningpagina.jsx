@@ -4,7 +4,8 @@ import './Oefeningpagina.css';
 const ExerciseDetail = ({ exercise }) => {
   if (!exercise) return null;
 
-  return (
+    return (
+        <div className="exercise-detail-background">
     <section className="exercise-detail-container">
       <div className="exercise-header">
         <h2>{exercise.name}</h2>
@@ -48,7 +49,8 @@ const ExerciseDetail = ({ exercise }) => {
           </div>
         </div>
       </div>
-    </section>
+            </section>
+    </div>
   );
 };
 

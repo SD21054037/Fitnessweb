@@ -3,13 +3,15 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
-    
+    padding: 2rem;
     background-color: #287f88;
     border-radius: 12px;
     margin: 2rem;
+    width: auto;
     flex-wrap: wrap;
-    width: 100%;
     align-self: center;
+    max-width: 800px;
+    
 }
 
 .oefeningen-tekstblok {

@@ -1,9 +1,20 @@
+.exercise-detail-background {
+    
+    width: 100vw;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .exercise-detail-container {
     padding: 2rem;
     background-color: #247078;
     color: #fff;
     border-radius: 12px;
     margin-top: 2rem;
+   
 }
 
 .exercise-header h2 {
