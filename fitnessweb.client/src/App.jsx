@@ -17,7 +17,7 @@ import { MuscleProvider } from './hooks/MuscleContext';
 import PageNotFound from './Paginas/Errorpaginas/NotFound';
 import MusclePageNotFound from './Paginas/Errorpaginas/MuscleNotFound';
 
-import PublicLayout from './Layout';
+import PublicLayout from './Layouts/Layout';
 
 function App() {
     return (
@@ -54,7 +54,7 @@ const AnimatedRoutes = () => {
                 } />
                 <Route path="/spierpagina/:spiernaam" element={
                     <PublicLayout>
-                        <PageWrapper><Spierpagina /></PageWrapper>
+                        <Spierpagina />
                     </PublicLayout>
                 } />
                 <Route

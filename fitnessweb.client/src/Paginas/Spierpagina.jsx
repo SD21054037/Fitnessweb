@@ -50,8 +50,9 @@ const Spierpagina = () => {
                         selectedMuscle={selectedMuscle}
                         onSelectMuscle={(muscle) => {
                             navigate(`/spierpagina/${muscle.name}`);
-                        }}
 
+                        }}
+                        visibleBones={group.bones || []}
                            
                         
                     />

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import muscleGroups from '../data/muscleGroupsData';
 import { useMuscle } from '../hooks/MuscleContext';
-import Musclemodel from '../Componenten/MuscleModel';
+import Musclemodel from '../Componenten/Models/MuscleModel';
 import { useRef, useState } from 'react';
-import './Muscles.css'; // Import component-specific CSS
+import './Muscles.css'; 
 
 export default function Muscles() {
     const allMuscles = muscleGroups.flatMap((group) => group.muscles);

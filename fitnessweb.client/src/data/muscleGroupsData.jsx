@@ -89,6 +89,7 @@ const muscleGroups = [
     {
         name: "Upper Arm",
         muscles: ["Biceps_brachii", "Triceps_brachii", "Brachialis"],
+        bones: ["Humerus_L", "Humerus_R", "Scapula_L", "Scapula_R", "Ulna_L", "Ulna_R","Radius_R", "Radius_L"],
         path: "/upperbody2.glb",
         description: "The upper arm group contains muscles responsible for powerful movements such as lifting, pushing, and pulling. These muscles are essential for elbow flexion and extension, and assist in shoulder stability and motion. This group includes both anterior (front) and posterior (back) muscles that work together to control arm movement.",
         sportApplication: "Used in throwing, pulling, and pushing movements in many sports like baseball and gymnastics.",

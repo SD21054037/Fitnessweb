@@ -13,7 +13,7 @@ HTML {
     --card-bg: rgba(255, 255, 255, 0.9);
     --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.3);
-    --background: #ffffff;
+    --background: #f2f4f5;
     --cta-bg: var(--primary);
     --cta-text: var(--text-light);
     --overlay-text: var(--text-dark);
@@ -23,7 +23,6 @@ HTML {
     --sidebar-item-text: #ffffff;
     --border-light: #e0e0e0;
     --border-dark: #44476a;
-    
 }
 
 /* Dark mode override */
@@ -140,4 +139,22 @@ body.dark-mode .hero-section {
     transition: color 0.3s ease;
 }
 
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1300px;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+
+
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}

@@ -14,7 +14,7 @@ const OefeningenSectie = ({ selectedMuscle }) => {
     };
 
     return (
-        <section className="oefeningen-container">
+        <section className="card">
             <div className="oefeningen-tekstblok">
                 <h3>Exercises</h3>
                 {selectedMuscle.exercises.map((exercise, index) => (

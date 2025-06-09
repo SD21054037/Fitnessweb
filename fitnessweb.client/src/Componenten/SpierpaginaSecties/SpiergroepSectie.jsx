@@ -1,13 +1,15 @@
 import React from 'react';
 import './SpiergroepSectie.css';
-import MuscleGroupModel from '../../Componenten/MuscleGroupModel';
+import MuscleGroupModel from '../../Componenten/Models/MuscleGroupModel';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { useState } from 'react';
 
+const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle, visibleBones }) => {
+    const [showSkeleton, setShowSkeleton] = useState(true);
 
-const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle }) => {
     return (
-        <section className="spiergroep-sectie">
+        <section className="spiergroep-sectie card">
             <h2 className="spiergroep-titel">{group.name}</h2>
             <div className="spiergroep-content">
                 <div className="model-container">
@@ -15,6 +17,7 @@ const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle }) =>
                         highlightSpieren={spieren.map(s => s.name)}
                         selected={selectedMuscle?.name}
                         onClickSpier={onSelectMuscle}
+                        visibleBones={showSkeleton ? (visibleBones || []) : []}
                     />
                     
                 </div>
@@ -39,6 +42,21 @@ const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle }) =>
                             </li>
                         ))}
                     </ul>
+                    <button
+                        onClick={() => setShowSkeleton(prev => !prev)}
+                        style={{
+                            backgroundColor: '#007B8A',
+                            color: 'white',
+                            border: 'none',
+                            padding: '0.5rem 1rem',
+                            borderRadius: '8px',
+                            marginBottom: '1rem',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {showSkeleton ? 'Hide Skeleton' : 'Show Skeleton'}
+                    </button>
+
                 </div>
             </div>
         </section>

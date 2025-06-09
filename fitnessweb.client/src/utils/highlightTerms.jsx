@@ -1,5 +1,5 @@
 import React from 'react';
-import Term from '../Componenten/Term';
+import Term from './Term';
 import dictionary from '../data/dictionary'; 
 
 export function highlightTerms(text) {

@@ -9,7 +9,7 @@ const AnatomieSectie = ({ selectedMuscle }) => {
     if (!selectedMuscle || !selectedMuscle.anatomy) return null;
 
     return (
-        <section className="anatomie-container">
+        <section className="card">
             <div className="anatomie-tekstblok">
                 <h3>{selectedMuscle.displayName}</h3>
 

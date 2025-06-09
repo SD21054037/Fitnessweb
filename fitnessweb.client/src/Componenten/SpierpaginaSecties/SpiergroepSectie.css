@@ -1,12 +1,4 @@
-.spiergroep-sectie {
-    padding: 2rem;
-    background-color: #e0f7fa;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem;
-    max-width: 1300px;
-    align-self: center;
-}
+
 
 .spiergroep-titel {
     text-align: center;
@@ -19,7 +11,9 @@
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
+
 
 .groep-info {
     flex: 1;
@@ -27,7 +21,7 @@
 
 .groep-description {
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--dark-text);
     line-height: 1.6;
 }
 

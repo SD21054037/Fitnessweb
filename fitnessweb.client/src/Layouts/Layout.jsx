@@ -1,8 +1,8 @@
 
-import HeaderComponent from './Componenten/Headers/HeaderComponent';
+import HeaderComponent from '../Componenten/Headers/HeaderComponent';
 
 import './Layout.css';
-import Footer from './Componenten/Footers/Footer';
+import Footer from '../Componenten/Footers/Footer';
 
 export default function Layout({ children }) {
     return (

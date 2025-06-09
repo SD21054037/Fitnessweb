@@ -11,7 +11,7 @@ const BlessuresSectie = ({ selectedMuscle }) => {
     const { common, prevention, treatment, specific, diagnosis, rehab, faq } = selectedMuscle.injuries;
 
     return (
-        <section className="blessure-container">
+        <section className="card">
             <div className="blessure-tekstblok">
                 <h3>Injuries</h3>
 

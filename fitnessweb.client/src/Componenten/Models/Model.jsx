@@ -2,8 +2,8 @@
 import { useGLTF } from '@react-three/drei';
 import { useRef, useImperativeHandle, forwardRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useMuscle } from '../hooks/MuscleContext';
-import muscleGroups from '../data/muscleGroupsData';
+import { useMuscle } from '../../hooks/MuscleContext';
+import muscleGroups from '../../data/muscleGroupsData';
 
 const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
     const { scene } = useGLTF('/BWS.glb');

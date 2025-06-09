@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 
-import Musclemodel from '../../Componenten/MuscleModel';
+import Musclemodel from '../../Componenten/Models/MuscleModel';
 import './HeroSection.css';
 import { useMuscleVisibility } from '../../hooks/useMuscleVisibility';
 
