@@ -72,6 +72,11 @@ const AnimatedRoutes = () => {
                         <PageWrapper><Muscles /></PageWrapper>
                     </PublicLayout>
                 } />
+                <Route path="/exercises" element={
+                    <PublicLayout>
+                        <PageWrapper><ExerciseListPage /></PageWrapper>
+                    </PublicLayout>
+                } />
 
                 {/* Pagina's met DashboardLayout */}
                 {/*<Route path="/dashboard" element={*/}
