@@ -16,7 +16,7 @@ import Dashboard from './Paginas/Dashboard';
 import Profile from './Paginas/Profiel';
 import Footer from './Componenten/Footer';
 import { MuscleProvider } from './hooks/MuscleContext';
-
+import PageNotFound from './Paginas/NotFound';
 import DashboardLayout from './DashboardLayout';
 import PublicLayout from './Layout';
 
@@ -101,7 +101,7 @@ const AnimatedRoutes = () => {
                 {/*} />*/}
 
                 {/* Fallback route */}
-                <Route path="*" element={<PageWrapper><h2>404 - Pagina niet gevonden</h2></PageWrapper>} />
+                <Route path="*" element={<PageWrapper><PageNotFound/></PageWrapper>} />
             </Routes>
         </AnimatePresence>
     );
