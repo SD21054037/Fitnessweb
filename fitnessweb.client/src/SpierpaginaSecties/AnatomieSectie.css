@@ -62,7 +62,7 @@
 .anatomie-animatie-placeholder {
     flex: 1 1 400px;
     min-height: 490px;
-    height: 100%;
+  
     background-color: #E0F7FA;
     border-radius: 10px;
 }

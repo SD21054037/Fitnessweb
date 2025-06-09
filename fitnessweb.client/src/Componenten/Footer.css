@@ -1,21 +1,122 @@
+/* Modern Footer Styles */
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2E9DA9;
-    color: white;
-    text-align: center;
+    background-color: var(--background);
+    color: var(--light-text);
+    padding: 2rem 1rem;
     position: relative;
     bottom: 0;
     width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
 }
 
-    .footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+
+.footer-link {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+    .footer-link:hover {
+        color: var(--primary-accent);
     }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
+    .footer-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--primary-accent);
+        transition: width 0.3s ease;
+    }
+
+    .footer-link:hover::after {
+        width: 100%;
+    }
+
+.footer-divider {
+    opacity: 0.3;
+    user-select: none;
+}
+
+.footer-made-with {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.heart-icon {
+    color: var(--primary-accent);
+    font-size: 0.9rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-copyright p,
+    .footer-link {
+        font-size: 0.8rem;
+    }
+}

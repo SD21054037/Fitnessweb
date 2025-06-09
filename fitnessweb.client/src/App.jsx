@@ -1,11 +1,10 @@
-import React, { Profiler, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
+
 import Homepagina from './Paginas/Homepagina';
 import Spierpagina from './Paginas/Spierpagina';
-import HeaderComponent from './Componenten/HeaderComponent';
-import { MuscleProvider } from './hooks/MuscleContext';
 import ExerciseListPage from './Paginas/Oefeninglijstpagina';
 import ExerciseDetail from './Paginas/Oefeningpagina';
 import exercises from './data/exercisesData';
@@ -15,13 +14,18 @@ import CustomWorkoutBuilder from './Paginas/WorkoutBuilder';
 import Muscles from './Paginas/Muscles';
 import Dashboard from './Paginas/Dashboard';
 import Profile from './Paginas/Profiel';
-import Layout from './Layout';
+import Footer from './Componenten/Footer';
+import { MuscleProvider } from './hooks/MuscleContext';
+
+import DashboardLayout from './DashboardLayout';
+import PublicLayout from './Layout';
+
 function App() {
     return (
         <Router>
             <MuscleProvider>
-                <Layout />
                 <AnimatedRoutes />
+                
             </MuscleProvider>
         </Router>
     );
@@ -33,19 +37,64 @@ const AnimatedRoutes = () => {
     return (
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<PageWrapper><Homepagina /></PageWrapper>} />
-                <Route path="/spierpagina" element={<PageWrapper><Spierpagina /></PageWrapper>} />
-                <Route path="/exercises" element={<PageWrapper><ExerciseListPage /></PageWrapper>} />
+                {/* Pagina's zonder layout */}
+                <Route path="/" element={
+                    <PublicLayout>
+                        <PageWrapper><Homepagina /></PageWrapper>
+                    </PublicLayout>}
+                />
+                <Route path="/login" element={
+                    <PublicLayout>
+                    <PageWrapper><Login /></PageWrapper>
+                    </PublicLayout>
+                } />
+                <Route path="/aanmelden" element={
+                    <PublicLayout>
+                        <PageWrapper><Aanmelden /></PageWrapper>
+                   </PublicLayout>
+                } />
+                <Route path="/spierpagina" element={
+                    <PublicLayout>
+                        <PageWrapper><Spierpagina /></PageWrapper>
+                    </PublicLayout>
+                } />
                 <Route
                     path="/exercises/:name"
-                    element={<PageWrapper><ExerciseDetailWrapper /></PageWrapper>}
+                    element={
+                        <PublicLayout>
+                            <PageWrapper><ExerciseDetailWrapper /></PageWrapper>
+                        </PublicLayout>
+                    }
                 />
-                <Route path="/login" element={<Login />} />
-                <Route path="/aanmelden" element={<Aanmelden />} />
-                <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
-                <Route path="/muscles" element={<PageWrapper><Muscles /></PageWrapper>} />
-                <Route path="/profile" element={<PageWrapper><Profile /></PageWrapper>} />
-                <Route path="/custom-workout" element={<CustomWorkoutBuilder />} />
+
+                {/* Pagina's met DashboardLayout */}
+                <Route path="/dashboard" element={
+                    <DashboardLayout>
+                        <PageWrapper><Dashboard /></PageWrapper>
+                    </DashboardLayout>
+                } />
+                <Route path="/profile" element={
+                    <DashboardLayout>
+                        <PageWrapper><Profile /></PageWrapper>
+                    </DashboardLayout>
+                } />
+                <Route path="/custom-workout" element={
+                    <DashboardLayout>
+                        <PageWrapper><CustomWorkoutBuilder /></PageWrapper>
+                    </DashboardLayout>
+                } />
+                <Route path="/muscles" element={
+                    <DashboardLayout>
+                        <PageWrapper><Muscles /></PageWrapper>
+                    </DashboardLayout>
+                } />
+                <Route path="/exercises" element={
+                    <DashboardLayout>
+                        <PageWrapper><ExerciseListPage /></PageWrapper>
+                    </DashboardLayout>
+                } />
+
+                {/* Fallback route */}
                 <Route path="*" element={<PageWrapper><h2>404 - Pagina niet gevonden</h2></PageWrapper>} />
             </Routes>
         </AnimatePresence>

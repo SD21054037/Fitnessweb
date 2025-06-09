@@ -3,12 +3,12 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2rem;
+    
     background-color: #287f88;
     border-radius: 12px;
     margin: 2rem;
     flex-wrap: wrap;
-    width: 1300px;
+    width: 100%;
     align-self: center;
 }
 
@@ -16,6 +16,7 @@
     flex: 1 1 500px;
     color: #fff;
     text-align: left;
+   
 }
 
     .oefeningen-tekstblok h3 {

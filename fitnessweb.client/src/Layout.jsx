@@ -1,6 +1,8 @@
 
 import HeaderComponent from './Componenten/HeaderComponent';
+
 import './Layout.css';
+import Footer from './Componenten/Footer';
 
 export default function Layout({ children }) {
     return (
@@ -11,6 +13,10 @@ export default function Layout({ children }) {
             <main className="layout-main">
                 {children}
             </main>
+            <footer>
+                <Footer />
+            </footer>
+            
         </>
     );
 }

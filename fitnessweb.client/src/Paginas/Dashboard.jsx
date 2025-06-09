@@ -12,7 +12,9 @@ import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { motion } from 'framer-motion';
 
+
 import { AppstoreAddOutlined, UserOutlined, ReadOutlined, SmileOutlined, ReloadOutlined, FireOutlined } from '@ant-design/icons';
+
 
 const { Title } = Typography;
 
@@ -80,9 +82,10 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard-background">
-        <div className="dashboard-container">
-
-            <Title level={3} className="welcome-text">{getGreeting()} 👋</Title>
+        
+            <div className="dashboard-container">
+                <div className="dashboard-herosection">
+            <Title level={1} className="welcome-text">{getGreeting()} 👋</Title>
             
 
 
@@ -91,18 +94,18 @@ export default function Dashboard() {
                 <Col><Statistic title="Completed" value={completed} /></Col>
                 <Col><Statistic title="Calories Burned" value={12450} /></Col>
                 <Col><Statistic title="Streak" value={5} suffix="days" /></Col>
-                <Col>
-                    <Progress type="circle" percent={Math.round((completed / total) * 100)} size={64} status="active"  />
-                </Col>
-            </Row>
-
+                {/*<Col>*/}
+                {/*    <Progress type="circle" percent={Math.round((completed / total) * 100)} size={64} status="active"  />*/}
+                {/*</Col>*/}
+                </Row>
+            </div>
             <Title level={2} style={{ marginTop: '40px' }}>Fitness & Education Dashboard</Title>
 
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, EffectCoverflow]}
                 effect="coverflow"
                 coverflowEffect={{ rotate: 0, stretch: 0, depth: 200, modifier: 2.5, slideShadows: false }}
-                spaceBetween={30}
+                spaceBetween={10}
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}

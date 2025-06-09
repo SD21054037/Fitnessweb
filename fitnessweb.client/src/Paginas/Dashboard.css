@@ -1,16 +1,10 @@
-:root {
-    --primary: #2CA4B1;
-    --accent: #1890ff;
-    --text-light: #ffffff;
-    --text-dark: #1890ff;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --glass-border: rgba(255, 255, 255, 0.3);
-}
+
 
 .dashboard-background {
     background: var(--dashboard-background);
-    width: 100vw;
+    
+    display: flex;
+
 }
 
 /* -------------------------- Layout -------------------------- */
@@ -22,29 +16,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+    width: 100%;
     overflow: hidden;
 }
 
-    .dashboard-container::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        
-        z-index: -1;
-    }
 
     /* -------------------------- Typography -------------------------- */
     .dashboard-container h2 {
         font-size: 36px;
-        color: var(--primary);
+        
         margin-bottom: 40px;
         z-index: 2;
     }
 
-.ant-typography {
-    color: var(--text-light);
+/* -------------------------- Hero Section -------------------------- */
+.dashboard-herosection {
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--hero-gradient);
+    border-radius: 12px;
 }
+    .dashboard-herosection h1 {
+        font-size: 48px;
+        color: var(--text-light) !important;
+    }
+
+.dashboard-stats .ant-statistic-title,
+.dashboard-stats .ant-statistic-content-value,
+.dashboard-stats .ant-statistic-content-suffix,
+.dashboard-stats .ant-progress-text,
+.dashboard-container h2
+{
+    color: var(--text-light) !important;
+}
+
+
 
 /* -------------------------- Swiper -------------------------- */
 .swiper {
@@ -58,6 +69,10 @@
     justify-content: center;
     height: auto;
     padding: 20px 0;
+}
+.swiper-pagination-bullet-active {
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 1;
 }
 
 /* -------------------------- Cards -------------------------- */
@@ -98,7 +113,7 @@
 }
 
 .dashboard-card p {
-    color: #444;
+    font-size: 16px;
     margin-top: 8px;
 }
 
@@ -152,18 +167,14 @@
     transition: background 0.4s ease, color 0.4s ease;
 }
 
-    .dashboard-container h1,
-    .dashboard-container h2,
+    
+    
     .dashboard-container h3,
     .dashboard-container p {
         color: var(--text-dark);
         transition: color 0.3s ease;
     }
 
-.dashboard-stats .ant-statistic-title,
-.dashboard-stats .ant-statistic-content-value {
-    color: var(--text-dark) !important;
-}
 
 /* Card hover highlight for both modes */
 .dashboard-card .ant-card:hover {

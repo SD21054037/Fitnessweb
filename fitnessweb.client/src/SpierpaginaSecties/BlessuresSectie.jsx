@@ -59,9 +59,9 @@ const BlessuresSectie = ({ selectedMuscle }) => {
                 {faq && (
                     <>
                         <h4>FAQ / Myths:</h4>
-                        <Collapse accordion>
+                        <Collapse accordion className="collapse_header" >
                             {faq.map((item, index) => (
-                                <Panel header={item.q} key={index}>
+                                <Panel header={item.q}  key={index}>
                                     <p>{highlightTerms(item.a)}</p>
                                 </Panel>
                             ))}
@@ -70,10 +70,10 @@ const BlessuresSectie = ({ selectedMuscle }) => {
                 )}
             </div>
 
-            <div className="blessure-illustratie">
-                <img src="/blessure-afbeelding.jpg" alt="Injury illustration" />
-                <p className="illustratie-caption"><em>Illustration of muscle tear or overuse injury.</em></p>
-            </div>
+            {/*<div className="blessure-illustratie">*/}
+            {/*    <img src="/blessure-afbeelding.jpg" alt="Injury illustration" />*/}
+            {/*    <p className="illustratie-caption"><em>Illustration of muscle tear or overuse injury.</em></p>*/}
+            {/*</div>*/}
         </section>
     );
 };

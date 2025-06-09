@@ -65,7 +65,7 @@
 .ant-collapse {
     background-color: #2b8b92;
     border: none;
-    color: white;
+   
     font-family: inherit;
     width: 100%;
     margin-top: 1rem;
@@ -73,18 +73,18 @@
     overflow: hidden;
 }
 
+
 .ant-collapse-item {
     border-bottom: 1px solid #4aa3a7;
 }
 
 .ant-collapse-header {
     background-color: #23787d;
-    color: #fff;
+    color: var(--light-text);
     font-weight: 500;
     font-size: 1rem;
     padding: 1rem;
     border: none;
-
 }
 
 .ant-collapse-content {
@@ -94,17 +94,10 @@
     padding: 1rem 1.5rem;
 }
 
-.ant-collapse-content-box {
-    padding: 0;
-}
 
-.ant-collapse-icon-position-start .ant-collapse-header {
-    padding-left: 2.5rem;
-    position: relative;
-}
 
 .ant-collapse-expand-icon {
-    position: absolute;
+    
     left: 1rem;
     color: #a9e1e5;
     font-size: 1rem;

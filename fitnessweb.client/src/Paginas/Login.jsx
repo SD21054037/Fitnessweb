@@ -41,14 +41,17 @@ export default function Login() {
         <div className="login-page">
 
             <div className="auth-hero">
+                <div className="auth-hero-image">
                 <DotLottieReact
                     src="https://lottie.host/9bebdae2-78c4-4bc5-b352-cc17348b0c4d/3xzmFuptup.lottie"
                     loop
                     autoplay
-                />
+                    />
+                </div>
+                <div className="auth-hero-text">
                 <h1>Welkom terug!</h1>
-                <p>Log in om je vooruitgang te volgen en slimmer te trainen.</p>
-                
+                    <p>Log in om je vooruitgang te volgen en slimmer te trainen.</p>
+                </div>
             </div>
         <div className="login-container">
             <Title level={2} style={{ textAlign: 'center' }}>Inloggen</Title>

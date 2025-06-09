@@ -1,35 +1,47 @@
-﻿import React from 'react';
-import { Menu, Dropdown } from 'antd';
+﻿import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import { useEffect } from 'react';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { Switch } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import './HeaderComponent.css';
 import { useMuscle } from '../hooks/MuscleContext';
 import muscleGroups from '../data/muscleGroupsData';
 import { Link } from 'react-router-dom';
+import './HeaderComponent.css';
 
 const HeaderComponent = () => {
     const navigate = useNavigate();
     const { selectMuscle, selectMuscleGroup } = useMuscle();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
+    const [darkMode, setDarkMode] = useState(() => {
+        const savedMode = localStorage.getItem('dark-mode');
+        if (savedMode !== null) {
+            return savedMode === 'true';
+        }
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    });
 
-    const [dark, setDark] = useState(() => localStorage.getItem('dark-mode') === 'true');
+    const toggleDarkMode = () => {
+        const newMode = !darkMode;
+        setDarkMode(newMode);
+        document.body.classList.toggle('dark-mode', newMode);
+        localStorage.setItem('dark-mode', newMode.toString());
+    };
 
     useEffect(() => {
-        document.body.classList.toggle('dark-mode', dark);
-        localStorage.setItem('dark-mode', dark);
-    }, [dark]);
+        document.body.classList.toggle('dark-mode', darkMode);
+    }, [darkMode]);
 
     const toggleSubmenu = (menu) => {
         setActiveSubmenu(prev => prev === menu ? null : menu);
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(prev => !prev);
+    };
 
     const findMuscleGroupByMuscle = (muscleName) => {
-        const groupEntry = Object .entries(muscleGroups).find(([groupName, group]) =>
+        const groupEntry = Object.entries(muscleGroups).find(([groupName, group]) =>
             group.muscles.includes(muscleName)
         );
         return groupEntry ? groupEntry[0] : null;
@@ -45,7 +57,6 @@ const HeaderComponent = () => {
             console.warn('Muscle group not found for:', muscleName);
         }
     };
-
 
     const handleExerciseNavigate = (exerciseName) => {
         navigate(`/exercises/${exerciseName.toLowerCase().replaceAll(' ', '-')}`);
@@ -148,26 +159,33 @@ const HeaderComponent = () => {
     ];
 
     return (
-        
+        <div className="header-container">
+            <header className="header">
+                <div className="header__logo">
+                    <a href="/">
+                        <img
+                            src={darkMode ? 'LogoLight.png' : 'LogoDark.png'}
+                            alt="Fitness & Education Logo"
+                        />
+                    </a>
+                </div>
 
-        <header className="header">
-            
-            <div className="header__logo">
-                <a href="/">
-                    <img src="/logo.png" alt="Fitness & Education Logo" />
-                </a>
-            </div>
-            {isMenuOpen && (
-                <div className="mobile-menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
-            )}
+                <div className="theme-switch-small-screen">
+                    <Switch
+                        checked={darkMode}
+                        onChange={toggleDarkMode}
+                        checkedChildren="🌙"
+                        unCheckedChildren="☀️"
+                    />
+                </div>
 
-            {isMenuOpen && (
-                <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+                
 
-                   
+                {isMenuOpen && (
+                    <div className="mobile-menu-overlay" onClick={toggleMenu}></div>
+                )}
 
-                   
-
+                <div className={`mobile-menu ${isMenuOpen ? 'open' : ''} ${darkMode ? 'dark' : ''}`}>
                     <div className="mobile-menu__content">
                         <p onClick={() => toggleSubmenu('muscles')}>
                             Muscles <span>{activeSubmenu === 'muscles' ? '˄' : '˅'}</span>
@@ -208,53 +226,49 @@ const HeaderComponent = () => {
                                 ))}
                             </div>
                         )}
-
-                        <p onClick={() => { navigate('/login'); setIsMenuOpen(false); }}>Login</p>
+                        <Link to="/aanmelden">Sign up</Link>
+                        <Link to="login" onClick={() => { navigate('/login'); setIsMenuOpen(false); }}>Login</Link>
                     </div>
                 </div>
-            )}
 
-                <div className="hamburger-icon" onClick={() => setIsMenuOpen(true)}>
-                    <svg width="28" height="28" viewBox="0 0 100 80" fill="white">
-                        <rect width="100" height="10"></rect>
-                        <rect y="30" width="100" height="10"></rect>
-                        <rect y="60" width="100" height="10"></rect>
-                    </svg>
-                </div>
-            <nav className="header__nav">
-                <Dropdown menu={{ items: muscleItems }} placement="bottomLeft" trigger={["hover"]}>
-                        <a onClick={(e) => {
-                            e.preventDefault();
-                            navigate('/muscles');
-                        }
-                        
-                        
-                        
-                        } className="nav-dropdown">Muscles <DownOutlined /></a>
-                </Dropdown>
-                <Dropdown menu={{ items: exerciseItems }} placement="bottomLeft" trigger={["hover"]}>
-                    <a
-                        onClick={(e) => {
-                            e.preventDefault();
-                            navigate('/exercises');
-                        }}
-                        className="nav-dropdown"
-                    >
-                        Exercises <DownOutlined />
-                    </a>
+                <nav className="header__nav">
+                    <Dropdown menu={{ items: muscleItems }} placement="bottomLeft" trigger={["hover"]}>
+                        <a onClick={(e) => { e.preventDefault(); navigate('/muscles'); }} className="nav-dropdown">
+                            Muscles <DownOutlined />
+                        </a>
+                    </Dropdown>
+                    <Dropdown menu={{ items: exerciseItems }} placement="bottomLeft" trigger={["hover"]}>
+                        <a onClick={(e) => { e.preventDefault(); navigate('/exercises'); }} className="nav-dropdown">
+                            Exercises <DownOutlined />
+                        </a>
+                    </Dropdown>
+                </nav>
 
-                </Dropdown>
-            </nav>
-            <button className="dark-toggle-button" onClick={() => setDark(prev => !prev)}>
-                {dark ? '☀️' : '🌙'}
-            </button>
+                <button
+                    className={`hamburger ${isMenuOpen ? 'is-active' : ''} ${darkMode ? 'dark' : ''}`}
+                    onClick={toggleMenu}
+                    aria-label="Menu"
+                    aria-expanded={isMenuOpen}
+                >
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </button>
 
                 <div className="header__actions">
+                    <div className="theme-switch">
+                        <Switch
+                            checked={darkMode}
+                            onChange={toggleDarkMode}
+                            checkedChildren="🌙"
+                            unCheckedChildren="☀️"
+                        />
+                    </div>
+                    <Link to="/aanmelden" className="header__button">Sign up</Link>
                     <Link to="/login" className="header__button">Login</Link>
-            
                 </div>
-
-        </header>
+            </header>
+        </div>
     );
 };
 

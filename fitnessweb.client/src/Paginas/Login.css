@@ -1,12 +1,12 @@
 .login-page,
 .signup-page {
-    min-height: 100vh;
+    height: 100vh;
     min-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #0099ff, #00ccff);
-    padding: 40px 20px;
+   
 }
 
 .login-container,
@@ -66,8 +66,10 @@ textarea {
     display: block;
 }
 
+
+
 body.dark-mode .login-page,
-.signup-page {
+body.dark-mode .signup-page {
     background: linear-gradient(to bottom, #0d1a28, #102a3c);
 }
 
@@ -104,3 +106,57 @@ body.dark-mode .ant-btn-primary {
     background-color: #0185ff! important;
     color: var(--cta-text) !important;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .login-page,
+    .signup-page {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    
+        height: auto;
+    }
+
+    .login-container,
+    .signup-container {
+        width: 80%;
+        padding: 1rem;
+        border-radius: 12px;
+        margin: 20px;
+      
+    }
+
+    .auth-hero {
+        display: flex;
+
+    }
+    .auth-hero-text {
+        text-align: center;
+        
+    }
+
+    .auth-hero h1 {
+        font-size: 24px;
+    }
+
+    .auth-hero p {
+        font-size: 14px;
+    }
+
+    .auth-hero-img {
+        max-width: 150px;
+        
+    }
+
+    .ant-btn-primary {
+        width: 100%;
+    }
+
+    .ant-input,
+    .ant-input-password {
+        font-size: 14px;
+    }
+}
+

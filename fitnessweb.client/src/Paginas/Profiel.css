@@ -1,43 +1,143 @@
+/* Profiel.css */
 .profile-page {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px;
     background-color: var(--background);
     color: var(--text-dark);
-    width: 100vw;
-    height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-    .profile-page .ant-card {
-        max-width: 500px;
-        width: 100%;
-        max-height: 600px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        padding: 24px;
-        transition: background 0.3s ease, color 0.3s ease;
+.profile-card {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    background: var(--card-bg);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .profile-card.dark {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        background: var(--card-bg-dark);
     }
 
-    .profile-page .ant-form-item-label > label {
-        color: var(--text-dark);
-        font-weight: 500;
-        transition: color 0.3s ease;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    margin: 0 !important;
+    font-weight: 600;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+.profile-form .ant-form-item-label > label {
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.modern-input {
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+    .modern-input:hover {
+        border-color: var(--primary-color);
     }
 
-    .profile-page .ant-input,
-    .profile-page .ant-select-selector,
-    .profile-page .ant-input-password {
-        background-color: #fff;
-        color: #000;
-        border-radius: 6px;
-        transition: all 0.3s ease;
+    .modern-input:focus {
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        border-color: var(--primary-color);
     }
 
-body.dark-mode .profile-page .ant-input,
-body.dark-mode .profile-page .ant-select-selector,
-body.dark-mode .profile-page .ant-input-password {
-    background-color: #1e1e1e;
-    color: #fff;
-    border-color: #444;
+.modern-select .ant-select-selector {
+    border-radius: 8px !important;
+    padding: 4px 12px !important;
+    background: var(--input-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: all 0.3s ease !important;
+}
+
+.submit-button .ant-btn {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 24px;
+    height: auto;
+    font-weight: 500;
+    background: var(--primary-color);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .submit-button .ant-btn:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+    }
+
+/* Animation for form elements */
+.profile-form .ant-form-item {
+    animation: fadeIn 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+    .profile-form .ant-form-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .profile-form .ant-form-item:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .profile-form .ant-form-item:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .profile-form .ant-form-item:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .profile-card {
+        padding: 20px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .theme-switch {
+        align-self: flex-end;
+    }
 }

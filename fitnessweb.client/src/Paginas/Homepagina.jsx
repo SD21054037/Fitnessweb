@@ -1,6 +1,6 @@
 ﻿
 import './Homepagina.css';
-import Footer from '../Componenten/Footer';
+
 import HeroSection from '../Componenten/HeroSection';
 import { useNavigate } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
@@ -127,7 +127,7 @@ const Homepagina = () => {
                 </section>
 
             </main>
-            <Footer />
+            
         </div>
     );
 };

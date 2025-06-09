@@ -48,6 +48,11 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
                 />
                 <OrbitControls target={[0, 0, 0]}
                     rotation={[0, Math.PI, 0]}
+                    enableZoom={true}
+                    enablePan={true}
+                    enableRotate={true}
+                    minDistance={1}
+                    maxDistance={3}
 
                 />
             </Canvas>

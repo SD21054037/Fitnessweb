@@ -60,7 +60,7 @@ const Spierpagina = () => {
                     </>
                 )}
             </main>
-            <Footer />
+          
         </div>
     );
 };

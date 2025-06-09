@@ -1,7 +1,7 @@
 .homepagina {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom right, #E6F7FA, #C9EAF3); 
+    
     font-family: 'Roboto', sans-serif;
     height: auto;
     width: 100vw;
@@ -287,17 +287,17 @@
 }
 
 .call-to-action {
-    background: var(--hero-gradient);
+    background: var(--background);
     padding: 60px 20px;
     text-align: center;
-    color: white;
+    color: var(--light-text);
 }
 
     .call-to-action h2 {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 10px;
-        color: white;
+        
     }
 
     .call-to-action p {

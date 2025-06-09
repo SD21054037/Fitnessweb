@@ -25,7 +25,7 @@ const AnatomieSectie = ({ selectedMuscle }) => {
                     <ambientLight intensity={1} />
                     <directionalLight position={[2, 2, 2]} />
                     <directionalLight position={[-2, -2, -2]} />
-                    <ArmAnimation />
+                    {/*<ArmAnimation />*/}
                     <OrbitControls />
                 </Canvas>
             </div>
