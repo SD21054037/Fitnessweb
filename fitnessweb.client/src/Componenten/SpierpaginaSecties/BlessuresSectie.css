@@ -31,7 +31,7 @@
         font-size: 1.3rem;
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
-        color: #e0f7f9;
+        
     }
 
     .blessure-tekstblok ul {
@@ -56,7 +56,7 @@
 
 .illustratie-caption {
     margin-top: 0.75rem;
-    color: #d6f2f5;
+   
     font-size: 0.95rem;
     font-style: italic;
     text-align: center;
