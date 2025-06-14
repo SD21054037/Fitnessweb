@@ -1,22 +1,8 @@
-.oefeningen-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: #287f88;
-    border-radius: 12px;
-    margin: 2rem;
-    width: auto;
-    flex-wrap: wrap;
-    align-self: center;
-    max-width: 800px;
-    
-}
+
 
 .oefeningen-tekstblok {
     flex: 1 1 500px;
-    color: #fff;
+
     text-align: left;
    
 }
@@ -39,7 +25,7 @@
     .oefening-blok p {
         margin: 0;
         line-height: 1.6;
-        color: #d4f3f5;
+        
     }
 
 .oefeningen-animatie-placeholder {
@@ -53,9 +39,9 @@
 .oefening-blok:hover {
     background-color: #f0f0f0;
     transition: 0.3s;
-    color: #333;
+    color: var(--primary);
 }
 
-.oefening-blok:hover p {
-    color: #333;
-}
+    .oefening-blok:hover p {
+        color: var(--primary);
+    }

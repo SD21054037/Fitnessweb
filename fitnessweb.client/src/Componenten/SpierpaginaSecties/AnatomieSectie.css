@@ -20,7 +20,7 @@
         line-height: 1.5;
     }
     .anatomie-blok h4 {
-        color: #ffffff;
+       
         font-weight: bold;
         margin-top: 1.5rem;
         font-size: 1.1rem;
@@ -36,7 +36,7 @@
 
 .anatomie-tekstblok {
     flex: 1 1 500px;
-    color: #fff;
+    
     font-size: 1.1rem;
     line-height: 1.8;
     text-align: left;
@@ -51,6 +51,30 @@
     flex: 1 1 400px;
     min-height: 490px;
   
-    background-color: #E0F7FA;
+    background-color: var(--background);
     border-radius: 10px;
+}
+
+.anatomie-animatie-header {
+    padding: 5px 0px 5px 10px;
+    background-color: var(--background);
+}
+
+.anatomie-animatie-header-text {
+    margin: 0;
+    gap: 5px;
+   
+    
+}
+
+.anatomie-animatie-header h4, .anatomie-animatie-header p {
+    margin: 0;
+
+    color: var(--text-dark); 
+}
+
+.anatomie-animatie-content {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--background);
 }

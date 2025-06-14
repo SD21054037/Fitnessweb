@@ -1,21 +1,8 @@
-.blessure-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2.5rem;
-    padding: 2.5rem;
-    background-color: #2b8b92;
-    border-radius: 16px;
-    margin: 2rem;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    max-width: 1300px;
-    align-self: center;
-}
+
 
 .blessure-tekstblok {
     flex: 1 1 500px;
-    color: #fff;
+  
     font-size: 1.1rem;
     line-height: 1.75;
     padding-right: 1rem;
@@ -63,7 +50,7 @@
 }
 /* FAQ / Myths Dropdown Styling */
 .ant-collapse {
-    background-color: #2b8b92;
+    background-color: var(--background);
     border: none;
    
     font-family: inherit;
@@ -79,8 +66,8 @@
 }
 
 .ant-collapse-header {
-    background-color: #23787d;
-    color: var(--light-text);
+    background-color: var(--bg-card);
+    color: var(--text-dark) !important;
     font-weight: 500;
     font-size: 1rem;
     padding: 1rem;
@@ -104,7 +91,7 @@
 }
 
 .ant-collapse-header:hover {
-    background-color: #2e8d93;
+    background-color: var(--primary);
     cursor: pointer;
 }
 

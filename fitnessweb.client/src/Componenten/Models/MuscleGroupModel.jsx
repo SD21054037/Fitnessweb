@@ -33,10 +33,10 @@ const Model = ({ path, highlightSpieren, selected, onClickSpier, visibleBones, c
                     child.material.transparent = true;
                     child.material.opacity = isSelected ? 1 : isHighlighted ? 0.25 : 0.1;
 
-                    // Focus camera
-                    if (isSelected && child.geometry && child.geometry.boundingBox === null) {
-                        child.geometry.computeBoundingBox();
-                    }
+                    // Focus camera, werkt pas wanneer ik de spieren verder heb opgesplitst in rechts en links
+                    //if (isSelected && child.geometry && child.geometry.boundingBox === null) {
+                    //    child.geometry.computeBoundingBox();
+                    //}
 
                     if (isSelected && child.geometry?.boundingBox) {
                         const center = new THREE.Vector3();
@@ -52,14 +52,14 @@ const Model = ({ path, highlightSpieren, selected, onClickSpier, visibleBones, c
                 }
             });
         }
-    });
+    },[selected]);
 
     return (
         <primitive
             object={gltf.scene}
             ref={meshRef}
             scale={1.5}
-            position={[0, path.includes('lower') ? -0.8 : -1.8, 0]}
+            position={[0, path.includes('lower') ? -1 : -1.8, 0]}
             rotation={[0, Math.PI, 0]}
             onClick={(e) => {
                 e.stopPropagation();
@@ -80,7 +80,7 @@ const MuscleGroupModel = ({ highlightSpieren, selected, onClickSpier, visibleBon
     if (!path) return null;
 
     return (
-        <Canvas camera={{ fov: 30 }} style={{ width: '100%', height: '530px' }}>
+        <Canvas camera={{ fov: 20 }} style={{ width: '100%', height: '530px' }}>
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 5, 5]} intensity={0.6} />
             <directionalLight position={[-5, -5, -5]} intensity={0.6} />
@@ -92,6 +92,7 @@ const MuscleGroupModel = ({ highlightSpieren, selected, onClickSpier, visibleBon
                 maxDistance={4}
                 maxPolarAngle={Math.PI / 2}
                 minPolarAngle={Math.PI / 2}
+                
             />
             <Model
                 path={path}

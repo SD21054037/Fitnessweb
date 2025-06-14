@@ -1,11 +1,15 @@
 ﻿import React from 'react';
 import './AnatomieSectie.css';
-import ArmAnimation from '../../Animations/ArmAnimation';
+
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { highlightTerms } from '../../utils/highlightTerms'; 
+import { highlightTerms } from '../../utils/highlightTerms';
+import MuscleAnimation from '../Models/MuscleAnimation';
+import { Button } from 'antd';
 
 const AnatomieSectie = ({ selectedMuscle }) => {
+    const [currentView, setCurrentView] = React.useState('origin'); 
+
     if (!selectedMuscle || !selectedMuscle.anatomy) return null;
 
     return (
@@ -21,13 +25,37 @@ const AnatomieSectie = ({ selectedMuscle }) => {
             </div>
 
             <div className="anatomie-animatie-placeholder">
-                <Canvas camera={{ position: [4, 0, 1], fov: 40 }} style={{ width: '100%', height: '490px' }}>
-                    <ambientLight intensity={1} />
-                    <directionalLight position={[2, 2, 2]} />
-                    <directionalLight position={[-2, -2, -2]} />
-                    {/*<ArmAnimation />*/}
-                    <OrbitControls />
-                </Canvas>
+                <div className="anatomie-animatie-header">
+                    <div className="anatomie-animatie-header-text">
+                        <h4>3D Anatomie</h4>
+                        <p>Current view: {currentView}</p>
+                 </div>
+                    <Button  variant="ghost" onClick={() => setCurrentView("origin")}>
+                        origin
+                    </Button>
+                    <Button  variant="ghost" onClick={() => setCurrentView("insertion")}>
+                       insertion
+                    </Button>
+                    <Button  variant="ghost" onClick={() =>  setCurrentView("animation")}>
+                        animation
+                    </Button>
+                    
+                    
+                </div>
+                {/*temporary. will do it in canvas itself later on but for now this ig*/}
+                <div className="anatomie-animatie-content">
+                    {currentView === 'origin' && (
+                        <img src={selectedMuscle.anatomy.originImg} alt={`${selectedMuscle.displayName} origin`} />
+                    )}
+                    {currentView === 'insertion' && (
+                        <img src={selectedMuscle.anatomy.insertionImg} alt={`${selectedMuscle.displayName} insertion`} />
+                    )}
+                    {currentView === 'animation' && (
+                        <MuscleAnimation AnimationPath={selectedMuscle.anatomy.Animation}/>
+                    )}
+                </div>
+
+                
             </div>
         </section>
     );

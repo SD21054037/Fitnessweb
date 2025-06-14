@@ -35,11 +35,11 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
                 <directionalLight
                     position={[5, 5, 5]}
                     intensity={1.2}
-                    castShadow // Enable shadows
+                    castShadow 
                 /><directionalLight
                     position={[-5, -5, -5]}
                     intensity={1}
-                    castShadow // Enable shadows
+                    castShadow 
                 />
                 <Model
                     ref={modelRef}
@@ -53,7 +53,8 @@ export default function Musclemodel({ modelRef, handleSceneReady }) {
                     enableRotate={true}
                     minDistance={1}
                     maxDistance={3}
-
+                    autoRotate 
+                    autoRotateSpeed={1.5}
                 />
             </Canvas>
 

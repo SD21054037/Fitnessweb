@@ -7,7 +7,14 @@
     transition: color 0.3s;
 }
 
-    .term-wrapper:hover {
+body.darkmode .term-wrapper {
+    color: var(--primary);
+}
+
+.darkmode .tooltip {
+    color: var(--primary);
+}
+.term-wrapper:hover {
         color: #023e8a; 
     }
 

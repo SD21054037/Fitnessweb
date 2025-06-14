@@ -3,7 +3,9 @@ import { useGLTF } from '@react-three/drei';
 import { useRef, useImperativeHandle, forwardRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMuscle } from '../../hooks/MuscleContext';
-import muscleGroups from '../../data/muscleGroupsData';
+import { toast } from 'react-toastify';
+import muscles from '../../data/musclesData';
+
 
 const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
     const { scene } = useGLTF('/BWS.glb');
@@ -17,6 +19,7 @@ const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
         }
     }, [scene, onSceneLoaded]);
 
+   
     useImperativeHandle(ref, () => ({
         hideMuscle: (muscleName) => {
             meshRef.current?.traverse((obj) => {
@@ -51,17 +54,18 @@ const Model = forwardRef(({ setHovered, onSceneLoaded }, ref) => {
                 }
             }}
             onClick={(e) => {
+                e.stopPropagation();
                 const clickedName = e.object.name;
-                const groepEntry = Object.entries(muscleGroups).find(
-                    ([_, groep]) => groep.muscles.includes(clickedName)
-                );
-                if (groepEntry && contextMuscle) {
-                    const [groepNaam] = groepEntry;
-                    contextMuscle.selectMuscle(clickedName);
-                    contextMuscle.selectMuscleGroup(groepNaam);
-                    navigate('/spierpagina');
+
+                const matchedMuscle = muscles.find(m => m.name === clickedName);
+
+                if (matchedMuscle) {
+                    navigate(`/spierpagina/${matchedMuscle.name}`);
+                } else {
+                    toast.info(`"${clickedName.replaceAll('_', ' ')}" is not available yet. We're working on it!`);
                 }
             }}
+
         />
     );
 });

@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './App.css';
 
 import Homepagina from './Paginas/Homepagina';
@@ -83,6 +86,18 @@ const AnimatedRoutes = () => {
                 <Route path="*" element={<PageWrapper><PageNotFound /></PageWrapper>} />
                 <Route path="/Spier404" element={<PageWrapper><MusclePageNotFound /></PageWrapper>} />
             </Routes>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
         </AnimatePresence>
     );
 };

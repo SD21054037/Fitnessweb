@@ -3,7 +3,7 @@ import './BlessuresSectie.css';
 import { Collapse } from 'antd';
 import { highlightTerms } from '../../utils/highlightTerms'; // pad naar highlightTerms functie
 
-const { Panel } = Collapse;
+
 
 const BlessuresSectie = ({ selectedMuscle }) => {
     if (!selectedMuscle || !selectedMuscle.injuries) return null;
@@ -59,13 +59,16 @@ const BlessuresSectie = ({ selectedMuscle }) => {
                 {faq && (
                     <>
                         <h4>FAQ / Myths:</h4>
-                        <Collapse accordion className="collapse_header" >
-                            {faq.map((item, index) => (
-                                <Panel header={item.q}  key={index}>
-                                    <p>{highlightTerms(item.a)}</p>
-                                </Panel>
-                            ))}
-                        </Collapse>
+                        <Collapse
+                            accordion
+                            className="collapse_header"
+                            items={faq.map((item, index) => ({
+                                key: index.toString(),
+                                label: item.q,
+                                children: <p>{highlightTerms(item.a)}</p>
+                            }))}
+                        />
+
                     </>
                 )}
             </div>
