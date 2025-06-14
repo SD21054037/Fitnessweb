@@ -23,6 +23,7 @@ HTML {
     --sidebar-item-text: #ffffff;
     --border-light: #e0e0e0;
     --border-dark: #44476a;
+    --term-wrapper: #023e8a;
 }
 
 /* Dark mode override */
@@ -44,6 +45,7 @@ body.dark-mode {
     --sidebar-item-gradient: linear-gradient(to right, #1c364c, #0e1a24);
     --sidebar-item-text: #ffffff;
     color: var(--text-light);
+    --term-wrapper: var(--primary);
 }
 
 /* Global style overrides */
@@ -146,8 +148,7 @@ body.dark-mode .hero-section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     margin: 2rem auto;
-    max-width: 1300px;
-    width: 100%;
+    
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -158,3 +159,8 @@ body.dark-mode .hero-section {
     margin-bottom: 1.5rem;
     color: var(--text-dark);
 }
+
+
+
+
+

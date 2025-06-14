@@ -35,7 +35,7 @@ const SpiergroepSectie = ({ group, spieren, selectedMuscle, onSelectMuscle, visi
                                 className={`spier-item ${selectedMuscle?.name === spier.name ? 'selected' : ''}`}
                                 onClick={() => onSelectMuscle(spier)}
                             >
-                                <span className="spier-naam">{spier.name}</span>
+                                <span className="spier-naam">{spier.displayName}</span>
                                 {spier.shortDescription && (
                                     <span className="spier-info">{spier.shortDescription}</span>
                                 )}

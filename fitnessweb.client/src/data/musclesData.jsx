@@ -974,7 +974,7 @@ const muscles = [
             faq: [
                 {
                     q: "Is the brachialis the same as the biceps?",
-                    a: "No — the brachialis lies underneath the biceps and is actually a stronger elbow flexor."
+                    a: "No, the brachialis lies underneath the biceps and is actually a stronger elbow flexor."
                 },
                 {
                     q: "Can I still train arms with a brachialis injury?",

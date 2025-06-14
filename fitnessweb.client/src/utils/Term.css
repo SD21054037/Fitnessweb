@@ -2,18 +2,14 @@
     position: relative;
     cursor: pointer;
     display: inline-block;
-    color: #023e8a;
+    color: var(--term-wrapper);
     border-bottom: 1px dashed #0077b6;
     transition: color 0.3s;
 }
 
-body.darkmode .term-wrapper {
-    color: var(--primary);
-}
 
-.darkmode .tooltip {
-    color: var(--primary);
-}
+
+
 .term-wrapper:hover {
         color: #023e8a; 
     }

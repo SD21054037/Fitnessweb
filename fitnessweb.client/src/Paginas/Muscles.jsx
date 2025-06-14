@@ -20,18 +20,10 @@ export default function Muscles() {
             muscle.toLowerCase().replaceAll('_', ' ').includes(searchTerm.toLowerCase())) || [];
 
     const handleMuscleClick = (clickedName) => {
-        if (contextMuscle) {
-            const groepEntry = Object.entries(muscleGroups).find(([groepNaam, groep]) =>
-                groep.muscles.includes(clickedName)
-            );
 
-            if (groepEntry) {
-                const [groepNaam] = groepEntry;
-                contextMuscle.selectMuscle(clickedName);
-                contextMuscle.selectMuscleGroup(groepNaam);
-                navigate('/spierpagina');
-            }
-        }
+        navigate(`/spierpagina/${clickedName}`);
+            
+        
     };
 
     return (

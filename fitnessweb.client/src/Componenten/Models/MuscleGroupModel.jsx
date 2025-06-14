@@ -1,58 +1,49 @@
 import React, { useRef } from 'react';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
+import { useEffect } from 'react';
 import * as THREE from 'three';
 import muscles from '../../data/musclesData';
 
-const Model = ({ path, highlightSpieren, selected, onClickSpier, visibleBones, controls }) => {
+const Model = ({ path, highlightSpieren, selected, onClickSpier, visibleBones }) => {
     const gltf = useGLTF(path);
     const meshRef = useRef();
-    const targetRef = useRef(null);
+    console.log(selected);
 
-    useFrame(() => {
-        if (!controls || !meshRef.current) return;
-        if (meshRef.current) {
-            meshRef.current.traverse((child) => {
-                if (child.isMesh) {
-                    const isHighlighted = highlightSpieren.includes(child.name);
-                    const isSelected = child.name === selected;
-                    const isBone = visibleBones.includes(child.name);
+    useEffect(() => {
+        if (!meshRef.current) return;
 
-                    child.visible = isHighlighted || isBone;
+        meshRef.current.traverse((child) => {
+            if (child.isMesh) {
+                const name = child.name;
+                const isHighlighted = highlightSpieren.includes(name);
+                const isSelected = selected === name;
+                
+                const isBone = visibleBones.includes(name);
 
-                    if (isBone) {
-                        child.material.color = new THREE.Color("#cccccc");
-                        child.material.transparent = true;
-                        child.material.opacity = 0.4;
-                    }
 
-                    child.material.emissive = new THREE.Color(
-                        isSelected ? 0x2A909A : isHighlighted ? 0xf08080 : 0x000000
-                    );
 
+                child.visible = isHighlighted || isBone;
+
+                if (isBone) {
+                    child.material.color.set('#cccccc');
                     child.material.transparent = true;
-                    child.material.opacity = isSelected ? 1 : isHighlighted ? 0.25 : 0.1;
-
-                    // Focus camera, werkt pas wanneer ik de spieren verder heb opgesplitst in rechts en links
-                    //if (isSelected && child.geometry && child.geometry.boundingBox === null) {
-                    //    child.geometry.computeBoundingBox();
-                    //}
-
-                    if (isSelected && child.geometry?.boundingBox) {
-                        const center = new THREE.Vector3();
-                        child.geometry.boundingBox.getCenter(center);
-                        meshRef.current.localToWorld(center);
-
-                        if (!targetRef.current || !targetRef.current.equals(center)) {
-                            controls.target.lerp(center, 0.1);
-                            controls.update();
-                            targetRef.current = center.clone();
-                        }
-                    }
+                    child.material.opacity = 0.4;
                 }
-            });
-        }
-    },[selected]);
+
+                child.material.emissive.set(isSelected ? 0x2A909A : isHighlighted ? 0x4DD0E1 : 0x000000);
+                child.material.transparent = true;
+                child.material.opacity = isSelected ? 1 : isHighlighted ? 0.25 : 0.1;
+
+            }
+        });
+    }, [highlightSpieren, selected, visibleBones]);
+
+
+    
+
+
+
 
     return (
         <primitive
@@ -84,6 +75,7 @@ const MuscleGroupModel = ({ highlightSpieren, selected, onClickSpier, visibleBon
             <ambientLight intensity={0.6} />
             <directionalLight position={[5, 5, 5]} intensity={0.6} />
             <directionalLight position={[-5, -5, -5]} intensity={0.6} />
+
             <OrbitControls
                 ref={orbitControlsRef}
                 enableZoom={true}
@@ -94,14 +86,17 @@ const MuscleGroupModel = ({ highlightSpieren, selected, onClickSpier, visibleBon
                 minPolarAngle={Math.PI / 2}
                 
             />
+
+           
             <Model
                 path={path}
                 highlightSpieren={highlightSpieren}
                 selected={selected}
                 onClickSpier={onClickSpier}
                 visibleBones={visibleBones}
-                controls={orbitControlsRef.current}
+                
             />
+            
         </Canvas>
     );
 };
