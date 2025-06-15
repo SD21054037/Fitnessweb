@@ -31,18 +31,18 @@ const SpierAnimatie = ({ path }) => {
   return <primitive object={scene} />;
 };
 
-const AnatomyModel = ({ modelPath, currentView, selectedmuscle, controls }) => {
+const AnatomyModel = ({ modelPath, currentView, selectedMuscle, controls }) => {
   const { scene } = useGLTF(modelPath);
   const meshRef = useRef();
 
   // Camera focus
   useFrame(() => {
-    if (!controls || !selectedmuscle?.anatomy || currentView === "animation") return;
+    if (!controls || !selectedMuscle?.anatomy || currentView === "animation") return;
 
     const point = new THREE.Vector3(
-      selectedmuscle.anatomy[currentView].x,
-      selectedmuscle.anatomy[currentView].y,
-      selectedmuscle.anatomy[currentView].z
+      selectedMuscle.anatomy[currentView].x,
+      selectedMuscle.anatomy[currentView].y,
+      selectedMuscle.anatomy[currentView].z
     );
 
     controls.target.lerp(point, 0.1);
@@ -55,22 +55,22 @@ const AnatomyModel = ({ modelPath, currentView, selectedmuscle, controls }) => {
 
       {currentView === "origin" && (
         <Marker position={new THREE.Vector3(
-          selectedmuscle.anatomy.origin.x,
-          selectedmuscle.anatomy.origin.y,
-          selectedmuscle.anatomy.origin.z
+          selectedMuscle.anatomy.origin.x,
+          selectedMuscle.anatomy.origin.y,
+          selectedMuscle.anatomy.origin.z
         )} color="green" />
       )}
 
       {currentView === "insertion" && (
         <Marker position={new THREE.Vector3(
-          selectedmuscle.anatomy.insertion.x,
-          selectedmuscle.anatomy.insertion.y,
-          selectedmuscle.anatomy.insertion.z
+          selectedMuscle.anatomy.insertion.x,
+          selectedMuscle.anatomy.insertion.y,
+          selectedMuscle.anatomy.insertion.z
         )} color="blue" />
       )}
 
       {currentView === "animation" && (
-        <SpierAnimatie path={selectedmuscle.anatomy.Animation} />
+        <SpierAnimatie path={selectedMuscle.anatomy.Animation} />
       )}
     </>
   );
