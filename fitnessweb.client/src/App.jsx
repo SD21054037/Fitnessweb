@@ -27,7 +27,18 @@ function App() {
         <Router>
             <MuscleProvider>
                 <AnimatedRoutes />
-                
+                <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
             </MuscleProvider>
         </Router>
     );
@@ -86,18 +97,7 @@ const AnimatedRoutes = () => {
                 <Route path="*" element={<PageWrapper><PageNotFound /></PageWrapper>} />
                 <Route path="/Spier404" element={<PageWrapper><MusclePageNotFound /></PageWrapper>} />
             </Routes>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-            />
+            
         </AnimatePresence>
     );
 };

@@ -8,7 +8,7 @@ const muscles = [
 //            origin: "Long head from the ischial tuberosity; short head from the linea aspera of the femur.",
 //            insertion: "Head of the fibula.",
 //            function: "Knee flexion, hip extension (long head), and lateral rotation of the knee when flexed.",
-//            innervation: "Long head: Tibial part of sciatic nerve; short head: Common fibular nerve (L5–S2)",
+//            innervation: "Long head: Tibial part of sciatic nerve; short head: Common fibular nerve (L5ï¿½S2)",
 //            bloodSupply: "Perforating branches of the profunda femoris artery",
 //            synergists: "Gluteus maximus (hip extension), semitendinosus, semimembranosus",
 //            antagonists: "Quadriceps, iliopsoas"
@@ -40,11 +40,11 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Can I run with a hamstring strain?",
-//                    a: "Not recommended — running can worsen the injury. Focus on rehab and progressive loading first."
+//                    a: "Not recommended ï¿½ running can worsen the injury. Focus on rehab and progressive loading first."
 //                },
 //                {
 //                    q: "Do hamstrings need direct stretching daily?",
-//                    a: "Not necessarily — mobility work and eccentric loading are more effective for long-term health."
+//                    a: "Not necessarily ï¿½ mobility work and eccentric loading are more effective for long-term health."
 //                }
 //            ]
 //        },
@@ -59,7 +59,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Hamstring Curl Machine",
-//                description: "Isolates the hamstrings through knee flexion — best used for hypertrophy or rehab."
+//                description: "Isolates the hamstrings through knee flexion ï¿½ best used for hypertrophy or rehab."
 //            }
 //        ]
 //    }
@@ -72,7 +72,7 @@ const muscles = [
 //            origin: "Ischial tuberosity.",
 //            insertion: "Proximal medial surface of tibia (part of pes anserinus).",
 //            function: "Hip extension, knee flexion, and medial rotation of the leg when knee is flexed.",
-//            innervation: "Tibial portion of the sciatic nerve (L5–S2)",
+//            innervation: "Tibial portion of the sciatic nerve (L5ï¿½S2)",
 //            bloodSupply: "Inferior gluteal artery and perforating branches of profunda femoris",
 //            synergists: "Semimembranosus, biceps femoris (long head)",
 //            antagonists: "Quadriceps group"
@@ -108,14 +108,14 @@ const muscles = [
 //                },
 //                {
 //                    q: "How long does a hamstring strain take to heal?",
-//                    a: "Mild strains may resolve in 2–3 weeks, while more severe ones may take 6–8+ weeks."
+//                    a: "Mild strains may resolve in 2ï¿½3 weeks, while more severe ones may take 6ï¿½8+ weeks."
 //                }
 //            ]
 //        },
 //        exercises: [
 //            {
 //                name: "Glute Bridge",
-//                description: "Activates both glutes and hamstrings — great for warm-up or rehab work."
+//                description: "Activates both glutes and hamstrings ï¿½ great for warm-up or rehab work."
 //            },
 //            {
 //                name: "Lying Hamstring Curl",
@@ -136,7 +136,7 @@ const muscles = [
 //        origin: "Ischial tuberosity.",
 //            insertion: "Posterior part of medial condyle of tibia.",
 //                function: "Hip extension, knee flexion, and medial rotation of the leg when flexed.",
-//                innervation: "Tibial part of the sciatic nerve (L5–S2)",
+//                innervation: "Tibial part of the sciatic nerve (L5ï¿½S2)",
 //                    bloodSupply: "Perforating branches of profunda femoris artery",
 //                        synergists: "Semitendinosus, biceps femoris",
 //                            antagonists: "Quadriceps, tensor fasciae latae"
@@ -148,7 +148,7 @@ const muscles = [
 //                    specific: [
 //                        {
 //                            name: "High Hamstring Strain",
-//                            description: "Common during sprinting or overstretching — affects semimembranosus more due to deeper fiber orientation."
+//                            description: "Common during sprinting or overstretching ï¿½ affects semimembranosus more due to deeper fiber orientation."
 //                        },
 //                        {
 //                            name: "Ischial Tuberosity Avulsion",
@@ -168,7 +168,7 @@ const muscles = [
 //                                faq: [
 //                                    {
 //                                        q: "Is semimembranosus injury the same as a regular hamstring strain?",
-//                                        a: "It’s part of the hamstrings but tends to be deeper and slower to heal due to its structure."
+//                                        a: "Itï¿½s part of the hamstrings but tends to be deeper and slower to heal due to its structure."
 //                                    },
 //                                    {
 //                                        q: "Can I squat with a hamstring injury?",
@@ -201,7 +201,7 @@ const muscles = [
 //            origin: "Inferior pubic ramus.",
 //            insertion: "Upper part of the linea aspera of the femur.",
 //            function: "Hip adduction and flexion.",
-//            innervation: "Obturator nerve (L2–L4)",
+//            innervation: "Obturator nerve (L2ï¿½L4)",
 //            bloodSupply: "Obturator artery",
 //            synergists: "Adductor longus, gracilis",
 //            antagonists: "Gluteus medius, gluteus minimus"
@@ -224,7 +224,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is adductor brevis visible?",
-//                    a: "No — it's a deeper, smaller muscle beneath adductor longus."
+//                    a: "No ï¿½ it's a deeper, smaller muscle beneath adductor longus."
 //                }
 //            ]
 //        },
@@ -253,7 +253,7 @@ const muscles = [
 //            origin: "Body of the pubis.",
 //            insertion: "Middle third of the linea aspera of the femur.",
 //            function: "Hip adduction and medial rotation.",
-//            innervation: "Obturator nerve (L2–L4)",
+//            innervation: "Obturator nerve (L2ï¿½L4)",
 //            bloodSupply: "Obturator artery and medial circumflex femoral artery",
 //            synergists: "Adductor brevis, adductor magnus, gracilis",
 //            antagonists: "Gluteus medius, gluteus minimus"
@@ -281,7 +281,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Can I walk with a groin strain?",
-//                    a: "Yes, if pain is mild — avoid aggressive movement and keep strides short."
+//                    a: "Yes, if pain is mild ï¿½ avoid aggressive movement and keep strides short."
 //                }
 //            ]
 //        },
@@ -309,7 +309,7 @@ const muscles = [
 //            origin: "Inferior pubic ramus, ischial tuberosity.",
 //            insertion: "Linea aspera and adductor tubercle of femur.",
 //            function: "Hip adduction, extension, and medial rotation.",
-//            innervation: "Obturator nerve and sciatic nerve (L2–L4, L5–S1)",
+//            innervation: "Obturator nerve and sciatic nerve (L2ï¿½L4, L5ï¿½S1)",
 //            bloodSupply: "Obturator, femoral, and deep femoral arteries",
 //            synergists: "Gluteus maximus (hip extension), other adductors",
 //            antagonists: "Tensor fasciae latae, gluteus medius"
@@ -332,7 +332,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is adductor magnus involved in squatting?",
-//                    a: "Yes — especially in wide-stance or sumo squats. It assists in hip extension and stabilization."
+//                    a: "Yes ï¿½ especially in wide-stance or sumo squats. It assists in hip extension and stabilization."
 //                }
 //            ]
 //        },
@@ -360,7 +360,7 @@ const muscles = [
 //            origin: "Inferior pubic ramus.",
 //            insertion: "Medial surface of tibia (part of pes anserinus).",
 //            function: "Hip adduction and knee flexion.",
-//            innervation: "Obturator nerve (L2–L3)",
+//            innervation: "Obturator nerve (L2ï¿½L3)",
 //            bloodSupply: "Obturator artery",
 //            synergists: "Adductor group, sartorius (for medial rotation and knee flexion)",
 //            antagonists: "Gluteus medius, rectus femoris"
@@ -383,7 +383,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Do I need to isolate the gracilis?",
-//                    a: "Not necessarily — but if tight or weak, targeted rehab may help with knee control and mobility."
+//                    a: "Not necessarily ï¿½ but if tight or weak, targeted rehab may help with knee control and mobility."
 //                }
 //            ]
 //        },
@@ -410,7 +410,7 @@ const muscles = [
 //            origin: "Superior pubic ramus.",
 //            insertion: "Pectineal line of femur.",
 //            function: "Hip adduction and flexion.",
-//            innervation: "Femoral nerve (L2–L3), sometimes obturator nerve",
+//            innervation: "Femoral nerve (L2ï¿½L3), sometimes obturator nerve",
 //            bloodSupply: "Medial circumflex femoral artery",
 //            synergists: "Adductor brevis, iliopsoas",
 //            antagonists: "Gluteus medius, tensor fasciae latae"
@@ -433,7 +433,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is pectineus a major mover?",
-//                    a: "It’s a small but important stabilizer — especially in hip flexion and early swing phase of gait."
+//                    a: "Itï¿½s a small but important stabilizer ï¿½ especially in hip flexion and early swing phase of gait."
 //                }
 //            ]
 //        },
@@ -482,7 +482,7 @@ const muscles = [
 //            origin: "Iliac fossa of the pelvis.",
 //            insertion: "Lesser trochanter of the femur (via iliopsoas tendon).",
 //            function: "Hip flexion and stabilization of the pelvis during movement.",
-//            innervation: "Femoral nerve (L2–L3)",
+//            innervation: "Femoral nerve (L2ï¿½L3)",
 //            bloodSupply: "Iliolumbar artery",
 //            synergists: "Psoas major, rectus femoris",
 //            antagonists: "Gluteus maximus, hamstrings"
@@ -505,7 +505,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is the iliacus involved in lower back pain?",
-//                    a: "Yes — tight hip flexors can tilt the pelvis and pull on the lumbar spine."
+//                    a: "Yes ï¿½ tight hip flexors can tilt the pelvis and pull on the lumbar spine."
 //                }
 //            ]
 //        },
@@ -530,10 +530,10 @@ const muscles = [
 //        displayName: "Psoas major",
 //        path: "/lowerbody2.glb",
 //        anatomy: {
-//            origin: "Transverse processes and vertebral bodies of T12–L5.",
+//            origin: "Transverse processes and vertebral bodies of T12ï¿½L5.",
 //            insertion: "Lesser trochanter of the femur.",
 //            function: "Strong hip flexor, contributes to lumbar spine stabilization.",
-//            innervation: "Anterior rami of L1–L3",
+//            innervation: "Anterior rami of L1ï¿½L3",
 //            bloodSupply: "Lumbar arteries",
 //            synergists: "Iliacus, rectus femoris, sartorius",
 //            antagonists: "Gluteus maximus, hamstrings"
@@ -561,7 +561,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is the psoas a core muscle?",
-//                    a: "Yes — it connects spine to femur and plays a stabilizing role in posture and movement."
+//                    a: "Yes ï¿½ it connects spine to femur and plays a stabilizing role in posture and movement."
 //                }
 //            ]
 //        },
@@ -572,7 +572,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Leg Raises",
-//                description: "Engages psoas during lower body movement — control is key."
+//                description: "Engages psoas during lower body movement ï¿½ control is key."
 //            },
 //            {
 //                name: "Reverse Lunge with Core Brace",
@@ -589,7 +589,7 @@ const muscles = [
 //            origin: "Anterior superior iliac spine (ASIS).",
 //            insertion: "Medial surface of tibia (part of pes anserinus).",
 //            function: "Flexes, abducts, and laterally rotates the hip; flexes the knee.",
-//            innervation: "Femoral nerve (L2–L3)",
+//            innervation: "Femoral nerve (L2ï¿½L3)",
 //            bloodSupply: "Femoral artery",
 //            synergists: "Iliopsoas, rectus femoris, gracilis",
 //            antagonists: "Gluteus maximus, adductors"
@@ -612,7 +612,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is sartorius important in athletic movement?",
-//                    a: "Yes — it helps coordinate multi-plane hip and knee motion, especially in agility-based sports."
+//                    a: "Yes ï¿½ it helps coordinate multi-plane hip and knee motion, especially in agility-based sports."
 //                }
 //            ]
 //        },
@@ -690,18 +690,18 @@ const muscles = [
 //            origin: "Medial epicondyle of the humerus and adjacent ulna/radius.",
 //            insertion: "Palmar surfaces of metacarpals and phalanges.",
 //            function: "Flexes the wrist and fingers; supports grip and forearm control.",
-//            innervation: "Median and ulnar nerves (C6–T1)",
+//            innervation: "Median and ulnar nerves (C6ï¿½T1)",
 //            bloodSupply: "Ulnar and anterior interosseous arteries",
 //            synergists: "Flexor carpi radialis, palmaris longus, flexor digitorum muscles",
 //            antagonists: "Extensors of the wrist and fingers"
 //        },
 //        injuries: {
-//            common: "Tendinopathy due to excessive gripping or keyboard/mouse overuse — also called 'golfer’s elbow'.",
+//            common: "Tendinopathy due to excessive gripping or keyboard/mouse overuse ï¿½ also called 'golferï¿½s elbow'.",
 //            prevention: "Balanced grip training, regular mobility, and active rest.",
 //            treatment: "Soft tissue work, eccentric flexion drills, and load management.",
 //            specific: [
 //                {
-//                    name: "Medial Epicondylitis (Golfer’s Elbow)",
+//                    name: "Medial Epicondylitis (Golferï¿½s Elbow)",
 //                    description: "Inflammation or strain of the flexor tendon group from overuse or repetitive gripping."
 //                }
 //            ],
@@ -745,13 +745,13 @@ const muscles = [
 //            origin: "Lateral epicondyle of the humerus and adjacent structures.",
 //            insertion: "Posterior surfaces of metacarpals and phalanges.",
 //            function: "Extension of the wrist, fingers, and thumb. Assists in grip and hand positioning.",
-//            innervation: "Radial nerve (C6–C8)",
+//            innervation: "Radial nerve (C6ï¿½C8)",
 //            bloodSupply: "Radial and posterior interosseous arteries",
 //            synergists: "Extensor carpi ulnaris, extensor digitorum, extensor indicis",
 //            antagonists: "Wrist/finger flexors"
 //        },
 //        injuries: {
-//            common: "Overuse in gripping or repetitive motion sports — classic 'tennis elbow' or lateral epicondylitis.",
+//            common: "Overuse in gripping or repetitive motion sports ï¿½ classic 'tennis elbow' or lateral epicondylitis.",
 //            prevention: "Forearm balance training, proper ergonomics, and wrist mobility.",
 //            treatment: "Rest, eccentric wrist extensions, and isometrics.",
 //            specific: [
@@ -773,7 +773,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Can I still train with tennis elbow?",
-//                    a: "Light isometrics and pain-free movement can help healing — avoid aggravating loads."
+//                    a: "Light isometrics and pain-free movement can help healing ï¿½ avoid aggravating loads."
 //                }
 //            ]
 //        },
@@ -802,15 +802,16 @@ const muscles = [
         path: "/upperbody2.glb",
         anatomy: {
             location: "Anterior upper arm (front of humerus)",
-            origin: "Scapula (short head: coracoid process; long head: supraglenoid tubercle)",
-            insertion: "Radial tuberosity",
+            originText: "Scapula",
+            insertionText: "Radius",
             function: "Elbow flexion and forearm supination",
             innervation: "Musculocutaneous nerve (C5-C7)",
             bloodSupply: "Brachial artery",
             synergists: "Brachialis, Brachioradialis",
             antagonists: "Triceps brachii",
-            originImg: "/images/biceps-origin.png",
-            insertionImg: "/images/biceps-insertion.png",
+            path: "/Biceps.glb",
+            origin: { x: -0.13969, y: 0.069834, z:1.4786 },
+            insertion: { x: -0.33959, y: 0.059366, z: 1.1648 },
             Animation: "/animations/biceps.glb"
 
 
@@ -1007,7 +1008,7 @@ const muscles = [
 //            origin: "Lateral supracondylar ridge of the humerus.",
 //            insertion: "Styloid process of the radius.",
 //            function: "Flexes the elbow, especially when the forearm is in a neutral (hammer) position.",
-//            innervation: "Radial nerve (C5–C6)",
+//            innervation: "Radial nerve (C5ï¿½C6)",
 //            bloodSupply: "Radial recurrent artery",
 //            synergists: "Biceps brachii, brachialis",
 //            antagonists: "Triceps brachii, anconeus"
@@ -1035,11 +1036,11 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is the brachioradialis a biceps muscle?",
-//                    a: "No — it’s a forearm muscle that assists in elbow flexion, especially in neutral grip positions."
+//                    a: "No ï¿½ itï¿½s a forearm muscle that assists in elbow flexion, especially in neutral grip positions."
 //                },
 //                {
 //                    q: "Why does my forearm hurt during curls?",
-//                    a: "You may be overloading the brachioradialis or using poor form — consider lowering weight and adjusting grip."
+//                    a: "You may be overloading the brachioradialis or using poor form ï¿½ consider lowering weight and adjusting grip."
 //                }
 //            ]
 //        },
@@ -1069,7 +1070,7 @@ const muscles = [
 //            origin: "Medial and lateral condyles of the femur.",
 //            insertion: "Calcaneus via the Achilles tendon.",
 //            function: "Plantarflexion of the ankle and assists in knee flexion.",
-//            innervation: "Tibial nerve (S1–S2)",
+//            innervation: "Tibial nerve (S1ï¿½S2)",
 //            bloodSupply: "Posterior tibial and peroneal arteries",
 //            synergists: "Soleus, posterior tibialis, peroneals",
 //            antagonists: "Tibialis anterior, dorsiflexors"
@@ -1122,7 +1123,7 @@ const muscles = [
 //            origin: "Posterior tibia and fibula.",
 //            insertion: "Calcaneus via the Achilles tendon.",
 //            function: "Plantarflexion of the ankle, especially when the knee is bent.",
-//            innervation: "Tibial nerve (S1–S2)",
+//            innervation: "Tibial nerve (S1ï¿½S2)",
 //            bloodSupply: "Posterior tibial and peroneal arteries",
 //            synergists: "Gastrocnemius, posterior tibialis, peroneals",
 //            antagonists: "Tibialis anterior, dorsiflexors"
@@ -1150,7 +1151,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Why train the soleus separately?",
-//                    a: "It’s most active when the knee is bent — key for endurance and ankle support."
+//                    a: "Itï¿½s most active when the knee is bent ï¿½ key for endurance and ankle support."
 //                }
 //            ]
 //        },
@@ -1173,7 +1174,7 @@ const muscles = [
 //            origin: "Lateral condyle and upper two-thirds of the lateral surface of the tibia.",
 //            insertion: "Medial cuneiform and base of the first metatarsal.",
 //            function: "Dorsiflexion and inversion of the foot.",
-//            innervation: "Deep peroneal nerve (L4–S1)",
+//            innervation: "Deep peroneal nerve (L4ï¿½S1)",
 //            bloodSupply: "Anterior tibial artery",
 //            synergists: "Extensor hallucis longus, extensor digitorum longus",
 //            antagonists: "Gastrocnemius, soleus, posterior tibialis"
@@ -1224,10 +1225,10 @@ const muscles = [
 //        displayName: "Chest (Pectoralis major & minor)",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Pectoralis major: Clavicle, sternum, and costal cartilages of ribs 1–6; Pectoralis minor: Anterior surface of ribs 3–5.",
+//            origin: "Pectoralis major: Clavicle, sternum, and costal cartilages of ribs 1ï¿½6; Pectoralis minor: Anterior surface of ribs 3ï¿½5.",
 //            insertion: "Pectoralis major: Greater tubercle and intertubercular groove of humerus; Pectoralis minor: Coracoid process of scapula.",
 //            function: "Pectoralis major: Shoulder flexion, adduction, and internal rotation; Pectoralis minor: Scapular depression and stabilization.",
-//            innervation: "Medial and lateral pectoral nerves (C5–T1)",
+//            innervation: "Medial and lateral pectoral nerves (C5ï¿½T1)",
 //            bloodSupply: "Thoracoacromial artery, internal thoracic artery",
 //            synergists: "Anterior deltoid, triceps brachii, serratus anterior",
 //            antagonists: "Posterior deltoid, trapezius, rotator cuff"
@@ -1235,15 +1236,15 @@ const muscles = [
 //        injuries: {
 //            common: "Strain or tear from heavy pressing, poor technique, or imbalance between push/pull training.",
 //            prevention: "Proper warm-up, controlled form, and balancing horizontal pull movements.",
-//            treatment: "Rest, mobility, and progressive strength return — full tears may require surgery.",
+//            treatment: "Rest, mobility, and progressive strength return ï¿½ full tears may require surgery.",
 //            specific: [
 //                {
 //                    name: "Pec Tear",
-//                    description: "Partial or complete rupture of pectoralis major tendon — often during bench press."
+//                    description: "Partial or complete rupture of pectoralis major tendon ï¿½ often during bench press."
 //                },
 //                {
 //                    name: "Costochondritis",
-//                    description: "Inflammation of the cartilage where ribs attach to the sternum — mimics chest strain."
+//                    description: "Inflammation of the cartilage where ribs attach to the sternum ï¿½ mimics chest strain."
 //                }
 //            ],
 //            recognitionTips: [
@@ -1259,11 +1260,11 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Can I train chest with shoulder pain?",
-//                    a: "Only with strict form and pain-free range — avoid flaring elbows and excessive internal rotation."
+//                    a: "Only with strict form and pain-free range ï¿½ avoid flaring elbows and excessive internal rotation."
 //                },
 //                {
 //                    q: "Is chest stretching important?",
-//                    a: "Yes — especially if you sit a lot or do a lot of pressing. It improves shoulder mechanics and posture."
+//                    a: "Yes ï¿½ especially if you sit a lot or do a lot of pressing. It improves shoulder mechanics and posture."
 //                }
 //            ]
 //        },
@@ -1278,7 +1279,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Chest Fly",
-//                description: "Isolates the chest through horizontal adduction with extended arms — best done light and controlled."
+//                description: "Isolates the chest through horizontal adduction with extended arms ï¿½ best done light and controlled."
 //            }
 //        ]
 //    }
@@ -1336,7 +1337,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Should I stretch or strengthen erector spinae?",
-//                    a: "Both — build strength with hinging movements and use mobility work to reduce chronic tightness."
+//                    a: "Both ï¿½ build strength with hinging movements and use mobility work to reduce chronic tightness."
 //                }
 //            ]
 //        },
@@ -1378,7 +1379,7 @@ const muscles = [
 //        displayName: "Serratus anterior",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Ribs 1–8",
+//            origin: "Ribs 1ï¿½8",
 //            insertion: "Medial border of scapula",
 //            function: "Protracts and stabilizes scapula"
 //        },
@@ -1394,8 +1395,8 @@ const muscles = [
 //        displayName: "Serratus posterior inferior",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Spinous processes of T11–L2",
-//            insertion: "Lower ribs 9–12",
+//            origin: "Spinous processes of T11ï¿½L2",
+//            insertion: "Lower ribs 9ï¿½12",
 //            function: "Depresses ribs during exhalation"
 //        },
 //        injuries: {
@@ -1438,14 +1439,14 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is the transverse abdominis visible?",
-//                    a: "No — it's a deep stabilizer muscle beneath the visible abs. But it’s critical for functional core strength."
+//                    a: "No ï¿½ it's a deep stabilizer muscle beneath the visible abs. But itï¿½s critical for functional core strength."
 //                }
 //            ]
 //        },
 //        exercises: [
 //            {
 //                name: "Dead Bug",
-//                description: "Teaches controlled limb movement while maintaining a braced core — ideal for TVA activation."
+//                description: "Teaches controlled limb movement while maintaining a braced core ï¿½ ideal for TVA activation."
 //            },
 //            {
 //                name: "Vacuum Hold",
@@ -1463,7 +1464,7 @@ const muscles = [
 //        displayName: "Obliques (External & Internal)",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "External: Ribs 5–12; Internal: Thoracolumbar fascia, iliac crest, and inguinal ligament.",
+//            origin: "External: Ribs 5ï¿½12; Internal: Thoracolumbar fascia, iliac crest, and inguinal ligament.",
 //            insertion: "External: Iliac crest, linea alba; Internal: Lower ribs, linea alba, pubis.",
 //            function: "Trunk rotation, lateral flexion, and abdominal compression.",
 //            innervation: "Lower six thoracic nerves and iliohypogastric nerve",
@@ -1494,7 +1495,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is it safe to train obliques after a strain?",
-//                    a: "Only after pain is gone — start with static holds like side planks before dynamic twisting."
+//                    a: "Only after pain is gone ï¿½ start with static holds like side planks before dynamic twisting."
 //                }
 //            ]
 //        },
@@ -1524,7 +1525,7 @@ const muscles = [
 //            origin: "Ilium (posterior to posterior gluteal line), sacrum, coccyx, and sacrotuberous ligament.",
 //            insertion: "Iliotibial tract and gluteal tuberosity of the femur.",
 //            function: "Powerful hip extension, external rotation, and posterior pelvic stabilization.",
-//            innervation: "Inferior gluteal nerve (L5–S2)",
+//            innervation: "Inferior gluteal nerve (L5ï¿½S2)",
 //            bloodSupply: "Inferior and superior gluteal arteries",
 //            synergists: "Hamstrings, adductor magnus (posterior fibers)",
 //            antagonists: "Iliopsoas, rectus femoris"
@@ -1560,14 +1561,14 @@ const muscles = [
 //                },
 //                {
 //                    q: "Can you grow glutes without squats?",
-//                    a: "Yes — movements like hip thrusts, lunges, and deadlifts target glutes directly and effectively."
+//                    a: "Yes ï¿½ movements like hip thrusts, lunges, and deadlifts target glutes directly and effectively."
 //                }
 //            ]
 //        },
 //        exercises: [
 //            {
 //                name: "Hip Thrust",
-//                description: "Targets gluteus maximus in full hip extension — excellent for hypertrophy and strength."
+//                description: "Targets gluteus maximus in full hip extension ï¿½ excellent for hypertrophy and strength."
 //            },
 //            {
 //                name: "Romanian Deadlift",
@@ -1588,7 +1589,7 @@ const muscles = [
 //            origin: "External surface of the ilium between the anterior and inferior gluteal lines.",
 //            insertion: "Anterior surface of the greater trochanter.",
 //            function: "Abduction and medial rotation of the hip.",
-//            innervation: "Superior gluteal nerve (L4–S1)",
+//            innervation: "Superior gluteal nerve (L4ï¿½S1)",
 //            bloodSupply: "Superior gluteal artery",
 //            synergists: "Gluteus medius, TFL",
 //            antagonists: "Adductors"
@@ -1611,7 +1612,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is glute minimus easy to isolate?",
-//                    a: "No — but it activates during many controlled abduction and balance-based movements."
+//                    a: "No ï¿½ but it activates during many controlled abduction and balance-based movements."
 //                }
 //            ]
 //        },
@@ -1639,7 +1640,7 @@ const muscles = [
 //            origin: "External surface of the ilium between anterior and posterior gluteal lines.",
 //            insertion: "Greater trochanter of the femur.",
 //            function: "Abducts the hip and stabilizes the pelvis during gait.",
-//            innervation: "Superior gluteal nerve (L4–S1)",
+//            innervation: "Superior gluteal nerve (L4ï¿½S1)",
 //            bloodSupply: "Superior gluteal artery",
 //            synergists: "Gluteus minimus, TFL",
 //            antagonists: "Adductor group"
@@ -1651,7 +1652,7 @@ const muscles = [
 //            specific: [
 //                {
 //                    name: "Gluteus Medius Tendinopathy",
-//                    description: "Painful inflammation or degeneration of the glute med tendon — often felt on the side of the hip."
+//                    description: "Painful inflammation or degeneration of the glute med tendon ï¿½ often felt on the side of the hip."
 //                }
 //            ],
 //            recognitionTips: [
@@ -1667,7 +1668,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Can gluteus medius weakness cause back pain?",
-//                    a: "Yes — poor pelvic control can overload the lumbar spine during movement."
+//                    a: "Yes ï¿½ poor pelvic control can overload the lumbar spine during movement."
 //                }
 //            ]
 //        },
@@ -1678,7 +1679,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Side-Lying Hip Abduction",
-//                description: "Directly engages gluteus medius — a staple in rehab and strength routines."
+//                description: "Directly engages gluteus medius ï¿½ a staple in rehab and strength routines."
 //            },
 //            {
 //                name: "Banded Lateral Walks",
@@ -1698,7 +1699,7 @@ const muscles = [
 //            origin: "Anterior inferior iliac spine (AIIS) and superior margin of acetabulum.",
 //            insertion: "Patella and tibial tuberosity via the patellar ligament.",
 //            function: "Extends the knee and assists in hip flexion.",
-//            innervation: "Femoral nerve (L2–L4)",
+//            innervation: "Femoral nerve (L2ï¿½L4)",
 //            bloodSupply: "Lateral circumflex femoral artery",
 //            synergists: "Vastus group, iliopsoas",
 //            antagonists: "Hamstrings, gluteus maximus"
@@ -1758,7 +1759,7 @@ const muscles = [
 //            origin: "Anterior and lateral surfaces of the femur shaft.",
 //            insertion: "Patella and tibial tuberosity via the patellar ligament.",
 //            function: "Knee extension.",
-//            innervation: "Femoral nerve (L2–L4)",
+//            innervation: "Femoral nerve (L2ï¿½L4)",
 //            bloodSupply: "Lateral circumflex femoral artery",
 //            synergists: "Other quadriceps muscles",
 //            antagonists: "Hamstrings"
@@ -1781,7 +1782,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is the vastus intermedius visible?",
-//                    a: "No — it lies deep under the rectus femoris, but it's essential for knee extension strength."
+//                    a: "No ï¿½ it lies deep under the rectus femoris, but it's essential for knee extension strength."
 //                }
 //            ]
 //        },
@@ -1809,7 +1810,7 @@ const muscles = [
 //            origin: "Greater trochanter and lateral linea aspera of femur.",
 //            insertion: "Patella and tibial tuberosity via patellar ligament.",
 //            function: "Primary extension of the knee.",
-//            innervation: "Femoral nerve (L2–L4)",
+//            innervation: "Femoral nerve (L2ï¿½L4)",
 //            bloodSupply: "Lateral circumflex femoral artery",
 //            synergists: "Other quadriceps muscles",
 //            antagonists: "Hamstrings"
@@ -1837,7 +1838,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is foam rolling useful for vastus lateralis tightness?",
-//                    a: "Yes — it helps release soft tissue tension and improve mobility."
+//                    a: "Yes ï¿½ it helps release soft tissue tension and improve mobility."
 //                }
 //            ]
 //        },
@@ -1865,7 +1866,7 @@ const muscles = [
 //            origin: "Medial lip of the linea aspera of the femur.",
 //            insertion: "Patella and tibial tuberosity via patellar ligament.",
 //            function: "Knee extension and medial stabilization of the patella.",
-//            innervation: "Femoral nerve (L2–L4)",
+//            innervation: "Femoral nerve (L2ï¿½L4)",
 //            bloodSupply: "Femoral artery",
 //            synergists: "Other quadriceps muscles",
 //            antagonists: "Hamstrings"
@@ -1922,7 +1923,7 @@ const muscles = [
 //            origin: "Lateral third of the clavicle.",
 //            insertion: "Deltoid tuberosity of the humerus.",
 //            function: "Shoulder flexion, internal rotation, and horizontal adduction.",
-//            innervation: "Axillary nerve (C5–C6)",
+//            innervation: "Axillary nerve (C5ï¿½C6)",
 //            bloodSupply: "Posterior circumflex humeral artery",
 //            synergists: "Pectoralis major, biceps brachii (short head)",
 //            antagonists: "Posterior deltoid, latissimus dorsi"
@@ -1987,7 +1988,7 @@ const muscles = [
 //            origin: "Acromion of the scapula.",
 //            insertion: "Deltoid tuberosity of the humerus.",
 //            function: "Shoulder abduction (raising arm to the side).",
-//            innervation: "Axillary nerve (C5–C6)",
+//            innervation: "Axillary nerve (C5ï¿½C6)",
 //            bloodSupply: "Thoracoacromial artery",
 //            synergists: "Supraspinatus (initiation), trapezius (scapular control)",
 //            antagonists: "Latissimus dorsi, pectoralis major"
@@ -2019,11 +2020,11 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Should I go heavy on lateral raises?",
-//                    a: "No — form and control are more important. Go light and focus on tension."
+//                    a: "No ï¿½ form and control are more important. Go light and focus on tension."
 //                },
 //                {
 //                    q: "Are side delts important for shoulder width?",
-//                    a: "Yes — they give the rounded, capped shoulder look."
+//                    a: "Yes ï¿½ they give the rounded, capped shoulder look."
 //                }
 //            ]
 //        },
@@ -2051,7 +2052,7 @@ const muscles = [
 //            origin: "Spine of the scapula.",
 //            insertion: "Deltoid tuberosity of the humerus.",
 //            function: "Shoulder extension, external rotation, and horizontal abduction.",
-//            innervation: "Axillary nerve (C5–C6)",
+//            innervation: "Axillary nerve (C5ï¿½C6)",
 //            bloodSupply: "Posterior circumflex humeral artery",
 //            synergists: "Infraspinatus, teres minor, rhomboids",
 //            antagonists: "Pectoralis major, anterior deltoid"
@@ -2087,7 +2088,7 @@ const muscles = [
 //                },
 //                {
 //                    q: "Do rear delts matter for posture?",
-//                    a: "Absolutely — they help pull the shoulder blades back and balance out front-dominant movement."
+//                    a: "Absolutely ï¿½ they help pull the shoulder blades back and balance out front-dominant movement."
 //                }
 //            ]
 //        },
@@ -2098,7 +2099,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Reverse Fly",
-//                description: "Isolates the rear delts through horizontal shoulder abduction — best done light and controlled."
+//                description: "Isolates the rear delts through horizontal shoulder abduction ï¿½ best done light and controlled."
 //            },
 //            {
 //                name: "Rear Delt Row",
@@ -2113,10 +2114,10 @@ const muscles = [
 //        displayName: "Latissimus dorsi",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Spinous processes of T7–T12, thoracolumbar fascia, iliac crest, and inferior 3 or 4 ribs.",
+//            origin: "Spinous processes of T7ï¿½T12, thoracolumbar fascia, iliac crest, and inferior 3 or 4 ribs.",
 //            insertion: "Intertubercular groove of the humerus.",
 //            function: "Shoulder extension, adduction, and internal rotation. Assists in trunk rotation and respiration.",
-//            innervation: "Thoracodorsal nerve (C6–C8)",
+//            innervation: "Thoracodorsal nerve (C6ï¿½C8)",
 //            bloodSupply: "Thoracodorsal artery",
 //            synergists: "Teres major, pectoralis major, triceps (long head)",
 //            antagonists: "Deltoids, rotator cuff (esp. in flexion and abduction)"
@@ -2144,7 +2145,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Are lats important for posture?",
-//                    a: "Yes — they stabilize the spine and scapula, and are vital in pulling mechanics."
+//                    a: "Yes ï¿½ they stabilize the spine and scapula, and are vital in pulling mechanics."
 //                }
 //            ]
 //        },
@@ -2170,10 +2171,10 @@ const muscles = [
 //        displayName: "Trapezius",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Occipital bone, ligamentum nuchae, and spinous processes of C7–T12 vertebrae.",
+//            origin: "Occipital bone, ligamentum nuchae, and spinous processes of C7ï¿½T12 vertebrae.",
 //            insertion: "Lateral third of clavicle, acromion, and spine of scapula.",
 //            function: "Upper: elevates scapula; Middle: retracts scapula; Lower: depresses and stabilizes scapula.",
-//            innervation: "Accessory nerve (cranial nerve XI) and cervical spinal nerves (C3–C4)",
+//            innervation: "Accessory nerve (cranial nerve XI) and cervical spinal nerves (C3ï¿½C4)",
 //            bloodSupply: "Transverse cervical artery",
 //            synergists: "Levator scapulae, rhomboids, serratus anterior",
 //            antagonists: "Pectoralis minor, latissimus dorsi (in downward rotation)"
@@ -2205,7 +2206,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Should I train traps directly?",
-//                    a: "Yes — especially mid/lower traps for posture and scapular health. Upper traps often get enough from compound lifts."
+//                    a: "Yes ï¿½ especially mid/lower traps for posture and scapular health. Upper traps often get enough from compound lifts."
 //                },
 //                {
 //                    q: "Why do my traps stay tight?",
@@ -2234,7 +2235,7 @@ const muscles = [
 //        description: "Retracts the scapula and stabilizes the shoulder blade.",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Spinous processes of T2–T5 vertebrae",
+//            origin: "Spinous processes of T2ï¿½T5 vertebrae",
 //            insertion: "Medial border of scapula",
 //            function: "Scapular retraction and stabilization"
 //        },
@@ -2250,7 +2251,7 @@ const muscles = [
 //        description: "Assists rhomboid major in scapular retraction.",
 //        path: "/upperbody2.glb",
 //        anatomy: {
-//            origin: "Spinous processes of C7–T1",
+//            origin: "Spinous processes of C7ï¿½T1",
 //            insertion: "Medial border of scapula above rhomboid major",
 //            function: "Scapular elevation and retraction"
 //        },
@@ -2285,7 +2286,7 @@ const muscles = [
 //            origin: "Lateral border of the scapula.",
 //            insertion: "Inferior facet of the greater tubercle of the humerus.",
 //            function: "External rotation and horizontal abduction of the shoulder.",
-//            innervation: "Axillary nerve (C5–C6)",
+//            innervation: "Axillary nerve (C5ï¿½C6)",
 //            bloodSupply: "Circumflex scapular artery",
 //            synergists: "Infraspinatus, posterior deltoid",
 //            antagonists: "Subscapularis, anterior deltoid"
@@ -2313,7 +2314,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is teres minor part of the rotator cuff?",
-//                    a: "Yes — it works with the infraspinatus to externally rotate and stabilize the shoulder."
+//                    a: "Yes ï¿½ it works with the infraspinatus to externally rotate and stabilize the shoulder."
 //                }
 //            ]
 //        },
@@ -2342,7 +2343,7 @@ const muscles = [
 //            origin: "Infraspinous fossa of the scapula.",
 //            insertion: "Middle facet of the greater tubercle of the humerus.",
 //            function: "External rotation of the shoulder and stabilization of the glenohumeral joint.",
-//            innervation: "Suprascapular nerve (C5–C6)",
+//            innervation: "Suprascapular nerve (C5ï¿½C6)",
 //            bloodSupply: "Suprascapular and circumflex scapular arteries",
 //            synergists: "Teres minor, posterior deltoid",
 //            antagonists: "Subscapularis, pectoralis major"
@@ -2370,7 +2371,7 @@ const muscles = [
 //            faq: [
 //                {
 //                    q: "Is infraspinatus important for athletes?",
-//                    a: "Yes — it plays a critical role in stabilizing and externally rotating the shoulder."
+//                    a: "Yes ï¿½ it plays a critical role in stabilizing and externally rotating the shoulder."
 //                }
 //            ]
 //        },
@@ -2396,8 +2397,8 @@ const muscles = [
 //        anatomy: {
 //            origin: "Supraspinous fossa of the scapula.",
 //            insertion: "Superior facet of the greater tubercle of the humerus.",
-//            function: "Initiates shoulder abduction (first 15°) and stabilizes the glenohumeral joint.",
-//            innervation: "Suprascapular nerve (C5–C6)",
+//            function: "Initiates shoulder abduction (first 15ï¿½) and stabilizes the glenohumeral joint.",
+//            innervation: "Suprascapular nerve (C5ï¿½C6)",
 //            bloodSupply: "Suprascapular artery",
 //            synergists: "Deltoid (middle fibers)",
 //            antagonists: "Latissimus dorsi, pectoralis major (adductors)"
@@ -2413,7 +2414,7 @@ const muscles = [
 //                },
 //                {
 //                    name: "Partial Rotator Cuff Tear",
-//                    description: "Common in overhead athletes or aging populations — pain in shoulder abduction."
+//                    description: "Common in overhead athletes or aging populations ï¿½ pain in shoulder abduction."
 //                }
 //            ],
 //            recognitionTips: [
@@ -2440,7 +2441,7 @@ const muscles = [
 //            },
 //            {
 //                name: "Empty Can Raise",
-//                description: "Targets the supraspinatus more directly — avoid if painful."
+//                description: "Targets the supraspinatus more directly ï¿½ avoid if painful."
 //            },
 //            {
 //                name: "Isometric Abduction Hold",
@@ -2456,7 +2457,7 @@ const muscles = [
 //            origin: "Subscapular fossa of the scapula.",
 //            insertion: "Lesser tubercle of the humerus.",
 //            function: "Internal rotation of the shoulder and stabilization of the humeral head.",
-//            innervation: "Upper and lower subscapular nerves (C5–C7)",
+//            innervation: "Upper and lower subscapular nerves (C5ï¿½C7)",
 //            bloodSupply: "Subscapular artery",
 //            synergists: "Pectoralis major, latissimus dorsi",
 //            antagonists: "Infraspinatus, teres minor"
